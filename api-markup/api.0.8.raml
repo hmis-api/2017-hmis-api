@@ -1,7 +1,7 @@
 #%RAML 0.8
-title: 2016 HMIS API
+title: 2017 HMIS API
 version: 1.0.0
-baseUri: https://www.hmislynk.com/hmis-clientapi-v2016/rest
+baseUri: https://www.hmislynk.com/hmis-clientapi-v2017/rest
 mediaType: application/json
 securedBy: [oauth_2_0]
 protocols:
@@ -119,7 +119,7 @@ schemas:
   - pathstatus_ids_json: !include Schemas/PathStatus_ids_json.json
   - pathstatus_json: !include Schemas/PathStatus_json.json
   - project_json: !include Schemas/Project_json.json
-  - organization_json: !include Schemas/organization_json.json    
+  - organization_json: !include Schemas/organization_json.json
   - projectcoc_id_json: !include Schemas/ProjectCoc_id_json.json
   - projectcoc_ids_json: !include Schemas/ProjectCoc_ids_json.json
   - projectcoc_json: !include Schemas/ProjectCoc_json.json
@@ -286,7 +286,7 @@ resourceTypes:
             description: Not found – There is no resource behind the URI.
           500:
             description: Internal Server Error.
-/v2016/clients:
+/v2017/clients:
   type: {
     collection: {
         id_schema_json: id_clients_json,
@@ -516,7 +516,7 @@ resourceTypes:
                 schema_id_json: exit_id_json
                 schema_id_json_example: !include examples/Exit_id_json_example.json
                 schema_json_example: !include examples/Exit_json_example.json
-/v2016/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitsid}/exithousingassesments:
+/v2017/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitsid}/exithousingassesments:
                   type: {
                     collection: {
                     id_schema_json: id_exithousingassesment_json,
@@ -527,7 +527,7 @@ resourceTypes:
                     id_schema_json_example: !include examples/id_exithousingassesment_json_example.json
                     }
                   }
-/v2016/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitsid}/exithousingassesments/{exithousingassesmentid}:
+/v2017/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitsid}/exithousingassesments/{exithousingassesmentid}:
                     uriParameters:
                       exithousingassesmentid:
                         displayName: ExitHousingAssesments Identifier
@@ -539,7 +539,7 @@ resourceTypes:
                         schema_id_json: exithosingassessments_id_json
                         schema_json_example: !include examples/ExitHousingAssesments_json_example.json
                         schema_id_json_example: !include examples/ExitHousingAssesments_id_json_example.json
-/v2016/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitsid}/housingassesmentdispositions:
+/v2017/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitsid}/housingassesmentdispositions:
         type: {
           collection: {
           id_schema_json: id_housingassesmentdispositions_json,
@@ -550,7 +550,7 @@ resourceTypes:
           id_schema_json_example: !include examples/id_HousingAssesmentDispositions_json_example.json
           }
         }
-/v2016/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitsid}/housingassesmentdispositions/{housingassesmentdispositionid}:
+/v2017/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitsid}/housingassesmentdispositions/{housingassesmentdispositionid}:
           uriParameters:
             housingassesmentdispositionid:
               displayName: HousingAssesmentDisposition Identifier
@@ -562,7 +562,7 @@ resourceTypes:
               schema_id_json: housingassesmentdispositions_id_json
               schema_json_example: !include examples/HousingAssesmentDispositions_json_example.json
               schema_id_json_example: !include examples/HousingAssesmentDispositions_id_json_example.json
-/v2016/clients/{clientid}/enrollments/{enrollmentid}/heathinsurances:
+/v2017/clients/{clientid}/enrollments/{enrollmentid}/heathinsurances:
           type: {
             collection: {
               id_schema_json: id_healthinsurance_json,
@@ -573,7 +573,7 @@ resourceTypes:
               id_schema_json_example: !include examples/id_healthinsurance_json_example.json
             }
           }
-/v2016/clients/{clientid}/enrollments/{enrollmentid}/heathinsurances/{healthinsuranceid}:
+/v2017/clients/{clientid}/enrollments/{enrollmentid}/heathinsurances/{healthinsuranceid}:
             uriParameters:
               healthinsuranceid:
                 displayName: HealthInsurance Identifier
@@ -585,7 +585,7 @@ resourceTypes:
                 schema_id_json: healthinsurance_id_json
                 schema_json_example: !include examples/HealthInsurance_json_example.json
                 schema_id_json_example: !include examples/HealthInsurance_id_json_example.json
-/v2016/clients/{clientid}/enrollments/{enrollmentid}/healthstatuses:
+/v2017/clients/{clientid}/enrollments/{enrollmentid}/healthstatuses:
           type: {
             collection: {
               id_schema_json: id_healthstatus_json,
@@ -596,7 +596,7 @@ resourceTypes:
               id_schema_json_example: !include examples/id_healthstatus_json_example.json
             }
           }
-/v2016/clients/{clientid}/enrollments/{enrollmentid}/healthstatuses/{healthstatusid}:
+/v2017/clients/{clientid}/enrollments/{enrollmentid}/healthstatuses/{healthstatusid}:
             uriParameters:
               healthstatusid:
                 displayName: HealthStatus Identifier
@@ -608,7 +608,7 @@ resourceTypes:
                 schema_id_json: healthstatus_id_json
                 schema_json_example: !include examples/HealthStatus_json_example.json
                 schema_id_json_example: !include examples/HealthStatus_id_json_example.json
-/v2016/clients/{clientid}/enrollments/{enrollmentid}/incomeandsources:
+/v2017/clients/{clientid}/enrollments/{enrollmentid}/incomeandsources:
           type: {
             collection: {
               id_schema_json: id_incomeandsources_json,
@@ -619,7 +619,7 @@ resourceTypes:
               id_schema_json_example: !include examples/id_incomeandsource_json_example.json
             }
           }
-/v2016/clients/{clientid}/enrollments/{enrollmentid}/incomeandsources/{incomeandsourcesid}:
+/v2017/clients/{clientid}/enrollments/{enrollmentid}/incomeandsources/{incomeandsourcesid}:
             uriParameters:
               incomeandsourcesid:
                 displayName: HealthStatus Identifier
@@ -631,7 +631,7 @@ resourceTypes:
                 schema_id_json: incomeandsource_id_json
                 schema_json_example: !include examples/IncomeAndSource_json_example.json
                 schema_id_json_example: !include examples/IncomeAndSource_id_json_example.json
-/v2016/clients/{clientid}/enrollments/{enrollmentid}/medicalassistences:
+/v2017/clients/{clientid}/enrollments/{enrollmentid}/medicalassistences:
           type: {
             collection: {
               id_schema_json: id_medicalassistances_json,
@@ -642,7 +642,7 @@ resourceTypes:
               id_schema_json_example: !include examples/id_medicalassistance_json_example.json
             }
           }
-/v2016/clients/{clientid}/enrollments/{enrollmentid}/medicalassistences/{medicalassistancesid}:
+/v2017/clients/{clientid}/enrollments/{enrollmentid}/medicalassistences/{medicalassistancesid}:
             uriParameters:
               medicalassistancesid:
                 displayName: MedicalAssistances Identifier
@@ -654,7 +654,7 @@ resourceTypes:
                 schema_id_json: medicalassistances_id_json
                 schema_json_example: !include examples/MedicalAssistance_json_example.json
                 schema_id_json_example: !include examples/MedicalAssistances_id_json_example.json
-/v2016/clients/{clientid}/enrollments/{enrollmentid}/noncashbenefits:
+/v2017/clients/{clientid}/enrollments/{enrollmentid}/noncashbenefits:
           type: {
             collection: {
               id_schema_json: id_noncashbenefits_json,
@@ -665,7 +665,7 @@ resourceTypes:
               id_schema_json_example: !include examples/id_noncashbenefits_json_example.json
             }
           }
-/v2016/clients/{clientid}/enrollments/{enrollmentid}/noncashbenefits/{noncashbenefitsid}:
+/v2017/clients/{clientid}/enrollments/{enrollmentid}/noncashbenefits/{noncashbenefitsid}:
             uriParameters:
               noncashbenefitsid:
                 displayName: NonCashBenefits Identifier
@@ -677,7 +677,7 @@ resourceTypes:
                 schema_id_json: noncashbenefits_id_json
                 schema_json_example: !include examples/NonCashBenefits_json_example.json
                 schema_id_json_example: !include examples/NonCashBenefits_id_json_example.json
-/v2016/clients/{clientid}/enrollments/{enrollmentid}/residentialmoveindates:
+/v2017/clients/{clientid}/enrollments/{enrollmentid}/residentialmoveindates:
           type: {
             collection: {
               id_schema_json: id_residentialmoveindate_json,
@@ -688,7 +688,7 @@ resourceTypes:
               id_schema_json_example: !include examples/id_residentialmoveindate_json_example.json
             }
           }
-/v2016/clients/{clientid}/enrollments/{enrollmentid}/residentialmoveindates/{residentialmoveindatesid}:
+/v2017/clients/{clientid}/enrollments/{enrollmentid}/residentialmoveindates/{residentialmoveindatesid}:
             uriParameters:
               residentialmoveindatesid:
                 displayName: ResidentialMoveInDate Identifier
@@ -700,7 +700,7 @@ resourceTypes:
                 schema_id_json: residentialmoveindate_id_json
                 schema_json_example: !include examples/ResidentialMoveInDate_json_example.json
                 schema_id_json_example: !include examples/ResidentialMoveInDate_id_json_example.json
-/v2016/clients/{clientid}/enrollments/{enrollmentid}/pathstatuses:
+/v2017/clients/{clientid}/enrollments/{enrollmentid}/pathstatuses:
           type: {
             collection: {
               id_schema_json: id_pathstatus_json,
@@ -711,7 +711,7 @@ resourceTypes:
               id_schema_json_example: !include examples/id_pathstatus_json_example.json
             }
           }
-/v2016/clients/{clientid}/enrollments/{enrollmentid}/pathstatuses/{pathstatusid}:
+/v2017/clients/{clientid}/enrollments/{enrollmentid}/pathstatuses/{pathstatusid}:
             uriParameters:
               pathstatusid:
                 displayName: PathStatus Identifier
@@ -723,7 +723,7 @@ resourceTypes:
                 schema_id_json: pathstatus_id_json
                 schema_json_example: !include examples/PathStatus_json_example.json
                 schema_id_json_example: !include examples/PathStatus_id_json_example.json
-/v2016/clients/{clientid}/enrollments/{enrollmentid}/entryrhsps:
+/v2017/clients/{clientid}/enrollments/{enrollmentid}/entryrhsps:
           type: {
             collection: {
               id_schema_json: id_entryrhsp_json,
@@ -734,7 +734,7 @@ resourceTypes:
               id_schema_json_example: !include examples/id_entryrhsp_json_example.json
             }
           }
-/v2016/clients/{clientid}/enrollments/{enrollmentid}/entryrhsps/{entryrhspid}:
+/v2017/clients/{clientid}/enrollments/{enrollmentid}/entryrhsps/{entryrhspid}:
             uriParameters:
               entryrhspid:
                 displayName: Entryrhsp Identifier
@@ -746,7 +746,7 @@ resourceTypes:
                 schema_id_json: entryrhsp_id_json
                 schema_json_example: !include examples/Entryrhsp_json_example.json
                 schema_id_json_example: !include examples/Entryrhsp_id_json_example.json
-/v2016/clients/{clientid}/enrollments/{enrollmentid}/entryrhys:
+/v2017/clients/{clientid}/enrollments/{enrollmentid}/entryrhys:
           type: {
             collection: {
               id_schema_json: id_entryrhy_json,
@@ -757,7 +757,7 @@ resourceTypes:
               id_schema_json_example: !include examples/id_entryrhy_json_example.json
             }
           }
-/v2016/clients/{clientid}/enrollments/{enrollmentid}/entryrhys/{entryrhyid}:
+/v2017/clients/{clientid}/enrollments/{enrollmentid}/entryrhys/{entryrhyid}:
             uriParameters:
               entryrhyid:
                 displayName: Entryrhy Identifier
@@ -769,7 +769,7 @@ resourceTypes:
                 schema_id_json: entryrhy_id_json
                 schema_json_example: !include examples/Entryrhy_json_example.json
                 schema_id_json_example: !include examples/Entryrhy_id_json_example.json
-/v2016/clients/{clientid}/enrollments/{enrollmentid}/entryssvfs:
+/v2017/clients/{clientid}/enrollments/{enrollmentid}/entryssvfs:
           type: {
             collection: {
               id_schema_json: id_entryssvf_json,
@@ -780,7 +780,7 @@ resourceTypes:
               id_schema_json_example: !include examples/id_entryssvf_json_example.json
             }
           }
-/v2016/clients/{clientid}/enrollments/{enrollmentid}/entryssvfs/{entryssvfid}:
+/v2017/clients/{clientid}/enrollments/{enrollmentid}/entryssvfs/{entryssvfid}:
           uriParameters:
               entryssvfid:
                 displayName: Entryssvf Identifier
@@ -792,7 +792,7 @@ resourceTypes:
               schema_id_json: entryssvf_id_json
               schema_json_example: !include examples/Entryssvf_json_example.json
               schema_id_json_example: !include examples/Entryssvf_id_json_example.json
-/v2016/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exitpaths:
+/v2017/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exitpaths:
         type: {
             collection: {
               id_schema_json: id_exitpath_json,
@@ -803,7 +803,7 @@ resourceTypes:
               id_schema_json_example: !include examples/id_exitpath_json_example.json
             }
           }
-/v2016/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exitpaths/{exitpathid}:
+/v2017/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exitpaths/{exitpathid}:
           uriParameters:
               exitpathid:
                 displayName: ExitPath Identifier
@@ -815,7 +815,7 @@ resourceTypes:
               schema_id_json: exitpath_id_json
               schema_json_example: !include examples/ExitPath_json_example.json
               schema_id_json_example: !include examples/ExitPath_id_json_example.json
-/v2016/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exitrhys:
+/v2017/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exitrhys:
         type: {
             collection: {
               id_schema_json: id_exitrhy_json,
@@ -826,7 +826,7 @@ resourceTypes:
               id_schema_json_example: !include examples/id_exitrhy_json_example.json
             }
           }
-/v2016/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exitrhys/{exitrhyid}:
+/v2017/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exitrhys/{exitrhyid}:
           uriParameters:
               exitrhyid:
                 displayName: Exitrhy Identifier
@@ -838,7 +838,7 @@ resourceTypes:
               schema_id_json: exitrhy_id_json
               schema_json_example: !include examples/Exitrhy_json_example.json
               schema_id_json_example: !include examples/Exitrhy_id_json_example.json
-/v2016/clients/{clientid}/enrollments/{enrollmentid}/servicefareferrals:
+/v2017/clients/{clientid}/enrollments/{enrollmentid}/servicefareferrals:
         type: {
             collection: {
               id_schema_json: id_servicefareferral_json,
@@ -849,7 +849,7 @@ resourceTypes:
               id_schema_json_example: !include examples/id_servicefareferral_json_example.json
             }
           }
-/v2016/clients/{clientid}/enrollments/{enrollmentid}/servicefareferrals/{servicefareferralid}:
+/v2017/clients/{clientid}/enrollments/{enrollmentid}/servicefareferrals/{servicefareferralid}:
           uriParameters:
               servicefareferralid:
                 displayName: ServiceFaReferral Identifier
@@ -861,7 +861,7 @@ resourceTypes:
               schema_id_json:  servicefareferral_id_json
               schema_json_example: !include examples/ServiceFaReferral_json_example.json
               schema_id_json_example: !include examples/ServiceFaReferral_id_json_example.json
-/v2016/clients/{clientid}/veteraninfos:
+/v2017/clients/{clientid}/veteraninfos:
         type: {
             collection: {
               id_schema_json: id_veteraninfo_json,
@@ -872,7 +872,7 @@ resourceTypes:
               id_schema_json_example: !include examples/id_veteraninfo_json_example.json
             }
           }
-/v2016/clients/{clientid}/veteraninfos/{veteraninfoid}:
+/v2017/clients/{clientid}/veteraninfos/{veteraninfoid}:
           uriParameters:
               veteraninfoid:
                 displayName: VeteranInfo Identifier
@@ -884,7 +884,7 @@ resourceTypes:
               schema_id_json:  veteraninfo_id_json
               schema_json_example: !include examples/VeteranInfo_json_example.json
               schema_id_json_example: !include examples/VeteranInfo_id_json_example.json
-/v2016/projects:
+/v2017/projects:
   type: {
     collection: {
         id_schema_json: id_projects_json,
@@ -1022,7 +1022,7 @@ resourceTypes:
             schema_id_json: affiliation_id_json
             schema_json_example: !include examples/Affiliations_json_example.json
             schema_id_json_example: !include examples/Affiliation_id_json_example.json
-/v2016/organizations:
+/v2017/organizations:
   type: {
     collection: {
         id_schema_json: id_organization_json,
@@ -1045,17 +1045,17 @@ resourceTypes:
         schema_id_json: organization_id_json
         schema_id_json_example: !include examples/organization_id_json_example.json
         schema_json_example: !include examples/organization_json_example.json
-            
+
 /search/{searchentity}:
   get:
     description: |
           The Search API is optimized to find the specific entity you're looking for (e.g., a client, enrollments, etc.).It's designed to  find the one result you're looking for (or maybe the few results you're looking for). Currently hmislynk supporting search on 'clients' entity only. Just like searching on Google, you sometimes want to see a few pages of search results so that you can find the item that best meets your needs.  HMISLynk Search API provides up to 50 results for each searh. However, the search results can be limited by the client.
             Note: Current supporting URI  is /search/clients
-            
+
     queryParameters:
       q:
         description: |
-             The search keywords, as well as any qualifiers. Currently supported search fields are first name,middle name,last name,dob,source system id and ssn. For search on "date of birth" field the format MM-dd-YYYY should be used for the search keyword. 
+             The search keywords, as well as any qualifiers. Currently supported search fields are first name,middle name,last name,dob,source system id and ssn. For search on "date of birth" field the format MM-dd-YYYY should be used for the search keyword.
       sort:
         description: The sort field. Default- results are sorted by "created date".
         type: string
@@ -1066,7 +1066,7 @@ resourceTypes:
         example: desc
         default: desc
       startIndex:
-        description: The start Index from where the search results should be returned. Default - 0 
+        description: The start Index from where the search results should be returned. Default - 0
         type: integer
         example: 0
         default: 0
@@ -1076,7 +1076,7 @@ resourceTypes:
         example: 50
         default: 50
       exclude:
-       description: | 
+       description: |
              Excludes flieds from the search.Currently it suppoted value is "ssi" (to exclude         source system id) only.
     responses:
       200:
@@ -1107,7 +1107,7 @@ resourceTypes:
                   "gender": "1",
                   "otherGender": "Test",
                   "veteranStatus": "8",
-                  "link":"/hmis-clientapi/rest/v2016/clients/65e3df62-dd22-4d07-83ef-6858a6322839"
+                  "link":"/hmis-clientapi/rest/v2017/clients/65e3df62-dd22-4d07-83ef-6858a6322839"
                 },
                 {
                   "clientId": "cf98b9b2-9a77-4133-99a3-b60f05a12ad1",
@@ -1130,4 +1130,3 @@ resourceTypes:
               ]
             }
             }
-                      

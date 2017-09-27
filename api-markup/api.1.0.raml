@@ -1,10 +1,10 @@
 #%RAML 1.0
-title: 2016 HMIS API
+title: 2017 HMIS API
 version: 1.0.0
 mediaType: application/json
 protocols:
   - HTTPS
-baseUri: 'https://www.hmislynk.com/hmis-clientapi-v2016/rest'
+baseUri: 'https://www.hmislynk.com/hmis-clientapi-v2017/rest'
 securitySchemes:
   oauth_2_0:
     description: |
@@ -440,9 +440,9 @@ resourceTypes:
           description: Internal Server Error.
       securedBy:
         - oauth_2_0
-/v2016:
+/v2017:
   /clients:
-    displayName: /v2016/clients
+    displayName: /v2017/clients
     description: 'Operations performed on the set of all HMIS clients within the system, and for adding a new client to the set of clients '
     type:
       collection:
@@ -1642,7 +1642,7 @@ resourceTypes:
               securedBy:
                 - oauth_2_0
               /exithousingassesments:
-                displayName: '/v2016/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitsid}/exithousingassesments'
+                displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitsid}/exithousingassesments'
                 description: 'Operations performed on the set of all HMIS exithousingassesments within the system, and for adding a new exithousingassesment to the set of exithousingassesments '
                 type:
                   collection:
@@ -1690,7 +1690,7 @@ resourceTypes:
                 securedBy:
                   - oauth_2_0
                 '/{exithousingassesmentid}':
-                  displayName: '/v2016/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitsid}/exithousingassesments/{exithousingassesmentid}'
+                  displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitsid}/exithousingassesments/{exithousingassesmentid}'
                   type:
                     member:
                       schema_json: exithosingassessments_json
@@ -1762,7 +1762,7 @@ resourceTypes:
                   securedBy:
                     - oauth_2_0
               /housingassesmentdispositions:
-                displayName: '/v2016/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitsid}/housingassesmentdispositions'
+                displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitsid}/housingassesmentdispositions'
                 description: 'Operations performed on the set of all HMIS housingassesmentdispositions within the system, and for adding a new housingassesmentdisposition to the set of housingassesmentdispositions '
                 type:
                   collection:
@@ -1810,7 +1810,7 @@ resourceTypes:
                 securedBy:
                   - oauth_2_0
                 '/{housingassesmentdispositionid}':
-                  displayName: '/v2016/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitsid}/housingassesmentdispositions/{housingassesmentdispositionid}'
+                  displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitsid}/housingassesmentdispositions/{housingassesmentdispositionid}'
                   type:
                     member:
                       schema_json: housingassesmentdispositions_json
@@ -1883,7 +1883,7 @@ resourceTypes:
                     - oauth_2_0
             '/{exitid}':
               /exitpaths:
-                displayName: '/v2016/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exitpaths'
+                displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exitpaths'
                 description: 'Operations performed on the set of all HMIS exitpaths within the system, and for adding a new exitpath to the set of exitpaths '
                 type:
                   collection:
@@ -1931,7 +1931,7 @@ resourceTypes:
                 securedBy:
                   - oauth_2_0
                 '/{exitpathid}':
-                  displayName: '/v2016/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exitpaths/{exitpathid}'
+                  displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exitpaths/{exitpathid}'
                   type:
                     member:
                       schema_json: exitpath_json
@@ -2007,7 +2007,7 @@ resourceTypes:
                   type: string
                   displayName: exitid
               /exitrhys:
-                displayName: '/v2016/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exitrhys'
+                displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exitrhys'
                 description: 'Operations performed on the set of all HMIS exitrhys within the system, and for adding a new exitrhy to the set of exitrhys '
                 type:
                   collection:
@@ -2055,7 +2055,7 @@ resourceTypes:
                 securedBy:
                   - oauth_2_0
                 '/{exitrhyid}':
-                  displayName: '/v2016/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exitrhys/{exitrhyid}'
+                  displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exitrhys/{exitrhyid}'
                   type:
                     member:
                       schema_json: exitrhy_json
@@ -2127,7 +2127,7 @@ resourceTypes:
                   securedBy:
                     - oauth_2_0
           /heathinsurances:
-            displayName: '/v2016/clients/{clientid}/enrollments/{enrollmentid}/heathinsurances'
+            displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/heathinsurances'
             description: 'Operations performed on the set of all HMIS heathinsurances within the system, and for adding a new heathinsurance to the set of heathinsurances '
             type:
               collection:
@@ -2175,7 +2175,7 @@ resourceTypes:
             securedBy:
               - oauth_2_0
             '/{healthinsuranceid}':
-              displayName: '/v2016/clients/{clientid}/enrollments/{enrollmentid}/heathinsurances/{healthinsuranceid}'
+              displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/heathinsurances/{healthinsuranceid}'
               type:
                 member:
                   schema_json: healthinsurance_json
@@ -2247,7 +2247,7 @@ resourceTypes:
               securedBy:
                 - oauth_2_0
           /healthstatuses:
-            displayName: '/v2016/clients/{clientid}/enrollments/{enrollmentid}/healthstatuses'
+            displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/healthstatuses'
             description: 'Operations performed on the set of all HMIS healthstatuses within the system, and for adding a new healthstatus to the set of healthstatuses '
             type:
               collection:
@@ -2295,7 +2295,7 @@ resourceTypes:
             securedBy:
               - oauth_2_0
             '/{healthstatusid}':
-              displayName: '/v2016/clients/{clientid}/enrollments/{enrollmentid}/healthstatuses/{healthstatusid}'
+              displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/healthstatuses/{healthstatusid}'
               type:
                 member:
                   schema_json: healthstatus_json
@@ -2367,7 +2367,7 @@ resourceTypes:
               securedBy:
                 - oauth_2_0
           /incomeandsources:
-            displayName: '/v2016/clients/{clientid}/enrollments/{enrollmentid}/incomeandsources'
+            displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/incomeandsources'
             description: 'Operations performed on the set of all HMIS incomeandsources within the system, and for adding a new incomeandsource to the set of incomeandsources '
             type:
               collection:
@@ -2415,7 +2415,7 @@ resourceTypes:
             securedBy:
               - oauth_2_0
             '/{incomeandsourcesid}':
-              displayName: '/v2016/clients/{clientid}/enrollments/{enrollmentid}/incomeandsources/{incomeandsourcesid}'
+              displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/incomeandsources/{incomeandsourcesid}'
               type:
                 member:
                   schema_json: incomeandsource_json
@@ -2487,7 +2487,7 @@ resourceTypes:
               securedBy:
                 - oauth_2_0
           /medicalassistences:
-            displayName: '/v2016/clients/{clientid}/enrollments/{enrollmentid}/medicalassistences'
+            displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/medicalassistences'
             description: 'Operations performed on the set of all HMIS medicalassistences within the system, and for adding a new medicalassistence to the set of medicalassistences '
             type:
               collection:
@@ -2535,7 +2535,7 @@ resourceTypes:
             securedBy:
               - oauth_2_0
             '/{medicalassistancesid}':
-              displayName: '/v2016/clients/{clientid}/enrollments/{enrollmentid}/medicalassistences/{medicalassistancesid}'
+              displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/medicalassistences/{medicalassistancesid}'
               type:
                 member:
                   schema_json: medicalassistance_json
@@ -2607,7 +2607,7 @@ resourceTypes:
               securedBy:
                 - oauth_2_0
           /noncashbenefits:
-            displayName: '/v2016/clients/{clientid}/enrollments/{enrollmentid}/noncashbenefits'
+            displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/noncashbenefits'
             description: 'Operations performed on the set of all HMIS noncashbenefits within the system, and for adding a new noncashbenefit to the set of noncashbenefits '
             type:
               collection:
@@ -2655,7 +2655,7 @@ resourceTypes:
             securedBy:
               - oauth_2_0
             '/{noncashbenefitsid}':
-              displayName: '/v2016/clients/{clientid}/enrollments/{enrollmentid}/noncashbenefits/{noncashbenefitsid}'
+              displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/noncashbenefits/{noncashbenefitsid}'
               type:
                 member:
                   schema_json: noncashbenefits_json
@@ -2727,7 +2727,7 @@ resourceTypes:
               securedBy:
                 - oauth_2_0
           /residentialmoveindates:
-            displayName: '/v2016/clients/{clientid}/enrollments/{enrollmentid}/residentialmoveindates'
+            displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/residentialmoveindates'
             description: 'Operations performed on the set of all HMIS residentialmoveindates within the system, and for adding a new residentialmoveindate to the set of residentialmoveindates '
             type:
               collection:
@@ -2775,7 +2775,7 @@ resourceTypes:
             securedBy:
               - oauth_2_0
             '/{residentialmoveindatesid}':
-              displayName: '/v2016/clients/{clientid}/enrollments/{enrollmentid}/residentialmoveindates/{residentialmoveindatesid}'
+              displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/residentialmoveindates/{residentialmoveindatesid}'
               type:
                 member:
                   schema_json: residentialmoveindate_json
@@ -2847,7 +2847,7 @@ resourceTypes:
               securedBy:
                 - oauth_2_0
           /pathstatuses:
-            displayName: '/v2016/clients/{clientid}/enrollments/{enrollmentid}/pathstatuses'
+            displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/pathstatuses'
             description: 'Operations performed on the set of all HMIS pathstatuses within the system, and for adding a new pathstatus to the set of pathstatuses '
             type:
               collection:
@@ -2895,7 +2895,7 @@ resourceTypes:
             securedBy:
               - oauth_2_0
             '/{pathstatusid}':
-              displayName: '/v2016/clients/{clientid}/enrollments/{enrollmentid}/pathstatuses/{pathstatusid}'
+              displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/pathstatuses/{pathstatusid}'
               type:
                 member:
                   schema_json: pathstatus_json
@@ -2967,7 +2967,7 @@ resourceTypes:
               securedBy:
                 - oauth_2_0
           /entryrhsps:
-            displayName: '/v2016/clients/{clientid}/enrollments/{enrollmentid}/entryrhsps'
+            displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/entryrhsps'
             description: 'Operations performed on the set of all HMIS entryrhsps within the system, and for adding a new entryrhsp to the set of entryrhsps '
             type:
               collection:
@@ -3015,7 +3015,7 @@ resourceTypes:
             securedBy:
               - oauth_2_0
             '/{entryrhspid}':
-              displayName: '/v2016/clients/{clientid}/enrollments/{enrollmentid}/entryrhsps/{entryrhspid}'
+              displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/entryrhsps/{entryrhspid}'
               type:
                 member:
                   schema_json: entryrhsp_json
@@ -3087,7 +3087,7 @@ resourceTypes:
               securedBy:
                 - oauth_2_0
           /entryrhys:
-            displayName: '/v2016/clients/{clientid}/enrollments/{enrollmentid}/entryrhys'
+            displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/entryrhys'
             description: 'Operations performed on the set of all HMIS entryrhys within the system, and for adding a new entryrhy to the set of entryrhys '
             type:
               collection:
@@ -3135,7 +3135,7 @@ resourceTypes:
             securedBy:
               - oauth_2_0
             '/{entryrhyid}':
-              displayName: '/v2016/clients/{clientid}/enrollments/{enrollmentid}/entryrhys/{entryrhyid}'
+              displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/entryrhys/{entryrhyid}'
               type:
                 member:
                   schema_json: entryrhy_json
@@ -3207,7 +3207,7 @@ resourceTypes:
               securedBy:
                 - oauth_2_0
           /entryssvfs:
-            displayName: '/v2016/clients/{clientid}/enrollments/{enrollmentid}/entryssvfs'
+            displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/entryssvfs'
             description: 'Operations performed on the set of all HMIS entryssvfs within the system, and for adding a new entryssvf to the set of entryssvfs '
             type:
               collection:
@@ -3255,7 +3255,7 @@ resourceTypes:
             securedBy:
               - oauth_2_0
             '/{entryssvfid}':
-              displayName: '/v2016/clients/{clientid}/enrollments/{enrollmentid}/entryssvfs/{entryssvfid}'
+              displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/entryssvfs/{entryssvfid}'
               type:
                 member:
                   schema_json: entryssvf_json
@@ -3327,7 +3327,7 @@ resourceTypes:
               securedBy:
                 - oauth_2_0
           /servicefareferrals:
-            displayName: '/v2016/clients/{clientid}/enrollments/{enrollmentid}/servicefareferrals'
+            displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/servicefareferrals'
             description: 'Operations performed on the set of all HMIS servicefareferrals within the system, and for adding a new servicefareferral to the set of servicefareferrals '
             type:
               collection:
@@ -3375,7 +3375,7 @@ resourceTypes:
             securedBy:
               - oauth_2_0
             '/{servicefareferralid}':
-              displayName: '/v2016/clients/{clientid}/enrollments/{enrollmentid}/servicefareferrals/{servicefareferralid}'
+              displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/servicefareferrals/{servicefareferralid}'
               type:
                 member:
                   schema_json: servicefareferral_json
@@ -3447,7 +3447,7 @@ resourceTypes:
               securedBy:
                 - oauth_2_0
       /veteraninfos:
-        displayName: '/v2016/clients/{clientid}/veteraninfos'
+        displayName: '/v2017/clients/{clientid}/veteraninfos'
         description: 'Operations performed on the set of all HMIS veteraninfos within the system, and for adding a new veteraninfo to the set of veteraninfos '
         type:
           collection:
@@ -3495,7 +3495,7 @@ resourceTypes:
         securedBy:
           - oauth_2_0
         '/{veteraninfoid}':
-          displayName: '/v2016/clients/{clientid}/veteraninfos/{veteraninfoid}'
+          displayName: '/v2017/clients/{clientid}/veteraninfos/{veteraninfoid}'
           type:
             member:
               schema_json: veteraninfo_json
@@ -3567,7 +3567,7 @@ resourceTypes:
           securedBy:
             - oauth_2_0
   /projects:
-    displayName: /v2016/projects
+    displayName: /v2017/projects
     description: 'Operations performed on the set of all HMIS projects within the system, and for adding a new project to the set of projects '
     type:
       collection:
@@ -4287,7 +4287,7 @@ resourceTypes:
           securedBy:
             - oauth_2_0
   /organizations:
-    displayName: /v2016/organizations
+    displayName: /v2017/organizations
     description: 'Operations performed on the set of all HMIS organizations within the system, and for adding a new organization to the set of organizations '
     type:
       collection:
@@ -4443,7 +4443,7 @@ resourceTypes:
                     "gender": "1",
                     "otherGender": "Test",
                     "veteranStatus": "8",
-                    "link":"/hmis-clientapi/rest/v2016/clients/65e3df62-dd22-4d07-83ef-6858a6322839"
+                    "link":"/hmis-clientapi/rest/v2017/clients/65e3df62-dd22-4d07-83ef-6858a6322839"
                   },
                   {
                     "clientId": "cf98b9b2-9a77-4133-99a3-b60f05a12ad1",

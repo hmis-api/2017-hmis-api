@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "2016 HMIS API",
+    "title": "2017 HMIS API",
     "version": "1.0.0"
   },
   "securityDefinitions": {
@@ -17,7 +17,7 @@
     }
   },
   "paths": {
-    "/v2016/clients": {
+    "/v2017/clients": {
       "get": {
         "description": "Searches for client.  Returns a list of client ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.",
         "parameters": [
@@ -111,7 +111,7 @@
         }
       }
     },
-    "/v2016/clients/{clientid}": {
+    "/v2017/clients/{clientid}": {
       "get": {
         "description": "Gets a client using a URI resource parameter/ID.",
         "responses": {
@@ -220,7 +220,7 @@
         ]
       }
     },
-    "/v2016/clients/{clientid}/enrollments": {
+    "/v2017/clients/{clientid}/enrollments": {
       "get": {
         "description": "Searches for enrollment.  Returns a list of enrollment ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.",
         "parameters": [
@@ -326,7 +326,7 @@
         }
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}": {
       "get": {
         "description": "Gets a enrollment using a URI resource parameter/ID.",
         "responses": {
@@ -453,7 +453,7 @@
         ]
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/enrollmentcocs": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/enrollmentcocs": {
       "get": {
         "description": "Searches for enrollmentcoc.  Returns a list of enrollmentcoc ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.",
         "parameters": [
@@ -571,7 +571,7 @@
         }
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/enrollmentcocs/{enrollmentcocid}": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/enrollmentcocs/{enrollmentcocid}": {
       "get": {
         "description": "Gets a enrollmentcoc using a URI resource parameter/ID.",
         "responses": {
@@ -716,7 +716,7 @@
         ]
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/educations": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/educations": {
       "get": {
         "description": "Searches for education.  Returns a list of education ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.",
         "parameters": [
@@ -834,7 +834,7 @@
         }
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/educations/{educationid}": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/educations/{educationid}": {
       "get": {
         "description": "Gets a education using a URI resource parameter/ID.",
         "responses": {
@@ -979,7 +979,7 @@
         ]
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/contacts": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/contacts": {
       "get": {
         "description": "Searches for contact.  Returns a list of contact ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.",
         "parameters": [
@@ -1097,7 +1097,7 @@
         }
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/contacts/{contactid}": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/contacts/{contactid}": {
       "get": {
         "description": "Gets a contact using a URI resource parameter/ID.",
         "responses": {
@@ -1242,7 +1242,7 @@
         ]
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/dateofengagements": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/dateofengagements": {
       "get": {
         "description": "Searches for dateofengagement.  Returns a list of dateofengagement ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.",
         "parameters": [
@@ -1360,7 +1360,7 @@
         }
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/dateofengagements/{dateofengagementsid}": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/dateofengagements/{dateofengagementsid}": {
       "get": {
         "description": "Gets a dateofengagement using a URI resource parameter/ID.",
         "responses": {
@@ -1505,7 +1505,7 @@
         ]
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/disabilities": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/disabilities": {
       "get": {
         "description": "Searches for disability.  Returns a list of disability ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.",
         "parameters": [
@@ -1623,7 +1623,7 @@
         }
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/disabilities/{disabilitiesid}": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/disabilities/{disabilitiesid}": {
       "get": {
         "description": "Gets a disability using a URI resource parameter/ID.",
         "responses": {
@@ -1768,7 +1768,7 @@
         ]
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/domesticviolences": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/domesticviolences": {
       "get": {
         "description": "Searches for domesticviolence.  Returns a list of domesticviolence ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.",
         "parameters": [
@@ -1886,7 +1886,7 @@
         }
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/domesticviolences/{domesticviolenceid}": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/domesticviolences/{domesticviolenceid}": {
       "get": {
         "description": "Gets a domesticviolence using a URI resource parameter/ID.",
         "responses": {
@@ -2031,7 +2031,7 @@
         ]
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/employments": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/employments": {
       "get": {
         "description": "Searches for employment.  Returns a list of employment ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.",
         "parameters": [
@@ -2149,7 +2149,7 @@
         }
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/employments/{employmentsid}": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/employments/{employmentsid}": {
       "get": {
         "description": "Gets a employment using a URI resource parameter/ID.",
         "responses": {
@@ -2294,7 +2294,7 @@
         ]
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/exits": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/exits": {
       "get": {
         "description": "Searches for exit.  Returns a list of exit ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.",
         "parameters": [
@@ -2412,7 +2412,7 @@
         }
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitsid}": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitsid}": {
       "get": {
         "description": "Gets a exit using a URI resource parameter/ID.",
         "responses": {
@@ -2557,7 +2557,7 @@
         ]
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitsid}/exithousingassesments": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitsid}/exithousingassesments": {
       "get": {
         "description": "Searches for exithousingassesment.  Returns a list of exithousingassesment ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.",
         "parameters": [
@@ -2687,7 +2687,7 @@
         }
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitsid}/exithousingassesments/{exithousingassesmentid}": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitsid}/exithousingassesments/{exithousingassesmentid}": {
       "get": {
         "description": "Gets a exithousingassesment using a URI resource parameter/ID.",
         "responses": {
@@ -2850,7 +2850,7 @@
         ]
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitsid}/housingassesmentdispositions": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitsid}/housingassesmentdispositions": {
       "get": {
         "description": "Searches for housingassesmentdisposition.  Returns a list of housingassesmentdisposition ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.",
         "parameters": [
@@ -2980,7 +2980,7 @@
         }
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitsid}/housingassesmentdispositions/{housingassesmentdispositionid}": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitsid}/housingassesmentdispositions/{housingassesmentdispositionid}": {
       "get": {
         "description": "Gets a housingassesmentdisposition using a URI resource parameter/ID.",
         "responses": {
@@ -3143,7 +3143,7 @@
         ]
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/heathinsurances": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/heathinsurances": {
       "get": {
         "description": "Searches for heathinsurance.  Returns a list of heathinsurance ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.",
         "parameters": [
@@ -3261,7 +3261,7 @@
         }
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/heathinsurances/{healthinsuranceid}": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/heathinsurances/{healthinsuranceid}": {
       "get": {
         "description": "Gets a heathinsurance using a URI resource parameter/ID.",
         "responses": {
@@ -3406,7 +3406,7 @@
         ]
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/healthstatuses": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/healthstatuses": {
       "get": {
         "description": "Searches for healthstatus.  Returns a list of healthstatus ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.",
         "parameters": [
@@ -3524,7 +3524,7 @@
         }
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/healthstatuses/{healthstatusid}": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/healthstatuses/{healthstatusid}": {
       "get": {
         "description": "Gets a healthstatus using a URI resource parameter/ID.",
         "responses": {
@@ -3669,7 +3669,7 @@
         ]
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/incomeandsources": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/incomeandsources": {
       "get": {
         "description": "Searches for incomeandsource.  Returns a list of incomeandsource ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.",
         "parameters": [
@@ -3787,7 +3787,7 @@
         }
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/incomeandsources/{incomeandsourcesid}": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/incomeandsources/{incomeandsourcesid}": {
       "get": {
         "description": "Gets a incomeandsource using a URI resource parameter/ID.",
         "responses": {
@@ -3932,7 +3932,7 @@
         ]
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/medicalassistences": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/medicalassistences": {
       "get": {
         "description": "Searches for medicalassistence.  Returns a list of medicalassistence ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.",
         "parameters": [
@@ -4050,7 +4050,7 @@
         }
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/medicalassistences/{medicalassistancesid}": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/medicalassistences/{medicalassistancesid}": {
       "get": {
         "description": "Gets a medicalassistence using a URI resource parameter/ID.",
         "responses": {
@@ -4195,7 +4195,7 @@
         ]
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/noncashbenefits": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/noncashbenefits": {
       "get": {
         "description": "Searches for noncashbenefit.  Returns a list of noncashbenefit ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.",
         "parameters": [
@@ -4313,7 +4313,7 @@
         }
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/noncashbenefits/{noncashbenefitsid}": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/noncashbenefits/{noncashbenefitsid}": {
       "get": {
         "description": "Gets a noncashbenefit using a URI resource parameter/ID.",
         "responses": {
@@ -4458,7 +4458,7 @@
         ]
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/residentialmoveindates": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/residentialmoveindates": {
       "get": {
         "description": "Searches for residentialmoveindate.  Returns a list of residentialmoveindate ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.",
         "parameters": [
@@ -4576,7 +4576,7 @@
         }
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/residentialmoveindates/{residentialmoveindatesid}": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/residentialmoveindates/{residentialmoveindatesid}": {
       "get": {
         "description": "Gets a residentialmoveindate using a URI resource parameter/ID.",
         "responses": {
@@ -4721,7 +4721,7 @@
         ]
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/pathstatuses": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/pathstatuses": {
       "get": {
         "description": "Searches for pathstatus.  Returns a list of pathstatus ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.",
         "parameters": [
@@ -4839,7 +4839,7 @@
         }
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/pathstatuses/{pathstatusid}": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/pathstatuses/{pathstatusid}": {
       "get": {
         "description": "Gets a pathstatus using a URI resource parameter/ID.",
         "responses": {
@@ -4984,7 +4984,7 @@
         ]
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/entryrhsps": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/entryrhsps": {
       "get": {
         "description": "Searches for entryrhsp.  Returns a list of entryrhsp ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.",
         "parameters": [
@@ -5102,7 +5102,7 @@
         }
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/entryrhsps/{entryrhspid}": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/entryrhsps/{entryrhspid}": {
       "get": {
         "description": "Gets a entryrhsp using a URI resource parameter/ID.",
         "responses": {
@@ -5247,7 +5247,7 @@
         ]
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/entryrhys": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/entryrhys": {
       "get": {
         "description": "Searches for entryrhy.  Returns a list of entryrhy ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.",
         "parameters": [
@@ -5365,7 +5365,7 @@
         }
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/entryrhys/{entryrhyid}": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/entryrhys/{entryrhyid}": {
       "get": {
         "description": "Gets a entryrhy using a URI resource parameter/ID.",
         "responses": {
@@ -5510,7 +5510,7 @@
         ]
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/entryssvfs": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/entryssvfs": {
       "get": {
         "description": "Searches for entryssvf.  Returns a list of entryssvf ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.",
         "parameters": [
@@ -5628,7 +5628,7 @@
         }
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/entryssvfs/{entryssvfid}": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/entryssvfs/{entryssvfid}": {
       "get": {
         "description": "Gets a entryssvf using a URI resource parameter/ID.",
         "responses": {
@@ -5773,7 +5773,7 @@
         ]
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exitpaths": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exitpaths": {
       "get": {
         "description": "Searches for exitpath.  Returns a list of exitpath ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.",
         "parameters": [
@@ -5903,7 +5903,7 @@
         }
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exitpaths/{exitpathid}": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exitpaths/{exitpathid}": {
       "get": {
         "description": "Gets a exitpath using a URI resource parameter/ID.",
         "responses": {
@@ -6066,7 +6066,7 @@
         ]
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exitrhys": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exitrhys": {
       "get": {
         "description": "Searches for exitrhy.  Returns a list of exitrhy ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.",
         "parameters": [
@@ -6196,7 +6196,7 @@
         }
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exitrhys/{exitrhyid}": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exitrhys/{exitrhyid}": {
       "get": {
         "description": "Gets a exitrhy using a URI resource parameter/ID.",
         "responses": {
@@ -6359,7 +6359,7 @@
         ]
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/servicefareferrals": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/servicefareferrals": {
       "get": {
         "description": "Searches for servicefareferral.  Returns a list of servicefareferral ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.",
         "parameters": [
@@ -6477,7 +6477,7 @@
         }
       }
     },
-    "/v2016/clients/{clientid}/enrollments/{enrollmentid}/servicefareferrals/{servicefareferralid}": {
+    "/v2017/clients/{clientid}/enrollments/{enrollmentid}/servicefareferrals/{servicefareferralid}": {
       "get": {
         "description": "Gets a servicefareferral using a URI resource parameter/ID.",
         "responses": {
@@ -6622,7 +6622,7 @@
         ]
       }
     },
-    "/v2016/clients/{clientid}/veteraninfos": {
+    "/v2017/clients/{clientid}/veteraninfos": {
       "get": {
         "description": "Searches for veteraninfo.  Returns a list of veteraninfo ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.",
         "parameters": [
@@ -6728,7 +6728,7 @@
         }
       }
     },
-    "/v2016/clients/{clientid}/veteraninfos/{veteraninfoid}": {
+    "/v2017/clients/{clientid}/veteraninfos/{veteraninfoid}": {
       "get": {
         "description": "Gets a veteraninfo using a URI resource parameter/ID.",
         "responses": {
@@ -6855,7 +6855,7 @@
         ]
       }
     },
-    "/v2016/projects": {
+    "/v2017/projects": {
       "get": {
         "description": "Searches for project.  Returns a list of project ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.",
         "parameters": [
@@ -6949,7 +6949,7 @@
         }
       }
     },
-    "/v2016/projects/{projectsid}": {
+    "/v2017/projects/{projectsid}": {
       "get": {
         "description": "Gets a project using a URI resource parameter/ID.",
         "responses": {
@@ -7058,7 +7058,7 @@
         ]
       }
     },
-    "/v2016/projects/{projectsid}/projectcocs": {
+    "/v2017/projects/{projectsid}/projectcocs": {
       "get": {
         "description": "Searches for projectcoc.  Returns a list of projectcoc ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.",
         "parameters": [
@@ -7164,7 +7164,7 @@
         }
       }
     },
-    "/v2016/projects/{projectsid}/projectcocs/{projectcocid}": {
+    "/v2017/projects/{projectsid}/projectcocs/{projectcocid}": {
       "get": {
         "description": "Gets a projectcoc using a URI resource parameter/ID.",
         "responses": {
@@ -7291,7 +7291,7 @@
         ]
       }
     },
-    "/v2016/projects/{projectsid}/inventories": {
+    "/v2017/projects/{projectsid}/inventories": {
       "get": {
         "description": "Searches for inventory.  Returns a list of inventory ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.",
         "parameters": [
@@ -7397,7 +7397,7 @@
         }
       }
     },
-    "/v2016/projects/{projectsid}/inventories/{inventoriesid}": {
+    "/v2017/projects/{projectsid}/inventories/{inventoriesid}": {
       "get": {
         "description": "Gets a inventory using a URI resource parameter/ID.",
         "responses": {
@@ -7524,7 +7524,7 @@
         ]
       }
     },
-    "/v2016/projects/{projectsid}/sites": {
+    "/v2017/projects/{projectsid}/sites": {
       "get": {
         "description": "Searches for site.  Returns a list of site ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.",
         "parameters": [
@@ -7630,7 +7630,7 @@
         }
       }
     },
-    "/v2016/projects/{projectsid}/sites/{sitesid}": {
+    "/v2017/projects/{projectsid}/sites/{sitesid}": {
       "get": {
         "description": "Gets a site using a URI resource parameter/ID.",
         "responses": {
@@ -7757,7 +7757,7 @@
         ]
       }
     },
-    "/v2016/projects/{projectsid}/funders": {
+    "/v2017/projects/{projectsid}/funders": {
       "get": {
         "description": "Searches for funder.  Returns a list of funder ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.",
         "parameters": [
@@ -7863,7 +7863,7 @@
         }
       }
     },
-    "/v2016/projects/{projectsid}/funders/{fundersid}": {
+    "/v2017/projects/{projectsid}/funders/{fundersid}": {
       "get": {
         "description": "Gets a funder using a URI resource parameter/ID.",
         "responses": {
@@ -7990,7 +7990,7 @@
         ]
       }
     },
-    "/v2016/projects/{projectsid}/affiliations": {
+    "/v2017/projects/{projectsid}/affiliations": {
       "get": {
         "description": "Searches for affiliation.  Returns a list of affiliation ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.",
         "parameters": [
@@ -8096,7 +8096,7 @@
         }
       }
     },
-    "/v2016/projects/{projectsid}/affiliations/{affiliationid}": {
+    "/v2017/projects/{projectsid}/affiliations/{affiliationid}": {
       "get": {
         "description": "Gets a affiliation using a URI resource parameter/ID.",
         "responses": {
@@ -8223,7 +8223,7 @@
         ]
       }
     },
-    "/v2016/organizations": {
+    "/v2017/organizations": {
       "get": {
         "description": "Searches for organization.  Returns a list of organization ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.",
         "parameters": [
@@ -8317,7 +8317,7 @@
         }
       }
     },
-    "/v2016/organizations/{organizationid}": {
+    "/v2017/organizations/{organizationid}": {
       "get": {
         "description": "Gets a organization using a URI resource parameter/ID.",
         "responses": {
@@ -8478,7 +8478,7 @@
         ],
         "responses": {
           "200": {
-            "description": "example: |\n  {\n  \"searchResults\": {\n    \"pagination\": {\n      \"total\":\"2\"\n      \"from\": \"0\",\n      \"maximum\": \"50\",\n      \"returned\":\"2\"\n    },\n    \"items\": [\n      {\n        \"clientId\": \"65e3df62-dd22-4d07-83ef-6858a6322839\",\n        \"firstName\": \"Eric\",\n        \"middleName\": \"Eric\",\n        \"lastName\": \"Eric\",\n        \"nameSuffix\": \"NS \",\n        \"nameDataQuality\": \"1\",\n        \"ssn\": \"ssn \",\n        \"ssnDataQuality\": \"1\",\n        \"dob\": \"1459498034983\",\n        \"dobDataQuality\": \"1\",\n        \"race\": \"1\",\n        \"ethnicity\": \"1\",\n        \"gender\": \"1\",\n        \"otherGender\": \"Test\",\n        \"veteranStatus\": \"8\",\n        \"link\":\"/hmis-clientapi/rest/v2016/clients/65e3df62-dd22-4d07-83ef-6858a6322839\"\n      },\n      {\n        \"clientId\": \"cf98b9b2-9a77-4133-99a3-b60f05a12ad1\",\n        \"firstName\": \"Eric\",\n        \"middleName\": \"Eric\",\n        \"lastName\": \"Eric\",\n        \"nameSuffix\": \"NS \",\n        \"nameDataQuality\": \"1\",\n        \"ssn\": \"ssn \",\n        \"ssnDataQuality\": \"1\",\n        \"dob\": \"1459498034983\",\n        \"dobDataQuality\": \"1\",\n        \"race\": \"1\",\n        \"ethnicity\": \"1\",\n        \"gender\": \"1\",\n        \"otherGender\": \"Test\",\n        \"veteranStatus\": \"8\",\n        \"link\":\"/hmis-clientapi/rest/v2014/clients/cf98b9b2-9a77-4133-99a3-b60f05a12ad1\"\n      }\n    ]\n  }\n  }\n            "
+            "description": "example: |\n  {\n  \"searchResults\": {\n    \"pagination\": {\n      \"total\":\"2\"\n      \"from\": \"0\",\n      \"maximum\": \"50\",\n      \"returned\":\"2\"\n    },\n    \"items\": [\n      {\n        \"clientId\": \"65e3df62-dd22-4d07-83ef-6858a6322839\",\n        \"firstName\": \"Eric\",\n        \"middleName\": \"Eric\",\n        \"lastName\": \"Eric\",\n        \"nameSuffix\": \"NS \",\n        \"nameDataQuality\": \"1\",\n        \"ssn\": \"ssn \",\n        \"ssnDataQuality\": \"1\",\n        \"dob\": \"1459498034983\",\n        \"dobDataQuality\": \"1\",\n        \"race\": \"1\",\n        \"ethnicity\": \"1\",\n        \"gender\": \"1\",\n        \"otherGender\": \"Test\",\n        \"veteranStatus\": \"8\",\n        \"link\":\"/hmis-clientapi/rest/v2017/clients/65e3df62-dd22-4d07-83ef-6858a6322839\"\n      },\n      {\n        \"clientId\": \"cf98b9b2-9a77-4133-99a3-b60f05a12ad1\",\n        \"firstName\": \"Eric\",\n        \"middleName\": \"Eric\",\n        \"lastName\": \"Eric\",\n        \"nameSuffix\": \"NS \",\n        \"nameDataQuality\": \"1\",\n        \"ssn\": \"ssn \",\n        \"ssnDataQuality\": \"1\",\n        \"dob\": \"1459498034983\",\n        \"dobDataQuality\": \"1\",\n        \"race\": \"1\",\n        \"ethnicity\": \"1\",\n        \"gender\": \"1\",\n        \"otherGender\": \"Test\",\n        \"veteranStatus\": \"8\",\n        \"link\":\"/hmis-clientapi/rest/v2014/clients/cf98b9b2-9a77-4133-99a3-b60f05a12ad1\"\n      }\n    ]\n  }\n  }\n            "
           }
         }
       }
@@ -15763,7 +15763,7 @@
     }
   },
   "host": "www.hmislynk.com",
-  "basePath": "/hmis-clientapi-v2016/rest",
+  "basePath": "/hmis-clientapi-v2017/rest",
   "schemes": [
     "https"
   ],
