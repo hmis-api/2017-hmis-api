@@ -4,7 +4,7 @@ version: 1.0.0
 mediaType: application/json
 protocols:
   - HTTPS
-baseUri: 'https://www.hmislynk.com/hmis-clientapi-v2017/rest'
+baseUri: 'https://www.hmislynk.com/hmis-clientapi-v2017/rest/v2017'
 securedBy: [oauth_2_0]
 securitySchemes:
   oauth_2_0: !include security-schemes/oauth_2_0.raml
@@ -144,505 +144,56 @@ types:
   veteran_info_id_only : !include types/veteran_info_id_only.json
   veteran_infos_ids : !include types/veteran_infos_ids.json
 resourceTypes:
-  collection:
-    securedBy:
-      - oauth_2_0
-    description: 'Operations performed on the set of all HMIS <<resourcePathName>> within the system, and for adding a new <<resourcePathName|!singularize>> to the set of <<resourcePathName>> '
-    get:
-      description: 'Searches for <<resourcePathName|!singularize>>.  Returns a list of <<resourcePathName|!singularize>> ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-      responses:
-        '200':
-          description: OK – Everything is working.
-          body:
-            application/json:
-              example: <<schema_ids_json_example>>
-        '400':
-          description: Bad Request – The request was invalid or cannot be served.
-        '403':
-          description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-        '404':
-          description: Not found – There is no resource behind the URI.
-        '500':
-          description: 500 – Internal Server Error
-      queryParameters:
-        CreatedAfter:
-          required: false
-          description: searches for members of the collection created after (inclusive) a particular date
-          example: 10-11-2011
-          type: date
-          displayName: CreatedAfter
-        CreatedBefore:
-          required: false
-          description: searches for members of the collection created before (inclusive) a particular date
-          example: 10-11-2012
-          type: date
-          displayName: CreatedBefore
-        UpdatedAfter:
-          required: false
-          description: searches for members of the collection updated after (inclusive) a particular date
-          example: 10-11-2011
-          type: date
-          displayName: UpdatedAfter
-        UpdatedBefore:
-          required: false
-          description: searches for members of the collection updated before (inclusive) a particular date
-          example: 10-11-2012
-          type: date
-          displayName: UpdatedBefore
-      securedBy:
-        - oauth_2_0
-    post:
-      description: |
-        Add a <<resourcePathName|!singularize>>
-      responses:
-        '201':
-          description: OK - New resource has been created.
-          body:
-            application/json:
-              example: <<id_schema_json_example>>
-        '400':
-          description: Bad Request – The request was invalid or cannot be served.
-        '401':
-          description: Unauthorized – The request requires user authentication.
-        '403':
-          description: 'Forbidden – The server understood the request, but is refusing it or access is not allowed.'
-        '404':
-          description: Not found – There is no resource behind the URI.
-        '422':
-          description: Unprocessable Entity - Request body is incorrect.
-        '500':
-          description: 500 – Internal Server Error.
-      body:
-        application/json:
-          example: <<schema_json_example>>
-      securedBy:
-        - oauth_2_0
-  member:
-    securedBy:
-      - oauth_2_0
-    get:
-      description: Gets a <<resourcePathName|!singularize>> using a URI resource parameter/ID.
-      responses:
-        '200':
-          description: OK – Everything is working.
-          body:
-            application/json:
-              example: <<schema_id_json_example>>
-        '400':
-          description: Bad Request – The request was invalid or cannot be served.
-        '401':
-          description: Unauthorized – The request requires an user authentication.
-        '403':
-          description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-        '404':
-          description: Not found – There is no resource behind the URI.
-        '500':
-          description: Internal Server Error
-      securedBy:
-        - oauth_2_0
-    put:
-      description: Updates a specific <<resourcePathName|!singularize>> specified by the URI resource parameter/ID.
-      responses:
-        '200':
-          description: OK – Everything is working.
-        '304':
-          description: Not Modified – The client can use cached data.
-        '400':
-          description: Bad Request – The request was invalid or cannot be served.
-        '401':
-          description: Unauthorized – The request requires a user.
-        '403':
-          description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-        '404':
-          description: Not found – There is no resource behind the URI.
-        '500':
-          description: Internal Server Error.
-      body:
-        application/json:
-          example: <<schema_json_example>>
-      securedBy:
-        - oauth_2_0
-    delete:
-      description: Deletes a specific <<resourcePathName|!singularize>> specified by the URI resource parameter/ID.
-      responses:
-        '204':
-          description: OK – The resource was successfully deleted.
-        '400':
-          description: Bad Request – The request was invalid or cannot be served.
-        '401':
-          description: Unauthorized – The request requires user authentication.
-        '403':
-          description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-        '404':
-          description: Not found – There is no resource behind the URI.
-        '500':
-          description: Internal Server Error.
-      securedBy:
-        - oauth_2_0
-/v2017:
+  collection: !include types/collection.raml
+  member: !include types/member.raml
   /clients:
-    displayName: /v2017/clients
-    description: 'Operations performed on the set of all HMIS clients within the system, and for adding a new client to the set of clients '
     type:
       collection:
-        id_schema_json: id_clients_json
-        schema_json: clients_json
-        schema_ids_json: clients_ids_json
-        schema_ids_json_example: !include ./examples/Clients_ids_json_example.json
-        schema_json_example: !include ./examples/clients_json_example.json
-        id_schema_json_example: !include ./examples/id_client_json_example.json
-    get:
-      description: 'Searches for client.  Returns a list of client ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-      responses:
-        '400':
-          description: Bad Request – The request was invalid or cannot be served.
-        '403':
-          description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-        '404':
-          description: Not found – There is no resource behind the URI.
-        '500':
-          description: 500 – Internal Server Error
-      securedBy:
-        - oauth_2_0
-      protocols:
-        - HTTPS
-    post:
-      description: |
-        Add a client
-      responses:
-        '400':
-          description: Bad Request – The request was invalid or cannot be served.
-        '401':
-          description: Unauthorized – The request requires user authentication.
-        '403':
-          description: 'Forbidden – The server understood the request, but is refusing it or access is not allowed.'
-        '404':
-          description: Not found – There is no resource behind the URI.
-        '422':
-          description: Unprocessable Entity - Request body is incorrect.
-        '500':
-          description: 500 – Internal Server Error.
-      securedBy:
-        - oauth_2_0
-      protocols:
-        - HTTPS
-    securedBy:
-      - oauth_2_0
-    '/{clientid}':
-      displayName: '/{clientid}'
+        schema_ids: clients_ids
+        schema_ids_example: !include examples/clients_ids_example.json
+        schema: client
+        schema_example: !include examples/client_example.json
+        schema_id_example: !include examples/client_id_example.json
+    /{clientid}:
       type:
-        member:
-          schema_json: clients_json
-          schema_id_json: client_id_json
-          schema_id_json_example: !include ./examples/Client_id_json_example.json
-          schema_json_example: !include ./examples/clients_json_example.json
-      get:
-        description: Gets a client using a URI resource parameter/ID.
-        responses:
-          '400':
-            description: Bad Request – The request was invalid or cannot be served.
-          '401':
-            description: Unauthorized – The request requires an user authentication.
-          '403':
-            description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-          '404':
-            description: Not found – There is no resource behind the URI.
-          '500':
-            description: Internal Server Error
-        securedBy:
-          - oauth_2_0
-        protocols:
-          - HTTPS
-      put:
-        description: Updates a specific client specified by the URI resource parameter/ID.
-        responses:
-          '200':
-            description: OK – Everything is working.
-          '304':
-            description: Not Modified – The client can use cached data.
-          '400':
-            description: Bad Request – The request was invalid or cannot be served.
-          '401':
-            description: Unauthorized – The request requires a user.
-          '403':
-            description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-          '404':
-            description: Not found – There is no resource behind the URI.
-          '500':
-            description: Internal Server Error.
-        securedBy:
-          - oauth_2_0
-        protocols:
-          - HTTPS
-      delete:
-        description: Deletes a specific client specified by the URI resource parameter/ID.
-        responses:
-          '204':
-            description: OK – The resource was successfully deleted.
-          '400':
-            description: Bad Request – The request was invalid or cannot be served.
-          '401':
-            description: Unauthorized – The request requires user authentication.
-          '403':
-            description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-          '404':
-            description: Not found – There is no resource behind the URI.
-          '500':
-            description: Internal Server Error.
-        securedBy:
-          - oauth_2_0
-        protocols:
-          - HTTPS
-      uriParameters:
-        clientid:
-          example: ADBC1111211111114111111111D1111V
-          type: string
-          displayName: Client Identifier
-      securedBy:
-        - oauth_2_0
-      /enrollments:
-        displayName: /enrollments
-        description: 'Operations performed on the set of all HMIS enrollments within the system, and for adding a new enrollment to the set of enrollments '
+         member:
+          schema: client
+          schema_id: client_id
+          schema_id_example: !include examples/client_id_example.json
+          schema_example: !include examples/client_example.json
+    /enrollments:
+      type:
+        collection:
+          id_schema_json: id_enrollments_json
+          schema_json: enrollments_json
+          schema_ids_json: enrollments_ids_json
+          schema_ids_json_example: !include ./examples/Enrollments_ids_json_example.json
+          schema_json_example: !include ./examples/Enrollments_json_example.json
+          id_schema_json_example: !include ./examples/id_enrollment_json_example.json
+      /{enrollmentid}:
         type:
-          collection:
-            id_schema_json: id_enrollments_json
+          member:
             schema_json: enrollments_json
-            schema_ids_json: enrollments_ids_json
-            schema_ids_json_example: !include ./examples/Enrollments_ids_json_example.json
+            schema_id_json: enrollment_id_json
+            schema_id_json_example: !include ./examples/Enrollment_id_json_example.json
             schema_json_example: !include ./examples/Enrollments_json_example.json
-            id_schema_json_example: !include ./examples/id_enrollment_json_example.json
-        get:
-          description: 'Searches for enrollment.  Returns a list of enrollment ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-          responses:
-            '400':
-              description: Bad Request – The request was invalid or cannot be served.
-            '403':
-              description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-            '404':
-              description: Not found – There is no resource behind the URI.
-            '500':
-              description: 500 – Internal Server Error
-          securedBy:
-            - oauth_2_0
-          protocols:
-            - HTTPS
-        post:
-          description: |
-            Add a enrollment
-          responses:
-            '400':
-              description: Bad Request – The request was invalid or cannot be served.
-            '401':
-              description: Unauthorized – The request requires user authentication.
-            '403':
-              description: 'Forbidden – The server understood the request, but is refusing it or access is not allowed.'
-            '404':
-              description: Not found – There is no resource behind the URI.
-            '422':
-              description: Unprocessable Entity - Request body is incorrect.
-            '500':
-              description: 500 – Internal Server Error.
-          securedBy:
-            - oauth_2_0
-          protocols:
-            - HTTPS
-        securedBy:
-          - oauth_2_0
-        '/{enrollmentid}':
-          displayName: '/{enrollmentid}'
+        /enrollmentcocs:
           type:
-            member:
-              schema_json: enrollments_json
-              schema_id_json: enrollment_id_json
-              schema_id_json_example: !include ./examples/Enrollment_id_json_example.json
-              schema_json_example: !include ./examples/Enrollments_json_example.json
-          get:
-            description: Gets a enrollment using a URI resource parameter/ID.
-            responses:
-              '400':
-                description: Bad Request – The request was invalid or cannot be served.
-              '401':
-                description: Unauthorized – The request requires an user authentication.
-              '403':
-                description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-              '404':
-                description: Not found – There is no resource behind the URI.
-              '500':
-                description: Internal Server Error
-            securedBy:
-              - oauth_2_0
-            protocols:
-              - HTTPS
-          put:
-            description: Updates a specific enrollment specified by the URI resource parameter/ID.
-            responses:
-              '200':
-                description: OK – Everything is working.
-              '304':
-                description: Not Modified – The client can use cached data.
-              '400':
-                description: Bad Request – The request was invalid or cannot be served.
-              '401':
-                description: Unauthorized – The request requires a user.
-              '403':
-                description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-              '404':
-                description: Not found – There is no resource behind the URI.
-              '500':
-                description: Internal Server Error.
-            securedBy:
-              - oauth_2_0
-            protocols:
-              - HTTPS
-          delete:
-            description: Deletes a specific enrollment specified by the URI resource parameter/ID.
-            responses:
-              '204':
-                description: OK – The resource was successfully deleted.
-              '400':
-                description: Bad Request – The request was invalid or cannot be served.
-              '401':
-                description: Unauthorized – The request requires user authentication.
-              '403':
-                description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-              '404':
-                description: Not found – There is no resource behind the URI.
-              '500':
-                description: Internal Server Error.
-            securedBy:
-              - oauth_2_0
-            protocols:
-              - HTTPS
-          uriParameters:
-            enrollmentid:
-              example: ADBC1111211111114111111111D1111V
-              type: string
-              displayName: Client Identifier
-          securedBy:
-            - oauth_2_0
-          /enrollmentcocs:
-            displayName: /enrollmentcocs
-            description: 'Operations performed on the set of all HMIS enrollmentcocs within the system, and for adding a new enrollmentcoc to the set of enrollmentcocs '
+            collection:
+              id_schema_json: id_enrollmentcoc_json
+              schema_json: enrollmentcoc_json
+              schema_ids_json: enrollmentcoc_ids_json
+              schema_ids_json_example: !include ./examples/EnrollmentCoC_ids_json_example.json
+              schema_json_example: !include ./examples/EnrollmentCoC_json_example.json
+              id_schema_json_example: !include ./examples/id_enrollmentcoc_json_example.json
+          /{enrollmentcocid}:
             type:
-              collection:
-                id_schema_json: id_enrollmentcoc_json
+              member:
                 schema_json: enrollmentcoc_json
-                schema_ids_json: enrollmentcoc_ids_json
-                schema_ids_json_example: !include ./examples/EnrollmentCoC_ids_json_example.json
+                schema_id_json: enrollmentcoc_id_json
+                schema_id_json_example: !include ./examples/EnrollmentCoC_id_json_example.json
                 schema_json_example: !include ./examples/EnrollmentCoC_json_example.json
-                id_schema_json_example: !include ./examples/id_enrollmentcoc_json_example.json
-            get:
-              description: 'Searches for enrollmentcoc.  Returns a list of enrollmentcoc ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '500':
-                  description: 500 – Internal Server Error
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
-            post:
-              description: |
-                Add a enrollmentcoc
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '401':
-                  description: Unauthorized – The request requires user authentication.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '422':
-                  description: Unprocessable Entity - Request body is incorrect.
-                '500':
-                  description: 500 – Internal Server Error.
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
-            securedBy:
-              - oauth_2_0
-            '/{enrollmentcocid}':
-              displayName: '/{enrollmentcocid}'
-              type:
-                member:
-                  schema_json: enrollmentcoc_json
-                  schema_id_json: enrollmentcoc_id_json
-                  schema_id_json_example: !include ./examples/EnrollmentCoC_id_json_example.json
-                  schema_json_example: !include ./examples/EnrollmentCoC_json_example.json
-              get:
-                description: Gets a enrollmentcoc using a URI resource parameter/ID.
-                responses:
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires an user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              put:
-                description: Updates a specific enrollmentcoc specified by the URI resource parameter/ID.
-                responses:
-                  '200':
-                    description: OK – Everything is working.
-                  '304':
-                    description: Not Modified – The client can use cached data.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires a user.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              delete:
-                description: Deletes a specific enrollmentcoc specified by the URI resource parameter/ID.
-                responses:
-                  '204':
-                    description: OK – The resource was successfully deleted.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              uriParameters:
-                enrollmentcocid:
-                  example: ADBC1111211111114111111111D1111V
-                  type: string
-                  displayName: EnrollmentCoC Identifier
-              securedBy:
-                - oauth_2_0
           /educations:
-            displayName: /educations
-            description: 'Operations performed on the set of all HMIS educations within the system, and for adding a new education to the set of educations '
             type:
               collection:
                 id_schema_json: id_education_json
@@ -651,118 +202,14 @@ resourceTypes:
                 schema_ids_json_example: !include ./examples/Education_ids_json_example.json
                 schema_json_example: !include ./examples/Education_json_example.json
                 id_schema_json_example: !include ./examples/id_education_json_example.json
-            get:
-              description: 'Searches for education.  Returns a list of education ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '500':
-                  description: 500 – Internal Server Error
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
-            post:
-              description: |
-                Add a education
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '401':
-                  description: Unauthorized – The request requires user authentication.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '422':
-                  description: Unprocessable Entity - Request body is incorrect.
-                '500':
-                  description: 500 – Internal Server Error.
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
-            securedBy:
-              - oauth_2_0
             '/{educationid}':
-              displayName: '/{educationid}'
               type:
                 member:
                   schema_json: education_json
                   schema_id_json: education_id_json
                   schema_id_json_example: !include ./examples/Education_id_json_example.json
                   schema_json_example: !include ./examples/Education_json_example.json
-              get:
-                description: Gets a education using a URI resource parameter/ID.
-                responses:
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires an user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              put:
-                description: Updates a specific education specified by the URI resource parameter/ID.
-                responses:
-                  '200':
-                    description: OK – Everything is working.
-                  '304':
-                    description: Not Modified – The client can use cached data.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires a user.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              delete:
-                description: Deletes a specific education specified by the URI resource parameter/ID.
-                responses:
-                  '204':
-                    description: OK – The resource was successfully deleted.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              uriParameters:
-                educationid:
-                  example: ADBC1111211111114111111111D1111V
-                  type: string
-                  displayName: Education Identifier
-              securedBy:
-                - oauth_2_0
           /contacts:
-            displayName: /contacts
-            description: 'Operations performed on the set of all HMIS contacts within the system, and for adding a new contact to the set of contacts '
             type:
               collection:
                 id_schema_json: id_contact_json
@@ -770,44 +217,7 @@ resourceTypes:
                 schema_ids_json: contact_ids_json
                 schema_ids_json_example: !include ./examples/Contact_ids_json_example.json
                 schema_json_example: !include ./examples/Contact_json_example.json
-                id_schema_json_example: !include ./examples/id_contact_json_example.json
-            get:
-              description: 'Searches for contact.  Returns a list of contact ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '500':
-                  description: 500 – Internal Server Error
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
-            post:
-              description: |
-                Add a contact
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '401':
-                  description: Unauthorized – The request requires user authentication.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '422':
-                  description: Unprocessable Entity - Request body is incorrect.
-                '500':
-                  description: 500 – Internal Server Error.
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
-            securedBy:
-              - oauth_2_0
+                id_schema_json_example: !include ./examples/id_contact_json_example.js
             '/{contactid}':
               displayName: '/{contactid}'
               type:
@@ -816,59 +226,16 @@ resourceTypes:
                   schema_id_json: contact_id_json
                   schema_id_json_example: !include ./examples/Contact_id_json_example.json
                   schema_json_example: !include ./examples/Contact_json_example.json
-              get:
-                description: Gets a contact using a URI resource parameter/ID.
-                responses:
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires an user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
               put:
                 description: Updates a specific contact specified by the URI resource parameter/ID.
-                responses:
-                  '200':
-                    description: OK – Everything is working.
-                  '304':
-                    description: Not Modified – The client can use cached data.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires a user.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
                   - HTTPS
               delete:
                 description: Deletes a specific contact specified by the URI resource parameter/ID.
-                responses:
-                  '204':
-                    description: OK – The resource was successfully deleted.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
@@ -893,35 +260,11 @@ resourceTypes:
                 id_schema_json_example: !include ./examples/id_dateofengagements_json_example.json
             get:
               description: 'Searches for dateofengagement.  Returns a list of dateofengagement ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '500':
-                  description: 500 – Internal Server Error
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
+              
             post:
               description: |
                 Add a dateofengagement
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '401':
-                  description: Unauthorized – The request requires user authentication.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '422':
-                  description: Unprocessable Entity - Request body is incorrect.
-                '500':
-                  description: 500 – Internal Server Error.
+              
               securedBy:
                 - oauth_2_0
               protocols:
@@ -938,57 +281,21 @@ resourceTypes:
                   schema_json_example: !include ./examples/DateOfEngagements_json_example.json
               get:
                 description: Gets a dateofengagement using a URI resource parameter/ID.
-                responses:
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires an user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
                   - HTTPS
               put:
                 description: Updates a specific dateofengagement specified by the URI resource parameter/ID.
-                responses:
-                  '200':
-                    description: OK – Everything is working.
-                  '304':
-                    description: Not Modified – The client can use cached data.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires a user.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
                   - HTTPS
               delete:
                 description: Deletes a specific dateofengagement specified by the URI resource parameter/ID.
-                responses:
-                  '204':
-                    description: OK – The resource was successfully deleted.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
@@ -1013,35 +320,11 @@ resourceTypes:
                 id_schema_json_example: !include ./examples/id_disabilities_json_example.json
             get:
               description: 'Searches for disability.  Returns a list of disability ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '500':
-                  description: 500 – Internal Server Error
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
+              
             post:
               description: |
                 Add a disability
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '401':
-                  description: Unauthorized – The request requires user authentication.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '422':
-                  description: Unprocessable Entity - Request body is incorrect.
-                '500':
-                  description: 500 – Internal Server Error.
+              
               securedBy:
                 - oauth_2_0
               protocols:
@@ -1058,57 +341,21 @@ resourceTypes:
                   schema_id_json_example: !include ./examples/Disabilities_id_json_example.json
               get:
                 description: Gets a disability using a URI resource parameter/ID.
-                responses:
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires an user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
                   - HTTPS
               put:
                 description: Updates a specific disability specified by the URI resource parameter/ID.
-                responses:
-                  '200':
-                    description: OK – Everything is working.
-                  '304':
-                    description: Not Modified – The client can use cached data.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires a user.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
                   - HTTPS
               delete:
                 description: Deletes a specific disability specified by the URI resource parameter/ID.
-                responses:
-                  '204':
-                    description: OK – The resource was successfully deleted.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
@@ -1133,35 +380,11 @@ resourceTypes:
                 id_schema_json_example: !include ./examples/id_domesticviolence_json_example.json
             get:
               description: 'Searches for domesticviolence.  Returns a list of domesticviolence ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '500':
-                  description: 500 – Internal Server Error
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
+              
             post:
               description: |
                 Add a domesticviolence
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '401':
-                  description: Unauthorized – The request requires user authentication.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '422':
-                  description: Unprocessable Entity - Request body is incorrect.
-                '500':
-                  description: 500 – Internal Server Error.
+              
               securedBy:
                 - oauth_2_0
               protocols:
@@ -1178,57 +401,21 @@ resourceTypes:
                   schema_id_json_example: !include ./examples/DomesticViolence_id_json_example.json
               get:
                 description: Gets a domesticviolence using a URI resource parameter/ID.
-                responses:
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires an user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
                   - HTTPS
               put:
                 description: Updates a specific domesticviolence specified by the URI resource parameter/ID.
-                responses:
-                  '200':
-                    description: OK – Everything is working.
-                  '304':
-                    description: Not Modified – The client can use cached data.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires a user.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
                   - HTTPS
               delete:
                 description: Deletes a specific domesticviolence specified by the URI resource parameter/ID.
-                responses:
-                  '204':
-                    description: OK – The resource was successfully deleted.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
@@ -1253,35 +440,11 @@ resourceTypes:
                 id_schema_json_example: !include ./examples/id_employments_json_example.json
             get:
               description: 'Searches for employment.  Returns a list of employment ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '500':
-                  description: 500 – Internal Server Error
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
+              
             post:
               description: |
                 Add a employment
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '401':
-                  description: Unauthorized – The request requires user authentication.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '422':
-                  description: Unprocessable Entity - Request body is incorrect.
-                '500':
-                  description: 500 – Internal Server Error.
+              
               securedBy:
                 - oauth_2_0
               protocols:
@@ -1298,57 +461,21 @@ resourceTypes:
                   schema_json_example: !include ./examples/Employments_json_example.json
               get:
                 description: Gets a employment using a URI resource parameter/ID.
-                responses:
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires an user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
                   - HTTPS
               put:
                 description: Updates a specific employment specified by the URI resource parameter/ID.
-                responses:
-                  '200':
-                    description: OK – Everything is working.
-                  '304':
-                    description: Not Modified – The client can use cached data.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires a user.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
                   - HTTPS
               delete:
                 description: Deletes a specific employment specified by the URI resource parameter/ID.
-                responses:
-                  '204':
-                    description: OK – The resource was successfully deleted.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
@@ -1373,35 +500,11 @@ resourceTypes:
                 id_schema_json_example: !include ./examples/id_exits_json_example.json
             get:
               description: 'Searches for exit.  Returns a list of exit ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '500':
-                  description: 500 – Internal Server Error
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
+              
             post:
               description: |
                 Add a exit
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '401':
-                  description: Unauthorized – The request requires user authentication.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '422':
-                  description: Unprocessable Entity - Request body is incorrect.
-                '500':
-                  description: 500 – Internal Server Error.
+              
               securedBy:
                 - oauth_2_0
               protocols:
@@ -1418,57 +521,21 @@ resourceTypes:
                   schema_json_example: !include ./examples/Exit_json_example.json
               get:
                 description: Gets a exit using a URI resource parameter/ID.
-                responses:
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires an user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
                   - HTTPS
               put:
                 description: Updates a specific exit specified by the URI resource parameter/ID.
-                responses:
-                  '200':
-                    description: OK – Everything is working.
-                  '304':
-                    description: Not Modified – The client can use cached data.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires a user.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
                   - HTTPS
               delete:
                 description: Deletes a specific exit specified by the URI resource parameter/ID.
-                responses:
-                  '204':
-                    description: OK – The resource was successfully deleted.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
@@ -1978,35 +1045,11 @@ resourceTypes:
                 id_schema_json_example: !include ./examples/id_healthinsurance_json_example.json
             get:
               description: 'Searches for heathinsurance.  Returns a list of heathinsurance ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '500':
-                  description: 500 – Internal Server Error
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
+              
             post:
               description: |
                 Add a heathinsurance
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '401':
-                  description: Unauthorized – The request requires user authentication.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '422':
-                  description: Unprocessable Entity - Request body is incorrect.
-                '500':
-                  description: 500 – Internal Server Error.
+              
               securedBy:
                 - oauth_2_0
               protocols:
@@ -2023,57 +1066,21 @@ resourceTypes:
                   schema_id_json_example: !include ./examples/HealthInsurance_id_json_example.json
               get:
                 description: Gets a heathinsurance using a URI resource parameter/ID.
-                responses:
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires an user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
                   - HTTPS
               put:
                 description: Updates a specific heathinsurance specified by the URI resource parameter/ID.
-                responses:
-                  '200':
-                    description: OK – Everything is working.
-                  '304':
-                    description: Not Modified – The client can use cached data.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires a user.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
                   - HTTPS
               delete:
                 description: Deletes a specific heathinsurance specified by the URI resource parameter/ID.
-                responses:
-                  '204':
-                    description: OK – The resource was successfully deleted.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
@@ -2098,35 +1105,11 @@ resourceTypes:
                 id_schema_json_example: !include ./examples/id_healthstatus_json_example.json
             get:
               description: 'Searches for healthstatus.  Returns a list of healthstatus ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '500':
-                  description: 500 – Internal Server Error
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
+              
             post:
               description: |
                 Add a healthstatus
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '401':
-                  description: Unauthorized – The request requires user authentication.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '422':
-                  description: Unprocessable Entity - Request body is incorrect.
-                '500':
-                  description: 500 – Internal Server Error.
+              
               securedBy:
                 - oauth_2_0
               protocols:
@@ -2143,57 +1126,21 @@ resourceTypes:
                   schema_id_json_example: !include ./examples/HealthStatus_id_json_example.json
               get:
                 description: Gets a healthstatus using a URI resource parameter/ID.
-                responses:
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires an user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
                   - HTTPS
               put:
                 description: Updates a specific healthstatus specified by the URI resource parameter/ID.
-                responses:
-                  '200':
-                    description: OK – Everything is working.
-                  '304':
-                    description: Not Modified – The client can use cached data.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires a user.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
                   - HTTPS
               delete:
                 description: Deletes a specific healthstatus specified by the URI resource parameter/ID.
-                responses:
-                  '204':
-                    description: OK – The resource was successfully deleted.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
@@ -2218,35 +1165,11 @@ resourceTypes:
                 id_schema_json_example: !include ./examples/id_incomeandsource_json_example.json
             get:
               description: 'Searches for incomeandsource.  Returns a list of incomeandsource ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '500':
-                  description: 500 – Internal Server Error
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
+              
             post:
               description: |
                 Add a incomeandsource
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '401':
-                  description: Unauthorized – The request requires user authentication.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '422':
-                  description: Unprocessable Entity - Request body is incorrect.
-                '500':
-                  description: 500 – Internal Server Error.
+              
               securedBy:
                 - oauth_2_0
               protocols:
@@ -2263,57 +1186,21 @@ resourceTypes:
                   schema_id_json_example: !include ./examples/IncomeAndSource_id_json_example.json
               get:
                 description: Gets a incomeandsource using a URI resource parameter/ID.
-                responses:
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires an user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
                   - HTTPS
               put:
                 description: Updates a specific incomeandsource specified by the URI resource parameter/ID.
-                responses:
-                  '200':
-                    description: OK – Everything is working.
-                  '304':
-                    description: Not Modified – The client can use cached data.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires a user.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
                   - HTTPS
               delete:
                 description: Deletes a specific incomeandsource specified by the URI resource parameter/ID.
-                responses:
-                  '204':
-                    description: OK – The resource was successfully deleted.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
@@ -2338,35 +1225,11 @@ resourceTypes:
                 id_schema_json_example: !include ./examples/id_medicalassistance_json_example.json
             get:
               description: 'Searches for medicalassistence.  Returns a list of medicalassistence ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '500':
-                  description: 500 – Internal Server Error
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
+              
             post:
               description: |
                 Add a medicalassistence
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '401':
-                  description: Unauthorized – The request requires user authentication.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '422':
-                  description: Unprocessable Entity - Request body is incorrect.
-                '500':
-                  description: 500 – Internal Server Error.
+              
               securedBy:
                 - oauth_2_0
               protocols:
@@ -2383,57 +1246,21 @@ resourceTypes:
                   schema_id_json_example: !include ./examples/MedicalAssistances_id_json_example.json
               get:
                 description: Gets a medicalassistence using a URI resource parameter/ID.
-                responses:
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires an user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
                   - HTTPS
               put:
                 description: Updates a specific medicalassistence specified by the URI resource parameter/ID.
-                responses:
-                  '200':
-                    description: OK – Everything is working.
-                  '304':
-                    description: Not Modified – The client can use cached data.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires a user.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
                   - HTTPS
               delete:
                 description: Deletes a specific medicalassistence specified by the URI resource parameter/ID.
-                responses:
-                  '204':
-                    description: OK – The resource was successfully deleted.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
@@ -2458,35 +1285,11 @@ resourceTypes:
                 id_schema_json_example: !include ./examples/id_noncashbenefits_json_example.json
             get:
               description: 'Searches for noncashbenefit.  Returns a list of noncashbenefit ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '500':
-                  description: 500 – Internal Server Error
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
+              
             post:
               description: |
                 Add a noncashbenefit
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '401':
-                  description: Unauthorized – The request requires user authentication.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '422':
-                  description: Unprocessable Entity - Request body is incorrect.
-                '500':
-                  description: 500 – Internal Server Error.
+              
               securedBy:
                 - oauth_2_0
               protocols:
@@ -2503,57 +1306,21 @@ resourceTypes:
                   schema_id_json_example: !include ./examples/NonCashBenefits_id_json_example.json
               get:
                 description: Gets a noncashbenefit using a URI resource parameter/ID.
-                responses:
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires an user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
                   - HTTPS
               put:
                 description: Updates a specific noncashbenefit specified by the URI resource parameter/ID.
-                responses:
-                  '200':
-                    description: OK – Everything is working.
-                  '304':
-                    description: Not Modified – The client can use cached data.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires a user.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
                   - HTTPS
               delete:
                 description: Deletes a specific noncashbenefit specified by the URI resource parameter/ID.
-                responses:
-                  '204':
-                    description: OK – The resource was successfully deleted.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
@@ -2578,35 +1345,11 @@ resourceTypes:
                 id_schema_json_example: !include ./examples/id_residentialmoveindate_json_example.json
             get:
               description: 'Searches for residentialmoveindate.  Returns a list of residentialmoveindate ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '500':
-                  description: 500 – Internal Server Error
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
+              
             post:
               description: |
                 Add a residentialmoveindate
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '401':
-                  description: Unauthorized – The request requires user authentication.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '422':
-                  description: Unprocessable Entity - Request body is incorrect.
-                '500':
-                  description: 500 – Internal Server Error.
+              
               securedBy:
                 - oauth_2_0
               protocols:
@@ -2623,57 +1366,21 @@ resourceTypes:
                   schema_id_json_example: !include ./examples/ResidentialMoveInDate_id_json_example.json
               get:
                 description: Gets a residentialmoveindate using a URI resource parameter/ID.
-                responses:
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires an user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
                   - HTTPS
               put:
                 description: Updates a specific residentialmoveindate specified by the URI resource parameter/ID.
-                responses:
-                  '200':
-                    description: OK – Everything is working.
-                  '304':
-                    description: Not Modified – The client can use cached data.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires a user.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
                   - HTTPS
               delete:
                 description: Deletes a specific residentialmoveindate specified by the URI resource parameter/ID.
-                responses:
-                  '204':
-                    description: OK – The resource was successfully deleted.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
@@ -2698,35 +1405,11 @@ resourceTypes:
                 id_schema_json_example: !include ./examples/id_pathstatus_json_example.json
             get:
               description: 'Searches for pathstatus.  Returns a list of pathstatus ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '500':
-                  description: 500 – Internal Server Error
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
+              
             post:
               description: |
                 Add a pathstatus
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '401':
-                  description: Unauthorized – The request requires user authentication.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '422':
-                  description: Unprocessable Entity - Request body is incorrect.
-                '500':
-                  description: 500 – Internal Server Error.
+              
               securedBy:
                 - oauth_2_0
               protocols:
@@ -2743,57 +1426,21 @@ resourceTypes:
                   schema_id_json_example: !include ./examples/PathStatus_id_json_example.json
               get:
                 description: Gets a pathstatus using a URI resource parameter/ID.
-                responses:
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires an user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
                   - HTTPS
               put:
                 description: Updates a specific pathstatus specified by the URI resource parameter/ID.
-                responses:
-                  '200':
-                    description: OK – Everything is working.
-                  '304':
-                    description: Not Modified – The client can use cached data.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires a user.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
                   - HTTPS
               delete:
                 description: Deletes a specific pathstatus specified by the URI resource parameter/ID.
-                responses:
-                  '204':
-                    description: OK – The resource was successfully deleted.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
@@ -2818,35 +1465,11 @@ resourceTypes:
                 id_schema_json_example: !include ./examples/id_entryrhsp_json_example.json
             get:
               description: 'Searches for entryrhsp.  Returns a list of entryrhsp ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '500':
-                  description: 500 – Internal Server Error
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
+              
             post:
               description: |
                 Add a entryrhsp
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '401':
-                  description: Unauthorized – The request requires user authentication.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '422':
-                  description: Unprocessable Entity - Request body is incorrect.
-                '500':
-                  description: 500 – Internal Server Error.
+              
               securedBy:
                 - oauth_2_0
               protocols:
@@ -2863,57 +1486,21 @@ resourceTypes:
                   schema_id_json_example: !include ./examples/Entryrhsp_id_json_example.json
               get:
                 description: Gets a entryrhsp using a URI resource parameter/ID.
-                responses:
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires an user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
                   - HTTPS
               put:
                 description: Updates a specific entryrhsp specified by the URI resource parameter/ID.
-                responses:
-                  '200':
-                    description: OK – Everything is working.
-                  '304':
-                    description: Not Modified – The client can use cached data.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires a user.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
                   - HTTPS
               delete:
                 description: Deletes a specific entryrhsp specified by the URI resource parameter/ID.
-                responses:
-                  '204':
-                    description: OK – The resource was successfully deleted.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
@@ -2938,35 +1525,11 @@ resourceTypes:
                 id_schema_json_example: !include ./examples/id_entryrhy_json_example.json
             get:
               description: 'Searches for entryrhy.  Returns a list of entryrhy ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '500':
-                  description: 500 – Internal Server Error
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
+              
             post:
               description: |
                 Add a entryrhy
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '401':
-                  description: Unauthorized – The request requires user authentication.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '422':
-                  description: Unprocessable Entity - Request body is incorrect.
-                '500':
-                  description: 500 – Internal Server Error.
+              
               securedBy:
                 - oauth_2_0
               protocols:
@@ -2983,57 +1546,21 @@ resourceTypes:
                   schema_id_json_example: !include ./examples/Entryrhy_id_json_example.json
               get:
                 description: Gets a entryrhy using a URI resource parameter/ID.
-                responses:
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires an user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
                   - HTTPS
               put:
                 description: Updates a specific entryrhy specified by the URI resource parameter/ID.
-                responses:
-                  '200':
-                    description: OK – Everything is working.
-                  '304':
-                    description: Not Modified – The client can use cached data.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires a user.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
                   - HTTPS
               delete:
                 description: Deletes a specific entryrhy specified by the URI resource parameter/ID.
-                responses:
-                  '204':
-                    description: OK – The resource was successfully deleted.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
@@ -3058,35 +1585,11 @@ resourceTypes:
                 id_schema_json_example: !include ./examples/id_entryssvf_json_example.json
             get:
               description: 'Searches for entryssvf.  Returns a list of entryssvf ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '500':
-                  description: 500 – Internal Server Error
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
+              
             post:
               description: |
                 Add a entryssvf
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '401':
-                  description: Unauthorized – The request requires user authentication.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '422':
-                  description: Unprocessable Entity - Request body is incorrect.
-                '500':
-                  description: 500 – Internal Server Error.
+              
               securedBy:
                 - oauth_2_0
               protocols:
@@ -3103,57 +1606,21 @@ resourceTypes:
                   schema_id_json_example: !include ./examples/Entryssvf_id_json_example.json
               get:
                 description: Gets a entryssvf using a URI resource parameter/ID.
-                responses:
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires an user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
                   - HTTPS
               put:
                 description: Updates a specific entryssvf specified by the URI resource parameter/ID.
-                responses:
-                  '200':
-                    description: OK – Everything is working.
-                  '304':
-                    description: Not Modified – The client can use cached data.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires a user.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
                   - HTTPS
               delete:
                 description: Deletes a specific entryssvf specified by the URI resource parameter/ID.
-                responses:
-                  '204':
-                    description: OK – The resource was successfully deleted.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
@@ -3178,35 +1645,11 @@ resourceTypes:
                 id_schema_json_example: !include ./examples/id_servicefareferral_json_example.json
             get:
               description: 'Searches for servicefareferral.  Returns a list of servicefareferral ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '500':
-                  description: 500 – Internal Server Error
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
+              
             post:
               description: |
                 Add a servicefareferral
-              responses:
-                '400':
-                  description: Bad Request – The request was invalid or cannot be served.
-                '401':
-                  description: Unauthorized – The request requires user authentication.
-                '403':
-                  description: 'Forbidden – The server understood the request, but is refusing it or access is not allowed.'
-                '404':
-                  description: Not found – There is no resource behind the URI.
-                '422':
-                  description: Unprocessable Entity - Request body is incorrect.
-                '500':
-                  description: 500 – Internal Server Error.
+              
               securedBy:
                 - oauth_2_0
               protocols:
@@ -3223,57 +1666,21 @@ resourceTypes:
                   schema_id_json_example: !include ./examples/ServiceFaReferral_id_json_example.json
               get:
                 description: Gets a servicefareferral using a URI resource parameter/ID.
-                responses:
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires an user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
                   - HTTPS
               put:
                 description: Updates a specific servicefareferral specified by the URI resource parameter/ID.
-                responses:
-                  '200':
-                    description: OK – Everything is working.
-                  '304':
-                    description: Not Modified – The client can use cached data.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires a user.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
                   - HTTPS
               delete:
                 description: Deletes a specific servicefareferral specified by the URI resource parameter/ID.
-                responses:
-                  '204':
-                    description: OK – The resource was successfully deleted.
-                  '400':
-                    description: Bad Request – The request was invalid or cannot be served.
-                  '401':
-                    description: Unauthorized – The request requires user authentication.
-                  '403':
-                    description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                  '404':
-                    description: Not found – There is no resource behind the URI.
-                  '500':
-                    description: Internal Server Error.
+                
                 securedBy:
                   - oauth_2_0
                 protocols:
@@ -4343,7 +2750,7 @@ resourceTypes:
         exclude:
           required: false
           description: |
-            Excludes flieds from the search.Currently it suppoted value is "ssi" (to exclude         source system id) only.
+            Excludes fields from the search.Currently it suppoted value is "ssi" (to exclude         source system id) only.
           type: string
           displayName: exclude
       securedBy:
