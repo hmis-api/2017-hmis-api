@@ -5,305 +5,144 @@ mediaType: application/json
 protocols:
   - HTTPS
 baseUri: 'https://www.hmislynk.com/hmis-clientapi-v2017/rest'
+securedBy: [oauth_2_0]
 securitySchemes:
-  oauth_2_0:
-    description: |
-      The HMIS API supports OAuth 2.0 for authenticating all API requests.
-    type: OAuth 2.0
-    settings:
-      authorizationUri: 'https://hmislynk.com/hmis-authorization-service/rest/authorize'
-      accessTokenUri: 'https://hmislynk.com/hmis-authorization-service/rest/token'
-      authorizationGrants:
-        - password
-      scopes:
-        - user
-        - administrator
-    describedBy:
-      responses:
-        '401':
-          description: |
-            Bad or expired token. This can happen if the user or the HMIS
-            revoked or expired an access token. To fix, you should re-
-            authenticate the user.
-        '403':
-          description: |
-            Bad OAuth request (wrong consumer key, bad nonce, expired
-            timestamp...). Unfortunately, re-authenticating the user won't help here.
-      headers:
-        Authorization:
-          required: false
-          description: |
-            Used to send a valid OAuth 2 access token. Do not use
-            an "access_token" query string parameter.
-          type: string
-          displayName: Authorization
-      securedBy:
-        - oauth_2_0
+  oauth_2_0: !include security-schemes/oauth_2_0.raml
+
 types:
-  affiliation_id_json:
-    type: string
-  affiliations_ids_json:
-    type: string
-  affiliations_json:
-    type: string
-  client_id_json:
-    type: string
-  clients_ids_json:
-    type: string
-  clients_json:
-    type: string
-  contact_id_json:
-    type: string
-  contact_ids_json:
-    type: string
-  contact_json:
-    type: string
-  dateofengagements_id_json:
-    type: string
-  dateofengagements_ids_json:
-    type: string
-  dateofengagements_json:
-    type: string
-  disabilities_id_json:
-    type: string
-  disabilities_ids_json:
-    type: string
-  disabilities_json:
-    type: string
-  domesticviolence_id_json:
-    type: string
-  domesticviolence_ids_json:
-    type: string
-  domesticviolence_json:
-    type: string
-  education_ids_json:
-    type: string
-  education_id_json:
-    type: string
-  education_json:
-    type: string
-  employment_id_json:
-    type: string
-  employments_ids_json:
-    type: string
-  employments_json:
-    type: string
-  enrollment_id_json:
-    type: string
-  enrollmentcoc_id_json:
-    type: string
-  enrollmentcoc_ids_json:
-    type: string
-  enrollmentcoc_json:
-    type: string
-  enrollments_ids_json:
-    type: string
-  enrollments_json:
-    type: string
-  entryrhsp_id_json:
-    type: string
-  entryrhsp_ids_json:
-    type: string
-  entryrhsp_json:
-    type: string
-  entryrhy_id_json:
-    type: string
-  entryrhy_ids_json:
-    type: string
-  entryrhy_json:
-    type: string
-  entryssvf_id_json:
-    type: string
-  entryssvf_ids_json:
-    type: string
-  entryssvf_json:
-    type: string
-  exit_id_json:
-    type: string
-  exit_ids_json:
-    type: string
-  exit_json:
-    type: string
-  exithosingassessments_id_json:
-    type: string
-  exithosingassessments_ids_json:
-    type: string
-  exithosingassessments_json:
-    type: string
-  exitpath_id_json:
-    type: string
-  exitpath_ids_json:
-    type: string
-  exitpath_json:
-    type: string
-  exitrhy_id_json:
-    type: string
-  exitrhy_ids_json:
-    type: string
-  exitrhy_json:
-    type: string
-  funder_id_json:
-    type: string
-  funders_ids_json:
-    type: string
-  funders_json:
-    type: string
-  healthinsurance_id_json:
-    type: string
-  healthinsurance_json:
-    type: string
-  healthinsurances_ids_json:
-    type: string
-  healthstatus_id_json:
-    type: string
-  healthstatus_ids_json:
-    type: string
-  healthstatus_json:
-    type: string
-  housingassesmentdispositions_id_json:
-    type: string
-  housingassesmentdispositions_ids_json:
-    type: string
-  housingassesmentdispositions_json:
-    type: string
-  id_affiliation_json:
-    type: string
-  id_clients_json:
-    type: string
-  id_contact_json:
-    type: string
-  id_dateofengagements_json:
-    type: string
-  id_disabilities_json:
-    type: string
-  id_domesticviolences_json:
-    type: string
-  id_education_json:
-    type: string
-  id_employments_json:
-    type: string
-  id_enrollmentcoc_json:
-    type: string
-  id_enrollments_json:
-    type: string
-  id_entryrhsp_json:
-    type: string
-  id_entryrhy_json:
-    type: string
-  id_entryssvf_json:
-    type: string
-  id_exithousingassesment_json:
-    type: string
-  id_exitpath_json:
-    type: string
-  id_exitrhy_json:
-    type: string
-  id_exits_json:
-    type: string
-  id_funders_json:
-    type: string
-  id_healthinsurance_json:
-    type: string
-  id_healthstatus_json:
-    type: string
-  id_housingassesmentdispositions_json:
-    type: string
-  id_incomeandsources_json:
-    type: string
-  id_inventories_json:
-    type: string
-  id_medicalassistances_json:
-    type: string
-  id_noncashbenefits_json:
-    type: string
-  id_organization_json:
-    type: string
-  id_pathstatus_json:
-    type: string
-  id_projectcoc_json:
-    type: string
-  id_projects_json:
-    type: string
-  id_residentialmoveindate_json:
-    type: string
-  id_servicefareferral_json:
-    type: string
-  id_sites_json:
-    type: string
-  id_veteraninfo_json:
-    type: string
-  incomeandsource_id_json:
-    type: string
-  incomeandsources_ids_json:
-    type: string
-  incomeandsource_json:
-    type: string
-  inventories_id_json:
-    type: string
-  inventories_ids_json:
-    type: string
-  inventories_json:
-    type: string
-  medicalassistance_json:
-    type: string
-  medicalassistances_ids_json:
-    type: string
-  medicalassistances_id_json:
-    type: string
-  noncashbenefits_id_json:
-    type: string
-  noncashbenefits_json:
-    type: string
-  noncashbenefits_ids_json:
-    type: string
-  pathstatus_id_json:
-    type: string
-  pathstatus_ids_json:
-    type: string
-  pathstatus_json:
-    type: string
-  project_json:
-    type: string
-  organization_json:
-    type: string
-  projectcoc_id_json:
-    type: string
-  projectcoc_ids_json:
-    type: string
-  projectcoc_json:
-    type: string
-  organization_id_json:
-    type: string
-  organization_ids_json:
-    type: string
-  projects_id_json:
-    type: string
-  projects_ids_json:
-    type: string
-  residentialmoveindate_id_json:
-    type: string
-  residentialmoveindate_ids_json:
-    type: string
-  residentialmoveindate_json:
-    type: string
-  servicefareferral_id_json:
-    type: string
-  servicefareferral_json:
-    type: string
-  servicefareferrals_ids_json:
-    type: string
-  sites_id_json:
-    type: string
-  sites_ids_json:
-    type: string
-  sites_json:
-    type: string
-  veteraninfo_id_json:
-    type: string
-  veteraninfo_ids_json:
-    type: string
-  veteraninfo_json:
-    type: string
+  affiliation_id : !include types/affiliation_id.json
+  affiliation_id_only : !include types/affiliation_id_only.json
+  affiliations : !include types/affiliations.json
+  affiliations_ids : !include types/affiliations_ids.json
+  client_id : !include types/client_id.json
+  clients : !include types/clients.json
+  clients_id_only : !include types/clients_id_only.json
+  clients_ids : !include types/clients_ids.json
+  contact : !include types/contact.json
+  contact_id : !include types/contact_id.json
+  contact_id_only : !include types/contact_id_only.json
+  contacts_ids : !include types/contacts_ids.json
+  date_of_engagement : !include types/date_of_engagement.json
+  date_of_engagement_id : !include types/date_of_engagement_id.json
+  date_of_engagement_id_only : !include types/date_of_engagement_id_only.json
+  date_of_engagements_ids : !include types/date_of_engagements_ids.json
+  disabilities : !include types/disabilities.json
+  disabilities_id : !include types/disabilities_id.json
+  disabilities_id_only : !include types/disabilities_id_only.json
+  disabilities_ids : !include types/disabilities_ids.json
+  domestic_violence : !include types/domestic_violence.json
+  domestic_violence_id : !include types/domestic_violence_id.json
+  domestic_violence_id_only : !include types/domestic_violence_id_only.json
+  domestic_violences_ids : !include types/domestic_violences_ids.json
+  education : !include types/education.json
+  education_id : !include types/education_id.json
+  education_id_only : !include types/education_id_only.json
+  education_ids : !include types/education_ids.json
+  educations_ids : !include types/educations_ids.json
+  employment : !include types/employment.json
+  employment_id : !include types/employment_id.json
+  employment_id_only : !include types/employment_id_only.json
+  employments_ids : !include types/employments_ids.json
+  enrollment : !include types/enrollment.json
+  enrollment_coc : !include types/enrollment_coc.json
+  enrollment_coc_id : !include types/enrollment_coc_id.json
+  enrollment_coc_id_only : !include types/enrollment_coc_id_only.json
+  enrollment_cocs_ids : !include types/enrollment_cocs_ids.json
+  enrollment_id : !include types/enrollment_id.json
+  enrollment_id_only : !include types/enrollment_id_only.json
+  enrollments_ids : !include types/enrollments_ids.json
+  entry_rhsp : !include types/entry_rhsp.json
+  entry_rhsp_id : !include types/entry_rhsp_id.json
+  entry_rhsp_id_only : !include types/entry_rhsp_id_only.json
+  entry_rhsps_ids : !include types/entry_rhsps_ids.json
+  entry_rhy : !include types/entry_rhy.json
+  entry_rhy_id : !include types/entry_rhy_id.json
+  entry_rhy_id_only : !include types/entry_rhy_id_only.json
+  entry_rhys_ids : !include types/entry_rhys_ids.json
+  entry_ssvf : !include types/entry_ssvf.json
+  entry_ssvf_id : !include types/entry_ssvf_id.json
+  entry_ssvf_id_only : !include types/entry_ssvf_id_only.json
+  entry_ssvfs_ids : !include types/entry_ssvfs_ids.json
+  exit : !include types/exit.json
+  exit_housing_assessment : !include types/exit_housing_assessment.json
+  exit_housing_assessment_id : !include types/exit_housing_assessment_id.json
+  exit_housing_assessments_ids : !include types/exit_housing_assessments_ids.json
+  exit_id : !include types/exit_id.json
+  exit_id_only : !include types/exit_id_only.json
+  exit_path : !include types/exit_path.json
+  exit_path_id : !include types/exit_path_id.json
+  exit_path_id_only : !include types/exit_path_id_only.json
+  exit_paths_ids : !include types/exit_paths_ids.json
+  exit_rhy : !include types/exit_rhy.json
+  exit_rhy_id : !include types/exit_rhy_id.json
+  exit_rhy_id_only : !include types/exit_rhy_id_only.json
+  exit_rhys_ids : !include types/exit_rhys_ids.json
+  exithousingassesment_id_only : !include types/exithousingassesment_id_only.json
+  exits_ids : !include types/exits_ids.json
+  funder_id : !include types/funder_id.json
+  funder_id_only : !include types/funder_id_only.json
+  funders : !include types/funders.json
+  funders_ids : !include types/funders_ids.json
+  health_insurance : !include types/health_insurance.json
+  health_insurance_id : !include types/health_insurance_id.json
+  health_insurances_ids : !include types/health_insurances_ids.json
+  health_status : !include types/health_status.json
+  health_status_id : !include types/health_status_id.json
+  health_statuses_ids : !include types/health_statuses_ids.json
+  healthinsurance_id_only : !include types/healthinsurance_id_only.json
+  healthstatus_id_only : !include types/healthstatus_id_only.json
+  housing_assessment_disposition : !include types/housing_assessment_disposition.json
+  housing_assessment_disposition_id : !include types/housing_assessment_disposition_id.json
+  housing_assessment_disposition_id_only : !include types/housing_assessment_disposition_id_only.json
+  housing_assessment_dispositions_ids : !include types/housing_assessment_dispositions_ids.json
+  income_and_source : !include types/income_and_source.json
+  income_and_source_id : !include types/income_and_source_id.json
+  income_and_source_id_only : !include types/income_and_source_id_only.json
+  income_and_sources_ids : !include types/income_and_sources_ids.json
+  inventories_ids : !include types/inventories_ids.json
+  inventory : !include types/inventory.json
+  inventory_id : !include types/inventory_id.json
+  inventory_id_only : !include types/inventory_id_only.json
+  medical_assistance : !include types/medical_assistance.json
+  medical_assistance_id : !include types/medical_assistance_id.json
+  medical_assistance_id_only : !include types/medical_assistance_id_only.json
+  medical_assistances_ids : !include types/medical_assistances_ids.json
+  non_cash_benefits : !include types/non_cash_benefits.json
+  non_cash_benefits_id : !include types/non_cash_benefits_id.json
+  non_cash_benefits_id_only : !include types/non_cash_benefits_id_only.json
+  non_cash_benefitses_ids : !include types/non_cash_benefitses_ids.json
+  organization : !include types/organization.json
+  organization_id : !include types/organization_id.json
+  organization_id_only : !include types/organization_id_only.json
+  organizations_ids : !include types/organizations_ids.json
+  path_status : !include types/path_status.json
+  path_status_id : !include types/path_status_id.json
+  path_status_id_only : !include types/path_status_id_only.json
+  path_statuses_ids : !include types/path_statuses_ids.json
+  project : !include types/project.json
+  project_coc : !include types/project_coc.json
+  project_coc_id : !include types/project_coc_id.json
+  project_coc_id_only : !include types/project_coc_id_only.json
+  project_cocs_ids : !include types/project_cocs_ids.json
+  project_id : !include types/project_id.json
+  projects_id_only : !include types/projects_id_only.json
+  projects_ids : !include types/projects_ids.json
+  residential_move_in_date : !include types/residential_move_in_date.json
+  residential_move_in_date_id : !include types/residential_move_in_date_id.json
+  residential_move_in_date_id_only : !include types/residential_move_in_date_id_only.json
+  residential_move_in_dates_ids : !include types/residential_move_in_dates_ids.json
+  service_fa_referral : !include types/service_fa_referral.json
+  service_fa_referral_id : !include types/service_fa_referral_id.json
+  service_fa_referral_id_only : !include types/service_fa_referral_id_only.json
+  service_fa_referrals_ids : !include types/service_fa_referrals_ids.json
+  site : !include types/site.json
+  site_id : !include types/site_id.json
+  site_id_only : !include types/site_id_only.json
+  sites_ids : !include types/sites_ids.json
+  veteran_info : !include types/veteran_info.json
+  veteran_info_id : !include types/veteran_info_id.json
+  veteran_info_id_only : !include types/veteran_info_id_only.json
+  veteran_infos_ids : !include types/veteran_infos_ids.json
 resourceTypes:
   collection:
     securedBy:
@@ -4413,7 +4252,7 @@ resourceTypes:
       description: |
         The Search API is optimized to find the specific entity you're looking for (e.g., a client, enrollments, etc.).It's designed to  find the one result you're looking for (or maybe the few results you're looking for). Currently hmislynk supporting search on 'clients' entity only. Just like searching on Google, you sometimes want to see a few pages of search results so that you can find the item that best meets your needs.  HMISLynk Search API provides up to 50 results for each searh. However, the search results can be limited by the client.
           Note: Current supporting URI  is /search/clients
-          
+
       responses:
         '200':
           description: |
@@ -4466,12 +4305,12 @@ resourceTypes:
                 ]
               }
               }
-                        
+
       queryParameters:
         q:
           required: false
           description: |
-            The search keywords, as well as any qualifiers. Currently supported search fields are first name,middle name,last name,dob,source system id and ssn. For search on "date of birth" field the format MM-dd-YYYY should be used for the search keyword. 
+            The search keywords, as well as any qualifiers. Currently supported search fields are first name,middle name,last name,dob,source system id and ssn. For search on "date of birth" field the format MM-dd-YYYY should be used for the search keyword.
           type: string
           displayName: q
         sort:
@@ -4517,4 +4356,3 @@ resourceTypes:
         displayName: searchentity
     securedBy:
       - oauth_2_0
-
