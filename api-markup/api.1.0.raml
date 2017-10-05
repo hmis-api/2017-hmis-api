@@ -680,7 +680,7 @@ resourceTypes:
     uriParameters:
       searchentity: {}
 /hmisTypes:
-  description: Get all available hmis types
+  description: Get all available HMIS picklist values (types)
   get:
     responses:
       200:
@@ -689,7 +689,7 @@ resourceTypes:
              example: !include examples/get_all_hmis_type_names.json
              schema: !include types/get_all_hmis_type_names.json
   /{name}/values:
-    description:  get all values of hmis type
+    description:  get all values of HMIS type
     get:
       responses:
         200:
@@ -698,6 +698,7 @@ resourceTypes:
               example: !include examples/get_all_hmis_type_value_of_hmis_type.json
               schema: !include types/get_all_hmis_type_value_of_hmis_type.json
 /questions:
+  description: Get all available HMIS questions
   get:
     responses:
       200:
