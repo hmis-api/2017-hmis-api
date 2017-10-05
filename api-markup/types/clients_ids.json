@@ -106,10 +106,7 @@
               "race",
               "ethnicity",
               "gender",
-              "otherGender",
-              "veteranStatus",
-              "phoneNumber",
-              "emailAddress"
+              "otherGender"
             ]
           }
         }

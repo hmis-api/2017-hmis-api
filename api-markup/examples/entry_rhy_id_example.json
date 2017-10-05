@@ -7,8 +7,8 @@
       "formerlyWardOfJuvenileJustice":8,
       "yearsJuvenileJustice":3,
       "houseHoldDynamics":1,
-      "sexualOrientatiionGenderIdentityYouth":99,
-      "sexualOrientatiionGenderIdentityFamilyMbr":1,
+      "sexualOrientationGenderIdentityYouth":99,
+      "sexualOrientationGenderIdentityFamilyMbr":1,
       "housingIssuesYouth":99,
       "housingIssuesFamilyMbr":1,
       "schoolEducationIssuesYouth":99,
@@ -41,6 +41,7 @@
       "workPlaceViolenceThreat":1,
       "workPlacePromiseDifference":8,
       "coercedToContinueWork":9,
+      "laborExploitPastThreeMonths":1,
       "laborExploitPastThreeMonths":420
    }
 }

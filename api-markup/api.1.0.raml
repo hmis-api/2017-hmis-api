@@ -8,15 +8,14 @@ baseUri: 'https://www.hmislynk.com/hmis-clientapi-v2017/rest/v2017'
 securedBy: [oauth_2_0]
 securitySchemes:
   oauth_2_0: !include security-schemes/oauth_2_0.raml
-
 types:
   affiliation_id : !include types/affiliation_id.json
   affiliation_id_only : !include types/affiliation_id_only.json
   affiliations : !include types/affiliations.json
   affiliations_ids : !include types/affiliations_ids.json
   client_id : !include types/client_id.json
-  clients : !include types/clients.json
-  clients_id_only : !include types/clients_id_only.json
+  client : !include types/client.json
+  clients_id_only : !include types/client_id_only.json
   clients_ids : !include types/clients_ids.json
   contact : !include types/contact.json
   contact_id : !include types/contact_id.json
@@ -26,9 +25,9 @@ types:
   date_of_engagement_id : !include types/date_of_engagement_id.json
   date_of_engagement_id_only : !include types/date_of_engagement_id_only.json
   date_of_engagements_ids : !include types/date_of_engagements_ids.json
-  disabilities : !include types/disabilities.json
-  disabilities_id : !include types/disabilities_id.json
-  disabilities_id_only : !include types/disabilities_id_only.json
+  disability : !include types/disability.json
+  disability_id : !include types/disability_id.json
+  disability_id_only : !include types/disability_id_only.json
   disabilities_ids : !include types/disabilities_ids.json
   domestic_violence : !include types/domestic_violence.json
   domestic_violence_id : !include types/domestic_violence_id.json
@@ -77,7 +76,7 @@ types:
   exit_rhy_id : !include types/exit_rhy_id.json
   exit_rhy_id_only : !include types/exit_rhy_id_only.json
   exit_rhys_ids : !include types/exit_rhys_ids.json
-  exithousingassesment_id_only : !include types/exithousingassesment_id_only.json
+  exit_housing_assessment_id_only : !include types/exit_housing_assessment_id_only.json
   exits_ids : !include types/exits_ids.json
   funder_id : !include types/funder_id.json
   funder_id_only : !include types/funder_id_only.json
@@ -146,7 +145,7 @@ types:
 resourceTypes:
   collection: !include types/collection.raml
   member: !include types/member.raml
-  /clients:
+/clients:
     type:
       collection:
         schema_ids: clients_ids
@@ -161,2605 +160,624 @@ resourceTypes:
           schema_id: client_id
           schema_id_example: !include examples/client_id_example.json
           schema_example: !include examples/client_example.json
-    /enrollments:
-      type:
-        collection:
-          id_schema_json: id_enrollments_json
-          schema_json: enrollments_json
-          schema_ids_json: enrollments_ids_json
-          schema_ids_json_example: !include ./examples/Enrollments_ids_json_example.json
-          schema_json_example: !include ./examples/Enrollments_json_example.json
-          id_schema_json_example: !include ./examples/id_enrollment_json_example.json
-      /{enrollmentid}:
+      /enrollments:
         type:
-          member:
-            schema_json: enrollments_json
-            schema_id_json: enrollment_id_json
-            schema_id_json_example: !include ./examples/Enrollment_id_json_example.json
-            schema_json_example: !include ./examples/Enrollments_json_example.json
-        /enrollmentcocs:
+          collection:
+            schema: enrollment
+            schema_ids: enrollments_ids
+            schema_ids_example: !include ./examples/enrollments_ids_example.json
+            schema_example: !include ./examples/enrollment_example.json
+            schema_id_example: !include ./examples/enrollment_id_example.json
+        /{enrollmentid}:
           type:
-            collection:
-              id_schema_json: id_enrollmentcoc_json
-              schema_json: enrollmentcoc_json
-              schema_ids_json: enrollmentcoc_ids_json
-              schema_ids_json_example: !include ./examples/EnrollmentCoC_ids_json_example.json
-              schema_json_example: !include ./examples/EnrollmentCoC_json_example.json
-              id_schema_json_example: !include ./examples/id_enrollmentcoc_json_example.json
-          /{enrollmentcocid}:
+            member:
+              schema: enrollment
+              schema_id: enrollment_id
+              schema_id_example: !include ./examples/enrollment_id_example.json
+              schema_example: !include ./examples/enrollment_example.json
+          /enrollment_cocs:
             type:
-              member:
-                schema_json: enrollmentcoc_json
-                schema_id_json: enrollmentcoc_id_json
-                schema_id_json_example: !include ./examples/EnrollmentCoC_id_json_example.json
-                schema_json_example: !include ./examples/EnrollmentCoC_json_example.json
+              collection:
+                schema_id: enrollment_coc_id
+                schema: enrollment_coc
+                schema_ids: enrollment_cocs_ids
+                schema_ids_example: !include ./examples/enrollment_cocs_ids_example.json
+                schema_example: !include ./examples/enrollment_coc_example.json
+                schema_id_example: !include ./examples/enrollment_coc_id_example.json
+            /{enrollment_cocid}:
+              type:
+                member:
+                  schema: enrollment_coc
+                  schema_id: enrollment_coc_id
+                  schema_id_example: !include ./examples/enrollment_coc_id_example.json
+                  schema_example: !include ./examples/enrollment_coc_example.json
           /educations:
             type:
               collection:
-                id_schema_json: id_education_json
-                schema_json: education_json
-                schema_ids_json: education_ids_json
-                schema_ids_json_example: !include ./examples/Education_ids_json_example.json
-                schema_json_example: !include ./examples/Education_json_example.json
-                id_schema_json_example: !include ./examples/id_education_json_example.json
-            '/{educationid}':
+                schema: education
+                schema_ids: educations_ids
+                schema_ids_example: !include ./examples/educations_ids_example.json
+                schema_example: !include ./examples/education_example.json
+                schema_id_example: !include ./examples/education_id_example.json
+            /{educationid}:
               type:
                 member:
-                  schema_json: education_json
-                  schema_id_json: education_id_json
-                  schema_id_json_example: !include ./examples/Education_id_json_example.json
-                  schema_json_example: !include ./examples/Education_json_example.json
+                  schema: education
+                  schema_id: education_id
+                  schema_id_example: !include ./examples/education_id_example.json
+                  schema_example: !include ./examples/education_example.json
           /contacts:
             type:
               collection:
-                id_schema_json: id_contact_json
-                schema_json: contact_json
-                schema_ids_json: contact_ids_json
-                schema_ids_json_example: !include ./examples/Contact_ids_json_example.json
-                schema_json_example: !include ./examples/Contact_json_example.json
-                id_schema_json_example: !include ./examples/id_contact_json_example.js
-            '/{contactid}':
-              displayName: '/{contactid}'
+                schema: contact
+                schema_ids: contacts_ids
+                schema_ids_example: !include ./examples/contacts_ids_example.json
+                schema_example: !include ./examples/contact_example.json
+                schema_id_example: !include ./examples/contact_id_example.json
+            /{contactid}:
               type:
                 member:
-                  schema_json: contact_json
-                  schema_id_json: contact_id_json
-                  schema_id_json_example: !include ./examples/Contact_id_json_example.json
-                  schema_json_example: !include ./examples/Contact_json_example.json
-              put:
-                description: Updates a specific contact specified by the URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              delete:
-                description: Deletes a specific contact specified by the URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              uriParameters:
-                contactid:
-                  example: ADBC1111211111114111111111D1111V
-                  type: string
-                  displayName: Contact Identifier
-              securedBy:
-                - oauth_2_0
+                  schema: contact
+                  schema_id: contact_id
+                  schema_id_example: !include ./examples/contact_id_example.json
+                  schema_example: !include ./examples/contact_example.json
           /dateofengagements:
-            displayName: /dateofengagements
-            description: 'Operations performed on the set of all HMIS dateofengagements within the system, and for adding a new dateofengagement to the set of dateofengagements '
             type:
               collection:
-                id_schema_json: id_dateofengagements_json
-                schema_json: dateofengagements_json
-                schema_ids_json: dateofengagements_ids_json
-                schema_json_example: !include ./examples/DateOfEngagements_json_example.json
-                schema_ids_json_example: !include ./examples/DateOfEngagements_ids_json_example.json
-                id_schema_json_example: !include ./examples/id_dateofengagements_json_example.json
-            get:
-              description: 'Searches for dateofengagement.  Returns a list of dateofengagement ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-              
-            post:
-              description: |
-                Add a dateofengagement
-              
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
-            securedBy:
-              - oauth_2_0
-            '/{dateofengagementsid}':
-              displayName: '/{dateofengagementsid}'
+                schema: date_of_engagement
+                schema_ids: date_of_engagements_ids
+                schema_example: !include ./examples/date_of_engagement_example.json
+                schema_ids_example: !include ./examples/date_of_engagements_ids_example.json
+                schema_id_example: !include ./examples/date_of_engagement_id_example.json
+            /{dateofengagementid}:
               type:
                 member:
-                  schema_json: dateofengagements_json
-                  schema_id_json: dateofengagements_id_json
-                  schema_id_json_example: !include ./examples/DateOfEngagements_id_json_example.json
-                  schema_json_example: !include ./examples/DateOfEngagements_json_example.json
-              get:
-                description: Gets a dateofengagement using a URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              put:
-                description: Updates a specific dateofengagement specified by the URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              delete:
-                description: Deletes a specific dateofengagement specified by the URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              uriParameters:
-                dateofengagementsid:
-                  example: ADBC1111211111114111111111D1111V
-                  type: string
-                  displayName: DateOfEngagements Identifier
-              securedBy:
-                - oauth_2_0
+                  schema: date_of_engagement
+                  schema_id: date_of_engagement_id
+                  schema_id_example: !include ./examples/date_of_engagement_id_example.json
+                  schema_example: !include ./examples/date_of_engagement_example.json
           /disabilities:
-            displayName: /disabilities
-            description: 'Operations performed on the set of all HMIS disabilities within the system, and for adding a new disability to the set of disabilities '
             type:
               collection:
-                id_schema_json: id_disabilities_json
-                schema_json: disabilities_json
-                schema_ids_json: disabilities_ids_json
-                schema_json_example: !include ./examples/Disabilities_json_example.json
-                schema_ids_json_example: !include ./examples/Disabilities_ids_json_example.json
-                id_schema_json_example: !include ./examples/id_disabilities_json_example.json
-            get:
-              description: 'Searches for disability.  Returns a list of disability ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-              
-            post:
-              description: |
-                Add a disability
-              
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
-            securedBy:
-              - oauth_2_0
-            '/{disabilitiesid}':
-              displayName: '/{disabilitiesid}'
+                schema: disability
+                schema_ids: disabilities_ids
+                schema_example: !include ./examples/disability_example.json
+                schema_ids_example: !include ./examples/disabilities_ids_example.json
+                schema_id_example: !include ./examples/disability_id_example.json
+            /{disabilityid}:
               type:
                 member:
-                  schema_json: disabilities_json
-                  schema_id_json: disabilities_id_json
-                  schema_json_example: !include ./examples/Disabilities_json_example.json
-                  schema_id_json_example: !include ./examples/Disabilities_id_json_example.json
-              get:
-                description: Gets a disability using a URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              put:
-                description: Updates a specific disability specified by the URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              delete:
-                description: Deletes a specific disability specified by the URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              uriParameters:
-                disabilitiesid:
-                  example: ADBC1111211111114111111111D1111V
-                  type: string
-                  displayName: Disabilities Identifier
-              securedBy:
-                - oauth_2_0
+                  schema: disability
+                  schema_id: disability_id
+                  schema_example: !include ./examples/disability_example.json
+                  schema_id_example: !include ./examples/disability_id_example.json
           /domesticviolences:
-            displayName: /domesticviolences
-            description: 'Operations performed on the set of all HMIS domesticviolences within the system, and for adding a new domesticviolence to the set of domesticviolences '
             type:
               collection:
-                id_schema_json: id_domesticviolences_json
-                schema_json: domesticviolence_json
-                schema_ids_json: domesticviolence_ids_json
-                schema_json_example: !include ./examples/DomesticViolence_json_example.json
-                schema_ids_json_example: !include ./examples/DomesticViolence_ids_json_example.json
-                id_schema_json_example: !include ./examples/id_domesticviolence_json_example.json
-            get:
-              description: 'Searches for domesticviolence.  Returns a list of domesticviolence ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-              
-            post:
-              description: |
-                Add a domesticviolence
-              
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
-            securedBy:
-              - oauth_2_0
-            '/{domesticviolenceid}':
-              displayName: '/{domesticviolenceid}'
+                schema: domestic_violence
+                schema_ids: domestic_violences_ids
+                schema_example: !include ./examples/domestic_violence_example.json
+                schema_ids_example: !include ./examples/domestic_violences_ids_example.json
+                schema_id_example: !include ./examples/domestic_violence_id_example.json
+            /{domesticviolenceid}:
               type:
                 member:
-                  schema_json: domesticviolence_json
-                  schema_id_json: domesticviolence_id_json
-                  schema_json_example: !include ./examples/DomesticViolence_json_example.json
-                  schema_id_json_example: !include ./examples/DomesticViolence_id_json_example.json
-              get:
-                description: Gets a domesticviolence using a URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              put:
-                description: Updates a specific domesticviolence specified by the URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              delete:
-                description: Deletes a specific domesticviolence specified by the URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              uriParameters:
-                domesticviolenceid:
-                  example: ADBC1111211111114111111111D1111V
-                  type: string
-                  displayName: DomesticViolence Identifier
-              securedBy:
-                - oauth_2_0
+                  schema: domestic_violence
+                  schema_id: domestic_violence_id
+                  schema_example: !include ./examples/domestic_violence_example.json
+                  schema_id_example: !include ./examples/domestic_violence_id_example.json
           /employments:
-            displayName: /employments
-            description: 'Operations performed on the set of all HMIS employments within the system, and for adding a new employment to the set of employments '
             type:
               collection:
-                id_schema_json: id_employments_json
-                schema_json: employments_json
-                schema_ids_json: employments_ids_json
-                schema_json_example: !include ./examples/Employments_json_example.json
-                schema_ids_json_example: !include ./examples/Employments_ids_json_example.json
-                id_schema_json_example: !include ./examples/id_employments_json_example.json
-            get:
-              description: 'Searches for employment.  Returns a list of employment ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-              
-            post:
-              description: |
-                Add a employment
-              
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
-            securedBy:
-              - oauth_2_0
-            '/{employmentsid}':
-              displayName: '/{employmentsid}'
+                schema: employment
+                schema_ids: employments_ids
+                schema_example: !include ./examples/employment_example.json
+                schema_ids_example: !include ./examples/employments_ids_example.json
+                schema_id_example: !include ./examples/employment_id_example.json
+            /{employmentid}:
               type:
                 member:
-                  schema_json: employments_json
-                  schema_id_json: employment_id_json
-                  schema_id_json_example: !include ./examples/Employment_id_json_example.json
-                  schema_json_example: !include ./examples/Employments_json_example.json
-              get:
-                description: Gets a employment using a URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              put:
-                description: Updates a specific employment specified by the URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              delete:
-                description: Deletes a specific employment specified by the URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              uriParameters:
-                employmentsid:
-                  example: ADBC1111211111114111111111D1111V
-                  type: string
-                  displayName: Employments Identifier
-              securedBy:
-                - oauth_2_0
+                  schema: employment
+                  schema_id: employment_id
+                  schema_id_example: !include ./examples/employment_id_example.json
+                  schema_example: !include ./examples/employment_example.json
           /exits:
-            displayName: /exits
-            description: 'Operations performed on the set of all HMIS exits within the system, and for adding a new exit to the set of exits '
             type:
               collection:
-                id_schema_json: id_exits_json
-                schema_json: exit_json
-                schema_ids_json: exit_ids_json
-                schema_json_example: !include ./examples/Exit_json_example.json
-                schema_ids_json_example: !include ./examples/Exit_ids_json_example.json
-                id_schema_json_example: !include ./examples/id_exits_json_example.json
-            get:
-              description: 'Searches for exit.  Returns a list of exit ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-              
-            post:
-              description: |
-                Add a exit
-              
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
-            securedBy:
-              - oauth_2_0
-            '/{exitsid}':
-              displayName: '/{exitsid}'
+                schema: exit
+                schema_ids: exits_ids
+                schema_example: !include ./examples/exit_example.json
+                schema_ids_example: !include ./examples/exits_ids_example.json
+                schema_id_example: !include ./examples/exit_id_example.json
+            /{exitid}:
               type:
                 member:
-                  schema_json: exit_json
-                  schema_id_json: exit_id_json
-                  schema_id_json_example: !include ./examples/Exit_id_json_example.json
-                  schema_json_example: !include ./examples/Exit_json_example.json
-              get:
-                description: Gets a exit using a URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              put:
-                description: Updates a specific exit specified by the URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              delete:
-                description: Deletes a specific exit specified by the URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              uriParameters:
-                exitsid:
-                  example: ADBC1111211111114111111111D1111V
-                  type: string
-                  displayName: Exits Identifier
-              securedBy:
-                - oauth_2_0
-              /exithousingassesments:
-                displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitsid}/exithousingassesments'
-                description: 'Operations performed on the set of all HMIS exithousingassesments within the system, and for adding a new exithousingassesment to the set of exithousingassesments '
+                  schema: exit
+                  schema_id: exit_id
+                  schema_id_example: !include ./examples/exit_id_example.json
+                  schema_example: !include ./examples/exit_example.json
+              /exithousingassessments:
                 type:
                   collection:
-                    id_schema_json: id_exithousingassesment_json
-                    schema_json: exithosingassessments_json
-                    schema_ids_json: exithosingassessments_ids_json
-                    schema_json_example: !include ./examples/ExitHousingAssesments_json_example.json
-                    schema_ids_json_example: !include ./examples/ExitHousingAssesments_ids_json_example.json
-                    id_schema_json_example: !include ./examples/id_exithousingassesment_json_example.json
-                get:
-                  description: 'Searches for exithousingassesment.  Returns a list of exithousingassesment ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-                  responses:
-                    '400':
-                      description: Bad Request – The request was invalid or cannot be served.
-                    '403':
-                      description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                    '404':
-                      description: Not found – There is no resource behind the URI.
-                    '500':
-                      description: 500 – Internal Server Error
-                  securedBy:
-                    - oauth_2_0
-                  protocols:
-                    - HTTPS
-                post:
-                  description: |
-                    Add a exithousingassesment
-                  responses:
-                    '400':
-                      description: Bad Request – The request was invalid or cannot be served.
-                    '401':
-                      description: Unauthorized – The request requires user authentication.
-                    '403':
-                      description: 'Forbidden – The server understood the request, but is refusing it or access is not allowed.'
-                    '404':
-                      description: Not found – There is no resource behind the URI.
-                    '422':
-                      description: Unprocessable Entity - Request body is incorrect.
-                    '500':
-                      description: 500 – Internal Server Error.
-                  securedBy:
-                    - oauth_2_0
-                  protocols:
-                    - HTTPS
-                securedBy:
-                  - oauth_2_0
-                '/{exithousingassesmentid}':
-                  displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitsid}/exithousingassesments/{exithousingassesmentid}'
+                    schema: exit_housing_assessment
+                    schema_ids: exit_housing_assessments_ids
+                    schema_example: !include ./examples/exit_housing_assessment_example.json
+                    schema_ids_example: !include ./examples/exit_housing_assessments_ids_example.json
+                    schema_id_example: !include ./examples/exit_housing_assessment_id_example.json
+                /{exithousingassessmentid}:
                   type:
                     member:
-                      schema_json: exithosingassessments_json
-                      schema_id_json: exithosingassessments_id_json
-                      schema_json_example: !include ./examples/ExitHousingAssesments_json_example.json
-                      schema_id_json_example: !include ./examples/ExitHousingAssesments_id_json_example.json
-                  get:
-                    description: Gets a exithousingassesment using a URI resource parameter/ID.
-                    responses:
-                      '400':
-                        description: Bad Request – The request was invalid or cannot be served.
-                      '401':
-                        description: Unauthorized – The request requires an user authentication.
-                      '403':
-                        description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                      '404':
-                        description: Not found – There is no resource behind the URI.
-                      '500':
-                        description: Internal Server Error
-                    securedBy:
-                      - oauth_2_0
-                    protocols:
-                      - HTTPS
-                  put:
-                    description: Updates a specific exithousingassesment specified by the URI resource parameter/ID.
-                    responses:
-                      '200':
-                        description: OK – Everything is working.
-                      '304':
-                        description: Not Modified – The client can use cached data.
-                      '400':
-                        description: Bad Request – The request was invalid or cannot be served.
-                      '401':
-                        description: Unauthorized – The request requires a user.
-                      '403':
-                        description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                      '404':
-                        description: Not found – There is no resource behind the URI.
-                      '500':
-                        description: Internal Server Error.
-                    securedBy:
-                      - oauth_2_0
-                    protocols:
-                      - HTTPS
-                  delete:
-                    description: Deletes a specific exithousingassesment specified by the URI resource parameter/ID.
-                    responses:
-                      '204':
-                        description: OK – The resource was successfully deleted.
-                      '400':
-                        description: Bad Request – The request was invalid or cannot be served.
-                      '401':
-                        description: Unauthorized – The request requires user authentication.
-                      '403':
-                        description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                      '404':
-                        description: Not found – There is no resource behind the URI.
-                      '500':
-                        description: Internal Server Error.
-                    securedBy:
-                      - oauth_2_0
-                    protocols:
-                      - HTTPS
-                  uriParameters:
-                    exithousingassesmentid:
-                      example: ADBC1111211111114111111111D1111V
-                      type: string
-                      displayName: ExitHousingAssesments Identifier
-                  securedBy:
-                    - oauth_2_0
-              /housingassesmentdispositions:
-                displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitsid}/housingassesmentdispositions'
-                description: 'Operations performed on the set of all HMIS housingassesmentdispositions within the system, and for adding a new housingassesmentdisposition to the set of housingassesmentdispositions '
+                      schema: exit_housing_assessment
+                      schema_id: exit_housing_assessment_id
+                      schema_example: !include ./examples/exit_housing_assessment_example.json
+                      schema_id_example: !include ./examples/exit_housing_assessment_id_example.json
+              /housingassessmentdispositions:
                 type:
                   collection:
-                    id_schema_json: id_housingassesmentdispositions_json
-                    schema_json: housingassesmentdispositions_json
-                    schema_ids_json: housingassesmentdispositions_ids_json
-                    schema_json_example: !include ./examples/HousingAssesmentDispositions_json_example.json
-                    schema_ids_json_example: !include ./examples/HousingAssesmentDispositions_ids_json_example.json
-                    id_schema_json_example: !include ./examples/id_HousingAssesmentDispositions_json_example.json
-                get:
-                  description: 'Searches for housingassesmentdisposition.  Returns a list of housingassesmentdisposition ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-                  responses:
-                    '400':
-                      description: Bad Request – The request was invalid or cannot be served.
-                    '403':
-                      description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                    '404':
-                      description: Not found – There is no resource behind the URI.
-                    '500':
-                      description: 500 – Internal Server Error
-                  securedBy:
-                    - oauth_2_0
-                  protocols:
-                    - HTTPS
-                post:
-                  description: |
-                    Add a housingassesmentdisposition
-                  responses:
-                    '400':
-                      description: Bad Request – The request was invalid or cannot be served.
-                    '401':
-                      description: Unauthorized – The request requires user authentication.
-                    '403':
-                      description: 'Forbidden – The server understood the request, but is refusing it or access is not allowed.'
-                    '404':
-                      description: Not found – There is no resource behind the URI.
-                    '422':
-                      description: Unprocessable Entity - Request body is incorrect.
-                    '500':
-                      description: 500 – Internal Server Error.
-                  securedBy:
-                    - oauth_2_0
-                  protocols:
-                    - HTTPS
-                securedBy:
-                  - oauth_2_0
-                '/{housingassesmentdispositionid}':
-                  displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitsid}/housingassesmentdispositions/{housingassesmentdispositionid}'
+                    schema: housing_assessment_disposition
+                    schema_ids: housing_assessment_dispositions_ids
+                    schema_example: !include ./examples/housing_assessment_disposition_example.json
+                    schema_ids_example: !include ./examples/housing_assesment_dispositions_ids_example.json
+                    schema_id_example: !include ./examples/housing_assessment_disposition_id_example.json
+                /{housingassessmentdispositionid}:
                   type:
                     member:
-                      schema_json: housingassesmentdispositions_json
-                      schema_id_json: housingassesmentdispositions_id_json
-                      schema_json_example: !include ./examples/HousingAssesmentDispositions_json_example.json
-                      schema_id_json_example: !include ./examples/HousingAssesmentDispositions_id_json_example.json
-                  get:
-                    description: Gets a housingassesmentdisposition using a URI resource parameter/ID.
-                    responses:
-                      '400':
-                        description: Bad Request – The request was invalid or cannot be served.
-                      '401':
-                        description: Unauthorized – The request requires an user authentication.
-                      '403':
-                        description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                      '404':
-                        description: Not found – There is no resource behind the URI.
-                      '500':
-                        description: Internal Server Error
-                    securedBy:
-                      - oauth_2_0
-                    protocols:
-                      - HTTPS
-                  put:
-                    description: Updates a specific housingassesmentdisposition specified by the URI resource parameter/ID.
-                    responses:
-                      '200':
-                        description: OK – Everything is working.
-                      '304':
-                        description: Not Modified – The client can use cached data.
-                      '400':
-                        description: Bad Request – The request was invalid or cannot be served.
-                      '401':
-                        description: Unauthorized – The request requires a user.
-                      '403':
-                        description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                      '404':
-                        description: Not found – There is no resource behind the URI.
-                      '500':
-                        description: Internal Server Error.
-                    securedBy:
-                      - oauth_2_0
-                    protocols:
-                      - HTTPS
-                  delete:
-                    description: Deletes a specific housingassesmentdisposition specified by the URI resource parameter/ID.
-                    responses:
-                      '204':
-                        description: OK – The resource was successfully deleted.
-                      '400':
-                        description: Bad Request – The request was invalid or cannot be served.
-                      '401':
-                        description: Unauthorized – The request requires user authentication.
-                      '403':
-                        description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                      '404':
-                        description: Not found – There is no resource behind the URI.
-                      '500':
-                        description: Internal Server Error.
-                    securedBy:
-                      - oauth_2_0
-                    protocols:
-                      - HTTPS
-                  uriParameters:
-                    housingassesmentdispositionid:
-                      example: ADBC1111211111114111111111D1111V
-                      type: string
-                      displayName: HousingAssesmentDisposition Identifier
-                  securedBy:
-                    - oauth_2_0
-            '/{exitid}':
+                      schema: housing_assessment_disposition
+                      schema_id: housing_assessment_disposition_id
+                      schema_example: !include ./examples/housing_assessment_disposition_example.json
+                      schema_id_example: !include ./examples/housing_assessment_disposition_id_example.json
               /exitpaths:
-                displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exitpaths'
-                description: 'Operations performed on the set of all HMIS exitpaths within the system, and for adding a new exitpath to the set of exitpaths '
                 type:
                   collection:
-                    id_schema_json: id_exitpath_json
-                    schema_json: exitpath_json
-                    schema_ids_json: exitpath_ids_json
-                    schema_json_example: !include ./examples/ExitPath_json_example.json
-                    schema_ids_json_example: !include ./examples/ExitPath_ids_json_example.json
-                    id_schema_json_example: !include ./examples/id_exitpath_json_example.json
-                get:
-                  description: 'Searches for exitpath.  Returns a list of exitpath ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-                  responses:
-                    '400':
-                      description: Bad Request – The request was invalid or cannot be served.
-                    '403':
-                      description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                    '404':
-                      description: Not found – There is no resource behind the URI.
-                    '500':
-                      description: 500 – Internal Server Error
-                  securedBy:
-                    - oauth_2_0
-                  protocols:
-                    - HTTPS
-                post:
-                  description: |
-                    Add a exitpath
-                  responses:
-                    '400':
-                      description: Bad Request – The request was invalid or cannot be served.
-                    '401':
-                      description: Unauthorized – The request requires user authentication.
-                    '403':
-                      description: 'Forbidden – The server understood the request, but is refusing it or access is not allowed.'
-                    '404':
-                      description: Not found – There is no resource behind the URI.
-                    '422':
-                      description: Unprocessable Entity - Request body is incorrect.
-                    '500':
-                      description: 500 – Internal Server Error.
-                  securedBy:
-                    - oauth_2_0
-                  protocols:
-                    - HTTPS
-                securedBy:
-                  - oauth_2_0
-                '/{exitpathid}':
-                  displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exitpaths/{exitpathid}'
+                    schema: exit_path
+                    schema_ids: exit_paths_ids
+                    schema_example: !include ./examples/exit_path_example.json
+                    schema_ids_example: !include ./examples/exit_paths_ids_example.json
+                    schema_id_example: !include ./examples/exit_path_id_example.json
+                /{exitpathid}:
                   type:
                     member:
-                      schema_json: exitpath_json
-                      schema_id_json: exitpath_id_json
-                      schema_json_example: !include ./examples/ExitPath_json_example.json
-                      schema_id_json_example: !include ./examples/ExitPath_id_json_example.json
-                  get:
-                    description: Gets a exitpath using a URI resource parameter/ID.
-                    responses:
-                      '400':
-                        description: Bad Request – The request was invalid or cannot be served.
-                      '401':
-                        description: Unauthorized – The request requires an user authentication.
-                      '403':
-                        description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                      '404':
-                        description: Not found – There is no resource behind the URI.
-                      '500':
-                        description: Internal Server Error
-                    securedBy:
-                      - oauth_2_0
-                    protocols:
-                      - HTTPS
-                  put:
-                    description: Updates a specific exitpath specified by the URI resource parameter/ID.
-                    responses:
-                      '200':
-                        description: OK – Everything is working.
-                      '304':
-                        description: Not Modified – The client can use cached data.
-                      '400':
-                        description: Bad Request – The request was invalid or cannot be served.
-                      '401':
-                        description: Unauthorized – The request requires a user.
-                      '403':
-                        description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                      '404':
-                        description: Not found – There is no resource behind the URI.
-                      '500':
-                        description: Internal Server Error.
-                    securedBy:
-                      - oauth_2_0
-                    protocols:
-                      - HTTPS
-                  delete:
-                    description: Deletes a specific exitpath specified by the URI resource parameter/ID.
-                    responses:
-                      '204':
-                        description: OK – The resource was successfully deleted.
-                      '400':
-                        description: Bad Request – The request was invalid or cannot be served.
-                      '401':
-                        description: Unauthorized – The request requires user authentication.
-                      '403':
-                        description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                      '404':
-                        description: Not found – There is no resource behind the URI.
-                      '500':
-                        description: Internal Server Error.
-                    securedBy:
-                      - oauth_2_0
-                    protocols:
-                      - HTTPS
-                  uriParameters:
-                    exitpathid:
-                      example: ADBC1111211111114111111111D1111V
-                      type: string
-                      displayName: ExitPath Identifier
-                  securedBy:
-                    - oauth_2_0
-              uriParameters:
-                exitid:
-                  type: string
-                  displayName: exitid
+                      schema: exit_path
+                      schema_id: exit_path_id
+                      schema_example: !include ./examples/exit_path_example.json
+                      schema_id_example: !include ./examples/exit_path_id_example.json
               /exitrhys:
-                displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exitrhys'
-                description: 'Operations performed on the set of all HMIS exitrhys within the system, and for adding a new exitrhy to the set of exitrhys '
                 type:
                   collection:
-                    id_schema_json: id_exitrhy_json
-                    schema_json: exitrhy_json
-                    schema_ids_json: exitrhy_ids_json
-                    schema_json_example: !include ./examples/Exitrhy_json_example.json
-                    schema_ids_json_example: !include ./examples/Exitrhy_ids_json_example.json
-                    id_schema_json_example: !include ./examples/id_exitrhy_json_example.json
-                get:
-                  description: 'Searches for exitrhy.  Returns a list of exitrhy ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-                  responses:
-                    '400':
-                      description: Bad Request – The request was invalid or cannot be served.
-                    '403':
-                      description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                    '404':
-                      description: Not found – There is no resource behind the URI.
-                    '500':
-                      description: 500 – Internal Server Error
-                  securedBy:
-                    - oauth_2_0
-                  protocols:
-                    - HTTPS
-                post:
-                  description: |
-                    Add a exitrhy
-                  responses:
-                    '400':
-                      description: Bad Request – The request was invalid or cannot be served.
-                    '401':
-                      description: Unauthorized – The request requires user authentication.
-                    '403':
-                      description: 'Forbidden – The server understood the request, but is refusing it or access is not allowed.'
-                    '404':
-                      description: Not found – There is no resource behind the URI.
-                    '422':
-                      description: Unprocessable Entity - Request body is incorrect.
-                    '500':
-                      description: 500 – Internal Server Error.
-                  securedBy:
-                    - oauth_2_0
-                  protocols:
-                    - HTTPS
-                securedBy:
-                  - oauth_2_0
-                '/{exitrhyid}':
-                  displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exitrhys/{exitrhyid}'
+                    schema: exit_rhy
+                    schema_ids: exit_rhys_ids
+                    schema_example: !include ./examples/exit_rhy_example.json
+                    schema_ids_example: !include ./examples/exit_rhys_ids_example.json
+                    schema_id_example: !include ./examples/exit_rhy_id_example.json
+                /{exitrhyid}:
                   type:
                     member:
-                      schema_json: exitrhy_json
-                      schema_id_json: exitrhy_id_json
-                      schema_json_example: !include ./examples/Exitrhy_json_example.json
-                      schema_id_json_example: !include ./examples/Exitrhy_id_json_example.json
-                  get:
-                    description: Gets a exitrhy using a URI resource parameter/ID.
-                    responses:
-                      '400':
-                        description: Bad Request – The request was invalid or cannot be served.
-                      '401':
-                        description: Unauthorized – The request requires an user authentication.
-                      '403':
-                        description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                      '404':
-                        description: Not found – There is no resource behind the URI.
-                      '500':
-                        description: Internal Server Error
-                    securedBy:
-                      - oauth_2_0
-                    protocols:
-                      - HTTPS
-                  put:
-                    description: Updates a specific exitrhy specified by the URI resource parameter/ID.
-                    responses:
-                      '200':
-                        description: OK – Everything is working.
-                      '304':
-                        description: Not Modified – The client can use cached data.
-                      '400':
-                        description: Bad Request – The request was invalid or cannot be served.
-                      '401':
-                        description: Unauthorized – The request requires a user.
-                      '403':
-                        description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                      '404':
-                        description: Not found – There is no resource behind the URI.
-                      '500':
-                        description: Internal Server Error.
-                    securedBy:
-                      - oauth_2_0
-                    protocols:
-                      - HTTPS
-                  delete:
-                    description: Deletes a specific exitrhy specified by the URI resource parameter/ID.
-                    responses:
-                      '204':
-                        description: OK – The resource was successfully deleted.
-                      '400':
-                        description: Bad Request – The request was invalid or cannot be served.
-                      '401':
-                        description: Unauthorized – The request requires user authentication.
-                      '403':
-                        description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-                      '404':
-                        description: Not found – There is no resource behind the URI.
-                      '500':
-                        description: Internal Server Error.
-                    securedBy:
-                      - oauth_2_0
-                    protocols:
-                      - HTTPS
-                  uriParameters:
-                    exitrhyid:
-                      example: ADBC1111211111114111111111D1111V
-                      type: string
-                      displayName: Exitrhy Identifier
-                  securedBy:
-                    - oauth_2_0
-          /heathinsurances:
-            displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/heathinsurances'
-            description: 'Operations performed on the set of all HMIS heathinsurances within the system, and for adding a new heathinsurance to the set of heathinsurances '
+                      schema: exit_rhy
+                      schema_id: exit_rhy_id
+                      schema_example: !include ./examples/exit_rhy_example.json
+                      schema_id_example: !include ./examples/exit_rhy_id_example.json
+          /healthinsurances:
             type:
               collection:
-                id_schema_json: id_healthinsurance_json
-                schema_json: healthinsurance_json
-                schema_ids_json: healthinsurances_ids_json
-                schema_json_example: !include ./examples/HealthInsurance_json_example.json
-                schema_ids_json_example: !include ./examples/HealthInsurances_ids_json_example.json
-                id_schema_json_example: !include ./examples/id_healthinsurance_json_example.json
-            get:
-              description: 'Searches for heathinsurance.  Returns a list of heathinsurance ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-              
-            post:
-              description: |
-                Add a heathinsurance
-              
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
-            securedBy:
-              - oauth_2_0
-            '/{healthinsuranceid}':
-              displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/heathinsurances/{healthinsuranceid}'
+                schema: health_insurance
+                schema_ids: health_insurances_ids
+                schema_example: !include ./examples/HealthInsurance_example.json
+                schema_ids_example: !include ./examples/HealthInsurances_ids_example.json
+                schema_id_example: !include ./examples/id_healthinsurance_example.json
+            /{healthinsuranceid}:
               type:
                 member:
-                  schema_json: healthinsurance_json
-                  schema_id_json: healthinsurance_id_json
-                  schema_json_example: !include ./examples/HealthInsurance_json_example.json
-                  schema_id_json_example: !include ./examples/HealthInsurance_id_json_example.json
-              get:
-                description: Gets a heathinsurance using a URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              put:
-                description: Updates a specific heathinsurance specified by the URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              delete:
-                description: Deletes a specific heathinsurance specified by the URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              uriParameters:
-                healthinsuranceid:
-                  example: ADBC1111211111114111111111D1111V
-                  type: string
-                  displayName: HealthInsurance Identifier
-              securedBy:
-                - oauth_2_0
+                  schema: healthinsurance
+                  schema_id: healthinsurance_id
+                  schema_example: !include ./examples/HealthInsurance_example.json
+                  schema_id_example: !include ./examples/HealthInsurance_id_example.json
           /healthstatuses:
-            displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/healthstatuses'
-            description: 'Operations performed on the set of all HMIS healthstatuses within the system, and for adding a new healthstatus to the set of healthstatuses '
             type:
               collection:
-                id_schema_json: id_healthstatus_json
-                schema_json: healthstatus_json
-                schema_ids_json: healthstatus_ids_json
-                schema_json_example: !include ./examples/HealthStatus_json_example.json
-                schema_ids_json_example: !include ./examples/HealthStatus_ids_json_example.json
-                id_schema_json_example: !include ./examples/id_healthstatus_json_example.json
-            get:
-              description: 'Searches for healthstatus.  Returns a list of healthstatus ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-              
-            post:
-              description: |
-                Add a healthstatus
-              
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
-            securedBy:
-              - oauth_2_0
-            '/{healthstatusid}':
-              displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/healthstatuses/{healthstatusid}'
+                schema_id: id_healthstatus
+                schema: healthstatus
+                schema_ids: healthstatus_ids
+                schema_example: !include ./examples/HealthStatus_example.json
+                schema_ids_example: !include ./examples/HealthStatus_ids_example.json
+                schema_id_example: !include ./examples/id_healthstatus_example.json
+            /{healthstatusid}:
               type:
                 member:
-                  schema_json: healthstatus_json
-                  schema_id_json: healthstatus_id_json
-                  schema_json_example: !include ./examples/HealthStatus_json_example.json
-                  schema_id_json_example: !include ./examples/HealthStatus_id_json_example.json
-              get:
-                description: Gets a healthstatus using a URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              put:
-                description: Updates a specific healthstatus specified by the URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              delete:
-                description: Deletes a specific healthstatus specified by the URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              uriParameters:
-                healthstatusid:
-                  example: ADBC1111211111114111111111D1111V
-                  type: string
-                  displayName: HealthStatus Identifier
-              securedBy:
-                - oauth_2_0
+                  schema: healthstatus
+                  schema_id: healthstatus_id
+                  schema_example: !include ./examples/HealthStatus_example.json
+                  schema_id_example: !include ./examples/HealthStatus_id_example.json
           /incomeandsources:
-            displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/incomeandsources'
-            description: 'Operations performed on the set of all HMIS incomeandsources within the system, and for adding a new incomeandsource to the set of incomeandsources '
             type:
               collection:
-                id_schema_json: id_incomeandsources_json
-                schema_json: incomeandsource_json
-                schema_ids_json: incomeandsources_ids_json
-                schema_json_example: !include ./examples/IncomeAndSource_json_example.json
-                schema_ids_json_example: !include ./examples/IncomeAndSources_ids_json_example.json
-                id_schema_json_example: !include ./examples/id_incomeandsource_json_example.json
-            get:
-              description: 'Searches for incomeandsource.  Returns a list of incomeandsource ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-              
-            post:
-              description: |
-                Add a incomeandsource
-              
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
-            securedBy:
-              - oauth_2_0
-            '/{incomeandsourcesid}':
-              displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/incomeandsources/{incomeandsourcesid}'
+                schema_id: id_incomeandsources
+                schema: incomeandsource
+                schema_ids: incomeandsources_ids
+                schema_example: !include ./examples/IncomeAndSource_example.json
+                schema_ids_example: !include ./examples/IncomeAndSources_ids_example.json
+                schema_id_example: !include ./examples/id_incomeandsource_example.json
+            /{incomeandsourcesid}:
               type:
                 member:
-                  schema_json: incomeandsource_json
-                  schema_id_json: incomeandsource_id_json
-                  schema_json_example: !include ./examples/IncomeAndSource_json_example.json
-                  schema_id_json_example: !include ./examples/IncomeAndSource_id_json_example.json
-              get:
-                description: Gets a incomeandsource using a URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              put:
-                description: Updates a specific incomeandsource specified by the URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              delete:
-                description: Deletes a specific incomeandsource specified by the URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              uriParameters:
-                incomeandsourcesid:
-                  example: ADBC1111211111114111111111D1111V
-                  type: string
-                  displayName: HealthStatus Identifier
-              securedBy:
-                - oauth_2_0
+                  schema: incomeandsource
+                  schema_id: incomeandsource_id
+                  schema_example: !include ./examples/IncomeAndSource_example.json
+                  schema_id_example: !include ./examples/IncomeAndSource_id_example.json
           /medicalassistences:
-            displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/medicalassistences'
-            description: 'Operations performed on the set of all HMIS medicalassistences within the system, and for adding a new medicalassistence to the set of medicalassistences '
             type:
               collection:
-                id_schema_json: id_medicalassistances_json
-                schema_json: medicalassistance_json
-                schema_ids_json: medicalassistances_ids_json
-                schema_json_example: !include ./examples/MedicalAssistance_json_example.json
-                schema_ids_json_example: !include ./examples/MedicalAssistances_ids_json_example.json
-                id_schema_json_example: !include ./examples/id_medicalassistance_json_example.json
-            get:
-              description: 'Searches for medicalassistence.  Returns a list of medicalassistence ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-              
-            post:
-              description: |
-                Add a medicalassistence
-              
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
-            securedBy:
-              - oauth_2_0
-            '/{medicalassistancesid}':
-              displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/medicalassistences/{medicalassistancesid}'
+                schema_id: id_medicalassistances
+                schema: medicalassistance
+                schema_ids: medicalassistances_ids
+                schema_example: !include ./examples/MedicalAssistance_example.json
+                schema_ids_example: !include ./examples/MedicalAssistances_ids_example.json
+                schema_id_example: !include ./examples/id_medicalassistance_example.json
+            /{medicalassistancesid}:
               type:
                 member:
-                  schema_json: medicalassistance_json
-                  schema_id_json: medicalassistances_id_json
-                  schema_json_example: !include ./examples/MedicalAssistance_json_example.json
-                  schema_id_json_example: !include ./examples/MedicalAssistances_id_json_example.json
-              get:
-                description: Gets a medicalassistence using a URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              put:
-                description: Updates a specific medicalassistence specified by the URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              delete:
-                description: Deletes a specific medicalassistence specified by the URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              uriParameters:
-                medicalassistancesid:
-                  example: ADBC1111211111114111111111D1111V
-                  type: string
-                  displayName: MedicalAssistances Identifier
-              securedBy:
-                - oauth_2_0
+                  schema: medicalassistance
+                  schema_id: medicalassistances_id
+                  schema_example: !include ./examples/MedicalAssistance_example.json
+                  schema_id_example: !include ./examples/MedicalAssistances_id_example.json
           /noncashbenefits:
-            displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/noncashbenefits'
-            description: 'Operations performed on the set of all HMIS noncashbenefits within the system, and for adding a new noncashbenefit to the set of noncashbenefits '
             type:
               collection:
-                id_schema_json: id_noncashbenefits_json
-                schema_json: noncashbenefits_json
-                schema_ids_json: noncashbenefits_ids_json
-                schema_json_example: !include ./examples/NonCashBenefits_json_example.json
-                schema_ids_json_example: !include ./examples/NonCashBenefits_ids_json_example.json
-                id_schema_json_example: !include ./examples/id_noncashbenefits_json_example.json
-            get:
-              description: 'Searches for noncashbenefit.  Returns a list of noncashbenefit ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-              
-            post:
-              description: |
-                Add a noncashbenefit
-              
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
-            securedBy:
-              - oauth_2_0
-            '/{noncashbenefitsid}':
-              displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/noncashbenefits/{noncashbenefitsid}'
+                schema_id: id_noncashbenefits
+                schema: noncashbenefits
+                schema_ids: noncashbenefits_ids
+                schema_example: !include ./examples/NonCashBenefits_example.json
+                schema_ids_example: !include ./examples/NonCashBenefits_ids_example.json
+                schema_id_example: !include ./examples/id_noncashbenefits_example.json
+            /{noncashbenefitsid}:
               type:
                 member:
-                  schema_json: noncashbenefits_json
-                  schema_id_json: noncashbenefits_id_json
-                  schema_json_example: !include ./examples/NonCashBenefits_json_example.json
-                  schema_id_json_example: !include ./examples/NonCashBenefits_id_json_example.json
-              get:
-                description: Gets a noncashbenefit using a URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              put:
-                description: Updates a specific noncashbenefit specified by the URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              delete:
-                description: Deletes a specific noncashbenefit specified by the URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              uriParameters:
-                noncashbenefitsid:
-                  example: ADBC1111211111114111111111D1111V
-                  type: string
-                  displayName: NonCashBenefits Identifier
-              securedBy:
-                - oauth_2_0
+                  schema: noncashbenefits
+                  schema_id: noncashbenefits_id
+                  schema_example: !include ./examples/NonCashBenefits_example.json
+                  schema_id_example: !include ./examples/NonCashBenefits_id_example.json
           /residentialmoveindates:
-            displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/residentialmoveindates'
-            description: 'Operations performed on the set of all HMIS residentialmoveindates within the system, and for adding a new residentialmoveindate to the set of residentialmoveindates '
             type:
               collection:
-                id_schema_json: id_residentialmoveindate_json
-                schema_json: residentialmoveindate_json
-                schema_ids_json: residentialmoveindate_ids_json
-                schema_json_example: !include ./examples/ResidentialMoveInDate_json_example.json
-                schema_ids_json_example: !include ./examples/ResidentialMoveInDate_ids_json_example.json
-                id_schema_json_example: !include ./examples/id_residentialmoveindate_json_example.json
-            get:
-              description: 'Searches for residentialmoveindate.  Returns a list of residentialmoveindate ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-              
-            post:
-              description: |
-                Add a residentialmoveindate
-              
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
-            securedBy:
-              - oauth_2_0
-            '/{residentialmoveindatesid}':
-              displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/residentialmoveindates/{residentialmoveindatesid}'
+                schema_id: id_residentialmoveindate
+                schema: residentialmoveindate
+                schema_ids: residentialmoveindate_ids
+                schema_example: !include ./examples/ResidentialMoveInDate_example.json
+                schema_ids_example: !include ./examples/ResidentialMoveInDate_ids_example.json
+                schema_id_example: !include ./examples/id_residentialmoveindate_example.json
+            /{residentialmoveindatesid}:
               type:
                 member:
-                  schema_json: residentialmoveindate_json
-                  schema_id_json: residentialmoveindate_id_json
-                  schema_json_example: !include ./examples/ResidentialMoveInDate_json_example.json
-                  schema_id_json_example: !include ./examples/ResidentialMoveInDate_id_json_example.json
-              get:
-                description: Gets a residentialmoveindate using a URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              put:
-                description: Updates a specific residentialmoveindate specified by the URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              delete:
-                description: Deletes a specific residentialmoveindate specified by the URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              uriParameters:
-                residentialmoveindatesid:
-                  example: ADBC1111211111114111111111D1111V
-                  type: string
-                  displayName: ResidentialMoveInDate Identifier
-              securedBy:
-                - oauth_2_0
+                  schema: residentialmoveindate
+                  schema_id: residentialmoveindate_id
+                  schema_example: !include ./examples/ResidentialMoveInDate_example.json
+                  schema_id_example: !include ./examples/ResidentialMoveInDate_id_example.json
           /pathstatuses:
-            displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/pathstatuses'
-            description: 'Operations performed on the set of all HMIS pathstatuses within the system, and for adding a new pathstatus to the set of pathstatuses '
             type:
               collection:
-                id_schema_json: id_pathstatus_json
-                schema_json: pathstatus_json
-                schema_ids_json: pathstatus_ids_json
-                schema_json_example: !include ./examples/PathStatus_json_example.json
-                schema_ids_json_example: !include ./examples/PathStatus_ids_json_example.json
-                id_schema_json_example: !include ./examples/id_pathstatus_json_example.json
-            get:
-              description: 'Searches for pathstatus.  Returns a list of pathstatus ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-              
-            post:
-              description: |
-                Add a pathstatus
-              
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
-            securedBy:
-              - oauth_2_0
-            '/{pathstatusid}':
-              displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/pathstatuses/{pathstatusid}'
+                schema_id: id_pathstatus
+                schema: pathstatus
+                schema_ids: pathstatus_ids
+                schema_example: !include ./examples/PathStatus_example.json
+                schema_ids_example: !include ./examples/PathStatus_ids_example.json
+                schema_id_example: !include ./examples/id_pathstatus_example.json
+            /{pathstatusid}:
               type:
                 member:
-                  schema_json: pathstatus_json
-                  schema_id_json: pathstatus_id_json
-                  schema_json_example: !include ./examples/PathStatus_json_example.json
-                  schema_id_json_example: !include ./examples/PathStatus_id_json_example.json
-              get:
-                description: Gets a pathstatus using a URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              put:
-                description: Updates a specific pathstatus specified by the URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              delete:
-                description: Deletes a specific pathstatus specified by the URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              uriParameters:
-                pathstatusid:
-                  example: ADBC1111211111114111111111D1111V
-                  type: string
-                  displayName: PathStatus Identifier
-              securedBy:
-                - oauth_2_0
+                  schema: pathstatus
+                  schema_id: pathstatus_id
+                  schema_example: !include ./examples/PathStatus_example.json
+                  schema_id_example: !include ./examples/PathStatus_id_example.json
           /entryrhsps:
-            displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/entryrhsps'
-            description: 'Operations performed on the set of all HMIS entryrhsps within the system, and for adding a new entryrhsp to the set of entryrhsps '
             type:
               collection:
-                id_schema_json: id_entryrhsp_json
-                schema_json: entryrhsp_json
-                schema_ids_json: entryrhsp_ids_json
-                schema_json_example: !include ./examples/Entryrhsp_json_example.json
-                schema_ids_json_example: !include ./examples/Entryrhsp_ids_json_example.json
-                id_schema_json_example: !include ./examples/id_entryrhsp_json_example.json
-            get:
-              description: 'Searches for entryrhsp.  Returns a list of entryrhsp ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-              
-            post:
-              description: |
-                Add a entryrhsp
-              
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
-            securedBy:
-              - oauth_2_0
-            '/{entryrhspid}':
-              displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/entryrhsps/{entryrhspid}'
+                schema_id: id_entryrhsp
+                schema: entryrhsp
+                schema_ids: entryrhsp_ids
+                schema_example: !include ./examples/entryrhsp_example.json
+                schema_ids_example: !include ./examples/entryrhsp_ids_example.json
+                schema_id_example: !include ./examples/id_entryrhsp_example.json
+            /{entryrhspid}:
               type:
                 member:
-                  schema_json: entryrhsp_json
-                  schema_id_json: entryrhsp_id_json
-                  schema_json_example: !include ./examples/Entryrhsp_json_example.json
-                  schema_id_json_example: !include ./examples/Entryrhsp_id_json_example.json
-              get:
-                description: Gets a entryrhsp using a URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              put:
-                description: Updates a specific entryrhsp specified by the URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              delete:
-                description: Deletes a specific entryrhsp specified by the URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              uriParameters:
-                entryrhspid:
-                  example: ADBC1111211111114111111111D1111V
-                  type: string
-                  displayName: Entryrhsp Identifier
-              securedBy:
-                - oauth_2_0
+                  schema: entryrhsp
+                  schema_id: entryrhsp_id
+                  schema_example: !include ./examples/entryrhsp_example.json
+                  schema_id_example: !include ./examples/entryrhsp_id_example.json
           /entryrhys:
-            displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/entryrhys'
-            description: 'Operations performed on the set of all HMIS entryrhys within the system, and for adding a new entryrhy to the set of entryrhys '
             type:
               collection:
-                id_schema_json: id_entryrhy_json
-                schema_json: entryrhy_json
-                schema_ids_json: entryrhy_ids_json
-                schema_json_example: !include ./examples/Entryrhy_json_example.json
-                schema_ids_json_example: !include ./examples/Entryrhy_ids_json_example.json
-                id_schema_json_example: !include ./examples/id_entryrhy_json_example.json
-            get:
-              description: 'Searches for entryrhy.  Returns a list of entryrhy ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-              
-            post:
-              description: |
-                Add a entryrhy
-              
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
-            securedBy:
-              - oauth_2_0
-            '/{entryrhyid}':
-              displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/entryrhys/{entryrhyid}'
+                schema_id: id_entryrhy
+                schema: entryrhy
+                schema_ids: entryrhy_ids
+                schema_example: !include ./examples/entryrhy_example.json
+                schema_ids_example: !include ./examples/entryrhy_ids_example.json
+                schema_id_example: !include ./examples/id_entryrhy_example.json
+            /{entryrhyid}:
               type:
                 member:
-                  schema_json: entryrhy_json
-                  schema_id_json: entryrhy_id_json
-                  schema_json_example: !include ./examples/Entryrhy_json_example.json
-                  schema_id_json_example: !include ./examples/Entryrhy_id_json_example.json
-              get:
-                description: Gets a entryrhy using a URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              put:
-                description: Updates a specific entryrhy specified by the URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              delete:
-                description: Deletes a specific entryrhy specified by the URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              uriParameters:
-                entryrhyid:
-                  example: ADBC1111211111114111111111D1111V
-                  type: string
-                  displayName: Entryrhy Identifier
-              securedBy:
-                - oauth_2_0
+                  schema: entryrhy
+                  schema_id: entryrhy_id
+                  schema_example: !include ./examples/entryrhy_example.json
+                  schema_id_example: !include ./examples/entryrhy_id_example.json
           /entryssvfs:
-            displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/entryssvfs'
-            description: 'Operations performed on the set of all HMIS entryssvfs within the system, and for adding a new entryssvf to the set of entryssvfs '
             type:
               collection:
-                id_schema_json: id_entryssvf_json
-                schema_json: entryssvf_json
-                schema_ids_json: entryssvf_ids_json
-                schema_json_example: !include ./examples/Entryssvf_json_example.json
-                schema_ids_json_example: !include ./examples/Entryssvf_ids_json_example.json
-                id_schema_json_example: !include ./examples/id_entryssvf_json_example.json
-            get:
-              description: 'Searches for entryssvf.  Returns a list of entryssvf ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-              
-            post:
-              description: |
-                Add a entryssvf
-              
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
-            securedBy:
-              - oauth_2_0
-            '/{entryssvfid}':
-              displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/entryssvfs/{entryssvfid}'
+                schema_id: id_entryssvf
+                schema: entryssvf
+                schema_ids: entryssvf_ids
+                schema_example: !include ./examples/entryssvf_example.json
+                schema_ids_example: !include ./examples/entryssvf_ids_example.json
+                schema_id_example: !include ./examples/id_entryssvf_example.json
+            /{entryssvfid}:
               type:
                 member:
-                  schema_json: entryssvf_json
-                  schema_id_json: entryssvf_id_json
-                  schema_json_example: !include ./examples/Entryssvf_json_example.json
-                  schema_id_json_example: !include ./examples/Entryssvf_id_json_example.json
-              get:
-                description: Gets a entryssvf using a URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              put:
-                description: Updates a specific entryssvf specified by the URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              delete:
-                description: Deletes a specific entryssvf specified by the URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              uriParameters:
-                entryssvfid:
-                  example: ADBC1111211111114111111111D1111V
-                  type: string
-                  displayName: Entryssvf Identifier
-              securedBy:
-                - oauth_2_0
+                  schema: entryssvf
+                  schema_id: entryssvf_id
+                  schema_example: !include ./examples/entryssvf_example.json
+                  schema_id_example: !include ./examples/entryssvf_id_example.json
           /servicefareferrals:
-            displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/servicefareferrals'
-            description: 'Operations performed on the set of all HMIS servicefareferrals within the system, and for adding a new servicefareferral to the set of servicefareferrals '
             type:
               collection:
-                id_schema_json: id_servicefareferral_json
-                schema_json: servicefareferral_json
-                schema_ids_json: servicefareferrals_ids_json
-                schema_json_example: !include ./examples/ServiceFaReferral_json_example.json
-                schema_ids_json_example: !include ./examples/ServiceFaReferrals_ids_json_example.json
-                id_schema_json_example: !include ./examples/id_servicefareferral_json_example.json
-            get:
-              description: 'Searches for servicefareferral.  Returns a list of servicefareferral ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-              
-            post:
-              description: |
-                Add a servicefareferral
-              
-              securedBy:
-                - oauth_2_0
-              protocols:
-                - HTTPS
-            securedBy:
-              - oauth_2_0
-            '/{servicefareferralid}':
-              displayName: '/v2017/clients/{clientid}/enrollments/{enrollmentid}/servicefareferrals/{servicefareferralid}'
+                schema_id: id_servicefareferral
+                schema: servicefareferral
+                schema_ids: servicefareferrals_ids
+                schema_example: !include ./examples/ServiceFaReferral_example.json
+                schema_ids_example: !include ./examples/ServiceFaReferrals_ids_example.json
+                schema_id_example: !include ./examples/id_servicefareferral_example.json
+            /{servicefareferralid}:
               type:
                 member:
-                  schema_json: servicefareferral_json
-                  schema_id_json: servicefareferral_id_json
-                  schema_json_example: !include ./examples/ServiceFaReferral_json_example.json
-                  schema_id_json_example: !include ./examples/ServiceFaReferral_id_json_example.json
-              get:
-                description: Gets a servicefareferral using a URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              put:
-                description: Updates a specific servicefareferral specified by the URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              delete:
-                description: Deletes a specific servicefareferral specified by the URI resource parameter/ID.
-                
-                securedBy:
-                  - oauth_2_0
-                protocols:
-                  - HTTPS
-              uriParameters:
-                servicefareferralid:
-                  example: ADBC1111211111114111111111D1111V
-                  type: string
-                  displayName: ServiceFaReferral Identifier
-              securedBy:
-                - oauth_2_0
+                  schema: servicefareferral
+                  schema_id: servicefareferral_id
+                  schema_example: !include ./examples/ServiceFaReferral_example.json
+                  schema_id_example: !include ./examples/ServiceFaReferral_id_example.json
       /veteraninfos:
-        displayName: '/v2017/clients/{clientid}/veteraninfos'
-        description: 'Operations performed on the set of all HMIS veteraninfos within the system, and for adding a new veteraninfo to the set of veteraninfos '
         type:
           collection:
-            id_schema_json: id_veteraninfo_json
-            schema_json: veteraninfo_json
-            schema_ids_json: veteraninfo_ids_json
-            schema_json_example: !include ./examples/VeteranInfo_json_example.json
-            schema_ids_json_example: !include ./examples/VeteranInfo_ids_json_example.json
-            id_schema_json_example: !include ./examples/id_veteraninfo_json_example.json
-        get:
-          description: 'Searches for veteraninfo.  Returns a list of veteraninfo ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-          responses:
-            '400':
-              description: Bad Request – The request was invalid or cannot be served.
-            '403':
-              description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-            '404':
-              description: Not found – There is no resource behind the URI.
-            '500':
-              description: 500 – Internal Server Error
-          securedBy:
-            - oauth_2_0
-          protocols:
-            - HTTPS
-        post:
-          description: |
-            Add a veteraninfo
-          responses:
-            '400':
-              description: Bad Request – The request was invalid or cannot be served.
-            '401':
-              description: Unauthorized – The request requires user authentication.
-            '403':
-              description: 'Forbidden – The server understood the request, but is refusing it or access is not allowed.'
-            '404':
-              description: Not found – There is no resource behind the URI.
-            '422':
-              description: Unprocessable Entity - Request body is incorrect.
-            '500':
-              description: 500 – Internal Server Error.
-          securedBy:
-            - oauth_2_0
-          protocols:
-            - HTTPS
-        securedBy:
-          - oauth_2_0
-        '/{veteraninfoid}':
-          displayName: '/v2017/clients/{clientid}/veteraninfos/{veteraninfoid}'
+            schema_id: id_veteraninfo
+            schema: veteraninfo
+            schema_ids: veteraninfo_ids
+            schema_example: !include ./examples/VeteranInfo_example.json
+            schema_ids_example: !include ./examples/VeteranInfo_ids_example.json
+            schema_id_example: !include ./examples/id_veteraninfo_example.json
+        /{veteraninfoid}:
           type:
             member:
-              schema_json: veteraninfo_json
-              schema_id_json: veteraninfo_id_json
-              schema_json_example: !include ./examples/VeteranInfo_json_example.json
-              schema_id_json_example: !include ./examples/VeteranInfo_id_json_example.json
-          get:
-            description: Gets a veteraninfo using a URI resource parameter/ID.
-            responses:
-              '400':
-                description: Bad Request – The request was invalid or cannot be served.
-              '401':
-                description: Unauthorized – The request requires an user authentication.
-              '403':
-                description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-              '404':
-                description: Not found – There is no resource behind the URI.
-              '500':
-                description: Internal Server Error
-            securedBy:
-              - oauth_2_0
-            protocols:
-              - HTTPS
-          put:
-            description: Updates a specific veteraninfo specified by the URI resource parameter/ID.
-            responses:
-              '200':
-                description: OK – Everything is working.
-              '304':
-                description: Not Modified – The client can use cached data.
-              '400':
-                description: Bad Request – The request was invalid or cannot be served.
-              '401':
-                description: Unauthorized – The request requires a user.
-              '403':
-                description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-              '404':
-                description: Not found – There is no resource behind the URI.
-              '500':
-                description: Internal Server Error.
-            securedBy:
-              - oauth_2_0
-            protocols:
-              - HTTPS
-          delete:
-            description: Deletes a specific veteraninfo specified by the URI resource parameter/ID.
-            responses:
-              '204':
-                description: OK – The resource was successfully deleted.
-              '400':
-                description: Bad Request – The request was invalid or cannot be served.
-              '401':
-                description: Unauthorized – The request requires user authentication.
-              '403':
-                description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-              '404':
-                description: Not found – There is no resource behind the URI.
-              '500':
-                description: Internal Server Error.
-            securedBy:
-              - oauth_2_0
-            protocols:
-              - HTTPS
-          uriParameters:
-            veteraninfoid:
-              example: ADBC1111211111114111111111D1111V
-              type: string
-              displayName: VeteranInfo Identifier
-          securedBy:
-            - oauth_2_0
-  /projects:
-    displayName: /v2017/projects
-    description: 'Operations performed on the set of all HMIS projects within the system, and for adding a new project to the set of projects '
+              schema: veteraninfo
+              schema_id: veteraninfo_id
+              schema_example: !include ./examples/VeteranInfo_example.json
+              schema_id_example: !include ./examples/VeteranInfo_id_example.json
+/projects:
+  type:
+    collection:
+      schema_id: id_projects
+      schema: project
+      schema_ids: projects_ids
+      schema_example: !include ./examples/Project_example.json
+      schema_ids_example: !include ./examples/Projects_ids_example.json
+      schema_id_example: !include ./examples/id_project_example.json
+  /{projectsid}:
     type:
-      collection:
-        id_schema_json: id_projects_json
-        schema_json: project_json
-        schema_ids_json: projects_ids_json
-        schema_json_example: !include ./examples/Project_json_example.json
-        schema_ids_json_example: !include ./examples/Projects_ids_json_example.json
-        id_schema_json_example: !include ./examples/id_project_json_example.json
-    get:
-      description: 'Searches for project.  Returns a list of project ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-      responses:
-        '400':
-          description: Bad Request – The request was invalid or cannot be served.
-        '403':
-          description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-        '404':
-          description: Not found – There is no resource behind the URI.
-        '500':
-          description: 500 – Internal Server Error
-      securedBy:
-        - oauth_2_0
-      protocols:
-        - HTTPS
-    post:
-      description: |
-        Add a project
-      responses:
-        '400':
-          description: Bad Request – The request was invalid or cannot be served.
-        '401':
-          description: Unauthorized – The request requires user authentication.
-        '403':
-          description: 'Forbidden – The server understood the request, but is refusing it or access is not allowed.'
-        '404':
-          description: Not found – There is no resource behind the URI.
-        '422':
-          description: Unprocessable Entity - Request body is incorrect.
-        '500':
-          description: 500 – Internal Server Error.
-      securedBy:
-        - oauth_2_0
-      protocols:
-        - HTTPS
-    securedBy:
-      - oauth_2_0
-    '/{projectsid}':
-      displayName: '/{projectsid}'
+      member:
+        schema: project
+        schema_id: projects_id
+        schema_id_example: !include ./examples/Projects_id_example.json
+        schema_example: !include ./examples/Project_example.json
+    /projectcocs:
       type:
-        member:
-          schema_json: project_json
-          schema_id_json: projects_id_json
-          schema_id_json_example: !include ./examples/Projects_id_json_example.json
-          schema_json_example: !include ./examples/Project_json_example.json
-      get:
-        description: Gets a project using a URI resource parameter/ID.
-        responses:
-          '400':
-            description: Bad Request – The request was invalid or cannot be served.
-          '401':
-            description: Unauthorized – The request requires an user authentication.
-          '403':
-            description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-          '404':
-            description: Not found – There is no resource behind the URI.
-          '500':
-            description: Internal Server Error
-        securedBy:
-          - oauth_2_0
-        protocols:
-          - HTTPS
-      put:
-        description: Updates a specific project specified by the URI resource parameter/ID.
-        responses:
-          '200':
-            description: OK – Everything is working.
-          '304':
-            description: Not Modified – The client can use cached data.
-          '400':
-            description: Bad Request – The request was invalid or cannot be served.
-          '401':
-            description: Unauthorized – The request requires a user.
-          '403':
-            description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-          '404':
-            description: Not found – There is no resource behind the URI.
-          '500':
-            description: Internal Server Error.
-        securedBy:
-          - oauth_2_0
-        protocols:
-          - HTTPS
-      delete:
-        description: Deletes a specific project specified by the URI resource parameter/ID.
-        responses:
-          '204':
-            description: OK – The resource was successfully deleted.
-          '400':
-            description: Bad Request – The request was invalid or cannot be served.
-          '401':
-            description: Unauthorized – The request requires user authentication.
-          '403':
-            description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-          '404':
-            description: Not found – There is no resource behind the URI.
-          '500':
-            description: Internal Server Error.
-        securedBy:
-          - oauth_2_0
-        protocols:
-          - HTTPS
-      uriParameters:
-        projectsid:
-          example: ADBC1111211111114111111111D1111V
-          type: string
-          displayName: Project Identifier
-      securedBy:
-        - oauth_2_0
-      /projectcocs:
-        displayName: /projectcocs
-        description: 'Operations performed on the set of all HMIS projectcocs within the system, and for adding a new projectcoc to the set of projectcocs '
+        collection:
+          schema_id: id_projectcoc
+          schema: projectcoc
+          schema_ids: projectcoc_ids
+          schema_example: !include ./examples/Projectcoc_example.json
+          schema_ids_example: !include ./examples/Projectcoc_ids_example.json
+          schema_id_example: !include ./examples/id_Projectcoc_example.json
+      /{projectcocid}:
         type:
-          collection:
-            id_schema_json: id_projectcoc_json
-            schema_json: projectcoc_json
-            schema_ids_json: projectcoc_ids_json
-            schema_json_example: !include ./examples/ProjectCoc_json_example.json
-            schema_ids_json_example: !include ./examples/ProjectCoc_ids_json_example.json
-            id_schema_json_example: !include ./examples/id_ProjectCoc_json_example.json
-        get:
-          description: 'Searches for projectcoc.  Returns a list of projectcoc ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-          responses:
-            '400':
-              description: Bad Request – The request was invalid or cannot be served.
-            '403':
-              description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-            '404':
-              description: Not found – There is no resource behind the URI.
-            '500':
-              description: 500 – Internal Server Error
-          securedBy:
-            - oauth_2_0
-          protocols:
-            - HTTPS
-        post:
-          description: |
-            Add a projectcoc
-          responses:
-            '400':
-              description: Bad Request – The request was invalid or cannot be served.
-            '401':
-              description: Unauthorized – The request requires user authentication.
-            '403':
-              description: 'Forbidden – The server understood the request, but is refusing it or access is not allowed.'
-            '404':
-              description: Not found – There is no resource behind the URI.
-            '422':
-              description: Unprocessable Entity - Request body is incorrect.
-            '500':
-              description: 500 – Internal Server Error.
-          securedBy:
-            - oauth_2_0
-          protocols:
-            - HTTPS
-        securedBy:
-          - oauth_2_0
-        '/{projectcocid}':
-          displayName: '/{projectcocid}'
-          type:
-            member:
-              schema_json: projectcoc_json
-              schema_id_json: projectcoc_id_json
-              schema_json_example: !include ./examples/ProjectCoc_json_example.json
-              schema_id_json_example: !include ./examples/ProjectCoc_id_json_example.json
-          get:
-            description: Gets a projectcoc using a URI resource parameter/ID.
-            responses:
-              '400':
-                description: Bad Request – The request was invalid or cannot be served.
-              '401':
-                description: Unauthorized – The request requires an user authentication.
-              '403':
-                description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-              '404':
-                description: Not found – There is no resource behind the URI.
-              '500':
-                description: Internal Server Error
-            securedBy:
-              - oauth_2_0
-            protocols:
-              - HTTPS
-          put:
-            description: Updates a specific projectcoc specified by the URI resource parameter/ID.
-            responses:
-              '200':
-                description: OK – Everything is working.
-              '304':
-                description: Not Modified – The client can use cached data.
-              '400':
-                description: Bad Request – The request was invalid or cannot be served.
-              '401':
-                description: Unauthorized – The request requires a user.
-              '403':
-                description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-              '404':
-                description: Not found – There is no resource behind the URI.
-              '500':
-                description: Internal Server Error.
-            securedBy:
-              - oauth_2_0
-            protocols:
-              - HTTPS
-          delete:
-            description: Deletes a specific projectcoc specified by the URI resource parameter/ID.
-            responses:
-              '204':
-                description: OK – The resource was successfully deleted.
-              '400':
-                description: Bad Request – The request was invalid or cannot be served.
-              '401':
-                description: Unauthorized – The request requires user authentication.
-              '403':
-                description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-              '404':
-                description: Not found – There is no resource behind the URI.
-              '500':
-                description: Internal Server Error.
-            securedBy:
-              - oauth_2_0
-            protocols:
-              - HTTPS
-          uriParameters:
-            projectcocid:
-              example: ADBC1111211111114111111111D1111V
-              type: string
-              displayName: ProjectCoc Identifier
-          securedBy:
-            - oauth_2_0
-      /inventories:
-        displayName: /inventories
-        description: 'Operations performed on the set of all HMIS inventories within the system, and for adding a new inventory to the set of inventories '
+          member:
+            schema: projectcoc
+            schema_id: projectcoc_id
+            schema_example: !include ./examples/Projectcoc_example.json
+            schema_id_example: !include ./examples/Projectcoc_id_example.json
+    /inventories:
+      type:
+        collection:
+          schema_id: id_inventories
+          schema: inventories
+          schema_ids: inventories_ids
+          schema_example: !include ./examples/Inventories_example.json
+          schema_ids_example: !include ./examples/Inventories_ids_example.json
+          schema_id_example: !include ./examples/id_inventories_example.json
+      /{inventoriesid}:
         type:
-          collection:
-            id_schema_json: id_inventories_json
-            schema_json: inventories_json
-            schema_ids_json: inventories_ids_json
-            schema_json_example: !include ./examples/Inventories_json_example.json
-            schema_ids_json_example: !include ./examples/Inventories_ids_json_example.json
-            id_schema_json_example: !include ./examples/id_inventories_json_example.json
-        get:
-          description: 'Searches for inventory.  Returns a list of inventory ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-          responses:
-            '400':
-              description: Bad Request – The request was invalid or cannot be served.
-            '403':
-              description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-            '404':
-              description: Not found – There is no resource behind the URI.
-            '500':
-              description: 500 – Internal Server Error
-          securedBy:
-            - oauth_2_0
-          protocols:
-            - HTTPS
-        post:
-          description: |
-            Add a inventory
-          responses:
-            '400':
-              description: Bad Request – The request was invalid or cannot be served.
-            '401':
-              description: Unauthorized – The request requires user authentication.
-            '403':
-              description: 'Forbidden – The server understood the request, but is refusing it or access is not allowed.'
-            '404':
-              description: Not found – There is no resource behind the URI.
-            '422':
-              description: Unprocessable Entity - Request body is incorrect.
-            '500':
-              description: 500 – Internal Server Error.
-          securedBy:
-            - oauth_2_0
-          protocols:
-            - HTTPS
-        securedBy:
-          - oauth_2_0
-        '/{inventoriesid}':
-          displayName: '/{inventoriesid}'
-          type:
-            member:
-              schema_json: inventories_json
-              schema_id_json: inventories_id_json
-              schema_id_json_example: !include ./examples/Inventories_id_json_example.json
-              schema_json_example: !include ./examples/Inventories_json_example.json
-          get:
-            description: Gets a inventory using a URI resource parameter/ID.
-            responses:
-              '400':
-                description: Bad Request – The request was invalid or cannot be served.
-              '401':
-                description: Unauthorized – The request requires an user authentication.
-              '403':
-                description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-              '404':
-                description: Not found – There is no resource behind the URI.
-              '500':
-                description: Internal Server Error
-            securedBy:
-              - oauth_2_0
-            protocols:
-              - HTTPS
-          put:
-            description: Updates a specific inventory specified by the URI resource parameter/ID.
-            responses:
-              '200':
-                description: OK – Everything is working.
-              '304':
-                description: Not Modified – The client can use cached data.
-              '400':
-                description: Bad Request – The request was invalid or cannot be served.
-              '401':
-                description: Unauthorized – The request requires a user.
-              '403':
-                description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-              '404':
-                description: Not found – There is no resource behind the URI.
-              '500':
-                description: Internal Server Error.
-            securedBy:
-              - oauth_2_0
-            protocols:
-              - HTTPS
-          delete:
-            description: Deletes a specific inventory specified by the URI resource parameter/ID.
-            responses:
-              '204':
-                description: OK – The resource was successfully deleted.
-              '400':
-                description: Bad Request – The request was invalid or cannot be served.
-              '401':
-                description: Unauthorized – The request requires user authentication.
-              '403':
-                description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-              '404':
-                description: Not found – There is no resource behind the URI.
-              '500':
-                description: Internal Server Error.
-            securedBy:
-              - oauth_2_0
-            protocols:
-              - HTTPS
-          uriParameters:
-            inventoriesid:
-              example: ADBC1111211111114111111111D1111V
-              type: string
-              displayName: Inventories Identifier
-          securedBy:
-            - oauth_2_0
-      /sites:
-        displayName: /sites
-        description: 'Operations performed on the set of all HMIS sites within the system, and for adding a new site to the set of sites '
+          member:
+            schema: inventories
+            schema_id: inventories_id
+            schema_id_example: !include ./examples/Inventories_id_example.json
+            schema_example: !include ./examples/Inventories_example.json
+    /sites:
+      type:
+        collection:
+          schema_id: id_sites
+          schema: sites
+          schema_ids: sites_ids
+          schema_example: !include ./examples/Sites_example.json
+          schema_ids_example: !include ./examples/Sites_ids_example.json
+          schema_id_example: !include ./examples/id_sites_example.json
+      /{sitesid}:
         type:
-          collection:
-            id_schema_json: id_sites_json
-            schema_json: sites_json
-            schema_ids_json: sites_ids_json
-            schema_json_example: !include ./examples/Sites_json_example.json
-            schema_ids_json_example: !include ./examples/Sites_ids_json_example.json
-            id_schema_json_example: !include ./examples/id_sites_json_example.json
-        get:
-          description: 'Searches for site.  Returns a list of site ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-          responses:
-            '400':
-              description: Bad Request – The request was invalid or cannot be served.
-            '403':
-              description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-            '404':
-              description: Not found – There is no resource behind the URI.
-            '500':
-              description: 500 – Internal Server Error
-          securedBy:
-            - oauth_2_0
-          protocols:
-            - HTTPS
-        post:
-          description: |
-            Add a site
-          responses:
-            '400':
-              description: Bad Request – The request was invalid or cannot be served.
-            '401':
-              description: Unauthorized – The request requires user authentication.
-            '403':
-              description: 'Forbidden – The server understood the request, but is refusing it or access is not allowed.'
-            '404':
-              description: Not found – There is no resource behind the URI.
-            '422':
-              description: Unprocessable Entity - Request body is incorrect.
-            '500':
-              description: 500 – Internal Server Error.
-          securedBy:
-            - oauth_2_0
-          protocols:
-            - HTTPS
-        securedBy:
-          - oauth_2_0
-        '/{sitesid}':
-          displayName: '/{sitesid}'
-          type:
-            member:
-              schema_json: sites_json
-              schema_id_json: sites_id_json
-              schema_json_example: !include ./examples/Sites_json_example.json
-              schema_id_json_example: !include ./examples/Sites_id_json_example.json
-          get:
-            description: Gets a site using a URI resource parameter/ID.
-            responses:
-              '400':
-                description: Bad Request – The request was invalid or cannot be served.
-              '401':
-                description: Unauthorized – The request requires an user authentication.
-              '403':
-                description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-              '404':
-                description: Not found – There is no resource behind the URI.
-              '500':
-                description: Internal Server Error
-            securedBy:
-              - oauth_2_0
-            protocols:
-              - HTTPS
-          put:
-            description: Updates a specific site specified by the URI resource parameter/ID.
-            responses:
-              '200':
-                description: OK – Everything is working.
-              '304':
-                description: Not Modified – The client can use cached data.
-              '400':
-                description: Bad Request – The request was invalid or cannot be served.
-              '401':
-                description: Unauthorized – The request requires a user.
-              '403':
-                description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-              '404':
-                description: Not found – There is no resource behind the URI.
-              '500':
-                description: Internal Server Error.
-            securedBy:
-              - oauth_2_0
-            protocols:
-              - HTTPS
-          delete:
-            description: Deletes a specific site specified by the URI resource parameter/ID.
-            responses:
-              '204':
-                description: OK – The resource was successfully deleted.
-              '400':
-                description: Bad Request – The request was invalid or cannot be served.
-              '401':
-                description: Unauthorized – The request requires user authentication.
-              '403':
-                description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-              '404':
-                description: Not found – There is no resource behind the URI.
-              '500':
-                description: Internal Server Error.
-            securedBy:
-              - oauth_2_0
-            protocols:
-              - HTTPS
-          uriParameters:
-            sitesid:
-              example: ADBC1111211111114111111111D1111V
-              type: string
-              displayName: Sites Identifier
-          securedBy:
-            - oauth_2_0
-      /funders:
-        displayName: /funders
-        description: 'Operations performed on the set of all HMIS funders within the system, and for adding a new funder to the set of funders '
+          member:
+            schema: sites
+            schema_id: sites_id
+            schema_example: !include ./examples/Sites_example.json
+            schema_id_example: !include ./examples/Sites_id_example.json
+    /funders:
+      type:
+        collection:
+          schema_id: id_funders
+          schema: funders
+          schema_ids: funders_ids
+          schema_example: !include ./examples/Funders_example.json
+          schema_ids_example: !include ./examples/Funders_ids_example.json
+          schema_id_example: !include ./examples/id_funders_example.json
+      /{fundersid}:
         type:
-          collection:
-            id_schema_json: id_funders_json
-            schema_json: funders_json
-            schema_ids_json: funders_ids_json
-            schema_json_example: !include ./examples/Funders_json_example.json
-            schema_ids_json_example: !include ./examples/Funders_ids_json_example.json
-            id_schema_json_example: !include ./examples/id_funders_json_example.json
-        get:
-          description: 'Searches for funder.  Returns a list of funder ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-          responses:
-            '400':
-              description: Bad Request – The request was invalid or cannot be served.
-            '403':
-              description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-            '404':
-              description: Not found – There is no resource behind the URI.
-            '500':
-              description: 500 – Internal Server Error
-          securedBy:
-            - oauth_2_0
-          protocols:
-            - HTTPS
-        post:
-          description: |
-            Add a funder
-          responses:
-            '400':
-              description: Bad Request – The request was invalid or cannot be served.
-            '401':
-              description: Unauthorized – The request requires user authentication.
-            '403':
-              description: 'Forbidden – The server understood the request, but is refusing it or access is not allowed.'
-            '404':
-              description: Not found – There is no resource behind the URI.
-            '422':
-              description: Unprocessable Entity - Request body is incorrect.
-            '500':
-              description: 500 – Internal Server Error.
-          securedBy:
-            - oauth_2_0
-          protocols:
-            - HTTPS
-        securedBy:
-          - oauth_2_0
-        '/{fundersid}':
-          displayName: '/{fundersid}'
-          type:
-            member:
-              schema_json: funders_json
-              schema_id_json: funder_id_json
-              schema_json_example: !include ./examples/Funders_json_example.json
-              schema_id_json_example: !include ./examples/Funder_id_json_example.json
-          get:
-            description: Gets a funder using a URI resource parameter/ID.
-            responses:
-              '400':
-                description: Bad Request – The request was invalid or cannot be served.
-              '401':
-                description: Unauthorized – The request requires an user authentication.
-              '403':
-                description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-              '404':
-                description: Not found – There is no resource behind the URI.
-              '500':
-                description: Internal Server Error
-            securedBy:
-              - oauth_2_0
-            protocols:
-              - HTTPS
-          put:
-            description: Updates a specific funder specified by the URI resource parameter/ID.
-            responses:
-              '200':
-                description: OK – Everything is working.
-              '304':
-                description: Not Modified – The client can use cached data.
-              '400':
-                description: Bad Request – The request was invalid or cannot be served.
-              '401':
-                description: Unauthorized – The request requires a user.
-              '403':
-                description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-              '404':
-                description: Not found – There is no resource behind the URI.
-              '500':
-                description: Internal Server Error.
-            securedBy:
-              - oauth_2_0
-            protocols:
-              - HTTPS
-          delete:
-            description: Deletes a specific funder specified by the URI resource parameter/ID.
-            responses:
-              '204':
-                description: OK – The resource was successfully deleted.
-              '400':
-                description: Bad Request – The request was invalid or cannot be served.
-              '401':
-                description: Unauthorized – The request requires user authentication.
-              '403':
-                description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-              '404':
-                description: Not found – There is no resource behind the URI.
-              '500':
-                description: Internal Server Error.
-            securedBy:
-              - oauth_2_0
-            protocols:
-              - HTTPS
-          uriParameters:
-            fundersid:
-              example: ADBC1111211111114111111111D1111V
-              type: string
-              displayName: Funders Identifier
-          securedBy:
-            - oauth_2_0
-      /affiliations:
-        displayName: /affiliations
-        description: 'Operations performed on the set of all HMIS affiliations within the system, and for adding a new affiliation to the set of affiliations '
+          member:
+            schema: funders
+            schema_id: funder_id
+            schema_example: !include ./examples/Funders_example.json
+            schema_id_example: !include ./examples/Funder_id_example.json
+    /affiliations:
+      type:
+        collection:
+          schema_id: id_affiliation
+          schema: affiliations
+          schema_ids: affiliations_ids
+          schema_example: !include ./examples/Affiliations_example.json
+          schema_ids_example: !include ./examples/Affiliation_ids_example.json
+          schema_id_example: !include ./examples/id_affiliation_example.json
+      /{affiliationid}:
         type:
-          collection:
-            id_schema_json: id_affiliation_json
-            schema_json: affiliations_json
-            schema_ids_json: affiliations_ids_json
-            schema_json_example: !include ./examples/Affiliations_json_example.json
-            schema_ids_json_example: !include ./examples/Affiliation_ids_json_example.json
-            id_schema_json_example: !include ./examples/id_affiliation_json_example.json
-        get:
-          description: 'Searches for affiliation.  Returns a list of affiliation ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-          responses:
-            '400':
-              description: Bad Request – The request was invalid or cannot be served.
-            '403':
-              description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-            '404':
-              description: Not found – There is no resource behind the URI.
-            '500':
-              description: 500 – Internal Server Error
-          securedBy:
-            - oauth_2_0
-          protocols:
-            - HTTPS
-        post:
-          description: |
-            Add a affiliation
-          responses:
-            '400':
-              description: Bad Request – The request was invalid or cannot be served.
-            '401':
-              description: Unauthorized – The request requires user authentication.
-            '403':
-              description: 'Forbidden – The server understood the request, but is refusing it or access is not allowed.'
-            '404':
-              description: Not found – There is no resource behind the URI.
-            '422':
-              description: Unprocessable Entity - Request body is incorrect.
-            '500':
-              description: 500 – Internal Server Error.
-          securedBy:
-            - oauth_2_0
-          protocols:
-            - HTTPS
-        securedBy:
-          - oauth_2_0
-        '/{affiliationid}':
-          displayName: '/{affiliationid}'
-          type:
-            member:
-              schema_json: affiliations_json
-              schema_id_json: affiliation_id_json
-              schema_json_example: !include ./examples/Affiliations_json_example.json
-              schema_id_json_example: !include ./examples/Affiliation_id_json_example.json
-          get:
-            description: Gets a affiliation using a URI resource parameter/ID.
-            responses:
-              '400':
-                description: Bad Request – The request was invalid or cannot be served.
-              '401':
-                description: Unauthorized – The request requires an user authentication.
-              '403':
-                description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-              '404':
-                description: Not found – There is no resource behind the URI.
-              '500':
-                description: Internal Server Error
-            securedBy:
-              - oauth_2_0
-            protocols:
-              - HTTPS
-          put:
-            description: Updates a specific affiliation specified by the URI resource parameter/ID.
-            responses:
-              '200':
-                description: OK – Everything is working.
-              '304':
-                description: Not Modified – The client can use cached data.
-              '400':
-                description: Bad Request – The request was invalid or cannot be served.
-              '401':
-                description: Unauthorized – The request requires a user.
-              '403':
-                description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-              '404':
-                description: Not found – There is no resource behind the URI.
-              '500':
-                description: Internal Server Error.
-            securedBy:
-              - oauth_2_0
-            protocols:
-              - HTTPS
-          delete:
-            description: Deletes a specific affiliation specified by the URI resource parameter/ID.
-            responses:
-              '204':
-                description: OK – The resource was successfully deleted.
-              '400':
-                description: Bad Request – The request was invalid or cannot be served.
-              '401':
-                description: Unauthorized – The request requires user authentication.
-              '403':
-                description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-              '404':
-                description: Not found – There is no resource behind the URI.
-              '500':
-                description: Internal Server Error.
-            securedBy:
-              - oauth_2_0
-            protocols:
-              - HTTPS
-          uriParameters:
-            affiliationid:
-              example: ADBC1111211111114111111111D1111V
-              type: string
-              displayName: Affiliation Identifier
-          securedBy:
-            - oauth_2_0
-  /organizations:
-    displayName: /v2017/organizations
-    description: 'Operations performed on the set of all HMIS organizations within the system, and for adding a new organization to the set of organizations '
+          member:
+            schema: affiliations
+            schema_id: affiliation_id
+            schema_example: !include ./examples/Affiliations_example.json
+            schema_id_example: !include ./examples/Affiliation_id_example.json
+/organizations:
+  type:
+    collection:
+      schema_id: id_organization
+      schema: organization
+      schema_ids: organization_ids
+      schema_example: !include ./examples/organization_example.json
+      schema_ids_example: !include ./examples/organization_ids_example.json
+      schema_id_example: !include ./examples/id_organization_example.json
+  /{organizationid}:
     type:
-      collection:
-        id_schema_json: id_organization_json
-        schema_json: organization_json
-        schema_ids_json: organization_ids_json
-        schema_json_example: !include ./examples/organization_json_example.json
-        schema_ids_json_example: !include ./examples/organization_ids_json_example.json
-        id_schema_json_example: !include ./examples/id_organization_json_example.json
-    get:
-      description: 'Searches for organization.  Returns a list of organization ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.'
-      responses:
-        '400':
-          description: Bad Request – The request was invalid or cannot be served.
-        '403':
-          description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-        '404':
-          description: Not found – There is no resource behind the URI.
-        '500':
-          description: 500 – Internal Server Error
-      securedBy:
-        - oauth_2_0
-      protocols:
-        - HTTPS
-    post:
-      description: |
-        Add a organization
-      responses:
-        '400':
-          description: Bad Request – The request was invalid or cannot be served.
-        '401':
-          description: Unauthorized – The request requires user authentication.
-        '403':
-          description: 'Forbidden – The server understood the request, but is refusing it or access is not allowed.'
-        '404':
-          description: Not found – There is no resource behind the URI.
-        '422':
-          description: Unprocessable Entity - Request body is incorrect.
-        '500':
-          description: 500 – Internal Server Error.
-      securedBy:
-        - oauth_2_0
-      protocols:
-        - HTTPS
-    securedBy:
-      - oauth_2_0
-    '/{organizationid}':
-      displayName: '/{organizationid}'
-      type:
-        member:
-          schema_json: organization_json
-          schema_id_json: organization_id_json
-          schema_id_json_example: !include ./examples/organization_id_json_example.json
-          schema_json_example: !include ./examples/organization_json_example.json
-      get:
-        description: Gets a organization using a URI resource parameter/ID.
-        responses:
-          '400':
-            description: Bad Request – The request was invalid or cannot be served.
-          '401':
-            description: Unauthorized – The request requires an user authentication.
-          '403':
-            description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-          '404':
-            description: Not found – There is no resource behind the URI.
-          '500':
-            description: Internal Server Error
-        securedBy:
-          - oauth_2_0
-        protocols:
-          - HTTPS
-      put:
-        description: Updates a specific organization specified by the URI resource parameter/ID.
-        responses:
-          '200':
-            description: OK – Everything is working.
-          '304':
-            description: Not Modified – The client can use cached data.
-          '400':
-            description: Bad Request – The request was invalid or cannot be served.
-          '401':
-            description: Unauthorized – The request requires a user.
-          '403':
-            description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-          '404':
-            description: Not found – There is no resource behind the URI.
-          '500':
-            description: Internal Server Error.
-        securedBy:
-          - oauth_2_0
-        protocols:
-          - HTTPS
-      delete:
-        description: Deletes a specific organization specified by the URI resource parameter/ID.
-        responses:
-          '204':
-            description: OK – The resource was successfully deleted.
-          '400':
-            description: Bad Request – The request was invalid or cannot be served.
-          '401':
-            description: Unauthorized – The request requires user authentication.
-          '403':
-            description: 'Forbidden – The server understood the request, but is refusing it or the access is not allowed.'
-          '404':
-            description: Not found – There is no resource behind the URI.
-          '500':
-            description: Internal Server Error.
-        securedBy:
-          - oauth_2_0
-        protocols:
-          - HTTPS
-      uriParameters:
-        organizationid:
-          example: ADBC1111211111114111111111D1111V
-          type: string
-          displayName: organization Identifier
-      securedBy:
-        - oauth_2_0
-/search:
-  '/{searchentity}':
-    displayName: '/search/{searchentity}'
-    get:
-      description: |
-        The Search API is optimized to find the specific entity you're looking for (e.g., a client, enrollments, etc.).It's designed to  find the one result you're looking for (or maybe the few results you're looking for). Currently hmislynk supporting search on 'clients' entity only. Just like searching on Google, you sometimes want to see a few pages of search results so that you can find the item that best meets your needs.  HMISLynk Search API provides up to 50 results for each searh. However, the search results can be limited by the client.
-          Note: Current supporting URI  is /search/clients
+      member:
+        schema: organization
+        schema_id: organization_id
+        schema_id_example: !include ./examples/organization_id_example.json
+        schema_example: !include ./examples/organization_example.json
+          /search:
+            '/{searchentity}':
+              get:
+                description: |
+                  The Search API is optimized to find the specific entity you're looking for (e.g., a client, enrollments, etc.).It's designed to  find the one result you're looking for (or maybe the few results you're looking for). Currently hmislynk supporting search on 'clients' entity only. Just like searching on Google, you sometimes want to see a few pages of search results so that you can find the item that best meets your needs.  HMISLynk Search API provides up to 50 results for each searh. However, the search results can be limited by the client. Note: Current supporting URI  is /search/clients
 
-      responses:
-        '200':
-          description: |
-            example: |
-              {
-              "searchResults": {
-                "pagination": {
-                  "total":"2"
-                  "from": "0",
-                  "maximum": "50",
-                  "returned":"2"
-                },
-                "items": [
-                  {
-                    "clientId": "65e3df62-dd22-4d07-83ef-6858a6322839",
-                    "firstName": "Eric",
-                    "middleName": "Eric",
-                    "lastName": "Eric",
-                    "nameSuffix": "NS ",
-                    "nameDataQuality": "1",
-                    "ssn": "ssn ",
-                    "ssnDataQuality": "1",
-                    "dob": "1459498034983",
-                    "dobDataQuality": "1",
-                    "race": "1",
-                    "ethnicity": "1",
-                    "gender": "1",
-                    "otherGender": "Test",
-                    "veteranStatus": "8",
-                    "link":"/hmis-clientapi/rest/v2017/clients/65e3df62-dd22-4d07-83ef-6858a6322839"
-                  },
-                  {
-                    "clientId": "cf98b9b2-9a77-4133-99a3-b60f05a12ad1",
-                    "firstName": "Eric",
-                    "middleName": "Eric",
-                    "lastName": "Eric",
-                    "nameSuffix": "NS ",
-                    "nameDataQuality": "1",
-                    "ssn": "ssn ",
-                    "ssnDataQuality": "1",
-                    "dob": "1459498034983",
-                    "dobDataQuality": "1",
-                    "race": "1",
-                    "ethnicity": "1",
-                    "gender": "1",
-                    "otherGender": "Test",
-                    "veteranStatus": "8",
-                    "link":"/hmis-clientapi/rest/v2014/clients/cf98b9b2-9a77-4133-99a3-b60f05a12ad1"
-                  }
-                ]
-              }
-              }
+                responses:
+                  '200':
+                    description: |
+                      example: |
+                        {
+                        "searchResults": {
+                          "pagination": {
+                            "total":"2"
+                            "from": "0",
+                            "maximum": "50",
+                            "returned":"2"
+                          },
+                          "items": [
+                            {
+                              "clientId": "65e3df62-dd22-4d07-83ef-6858a6322839",
+                              "firstName": "Eric",
+                              "middleName": "Eric",
+                              "lastName": "Eric",
+                              "nameSuffix": "NS ",
+                              "nameDataQuality": "1",
+                              "ssn": "ssn ",
+                              "ssnDataQuality": "1",
+                              "dob": "1459498034983",
+                              "dobDataQuality": "1",
+                              "race": "1",
+                              "ethnicity": "1",
+                              "gender": "1",
+                              "otherGender": "Test",
+                              "veteranStatus": "8",
+                              "link":"/hmis-clientapi/rest/v2015/clients/65e3df62-dd22-4d07-83ef-6858a6322839"
+                            },
+                            {
+                              "clientId": "cf98b9b2-9a77-4133-99a3-b60f05a12ad1",
+                              "firstName": "Eric",
+                              "middleName": "Eric",
+                              "lastName": "Eric",
+                              "nameSuffix": "NS ",
+                              "nameDataQuality": "1",
+                              "ssn": "ssn ",
+                              "ssnDataQuality": "1",
+                              "dob": "1459498034983",
+                              "dobDataQuality": "1",
+                              "race": "1",
+                              "ethnicity": "1",
+                              "gender": "1",
+                              "otherGender": "Test",
+                              "veteranStatus": "8",
+                              "link":"/hmis-clientapi/rest/v2014/clients/cf98b9b2-9a77-4133-99a3-b60f05a12ad1"
+                            }
+                          ]
+                        }
+                        }
 
-      queryParameters:
-        q:
-          required: false
-          description: |
-            The search keywords, as well as any qualifiers. Currently supported search fields are first name,middle name,last name,dob,source system id and ssn. For search on "date of birth" field the format MM-dd-YYYY should be used for the search keyword.
-          type: string
-          displayName: q
-        sort:
-          required: false
-          description: The sort field. Default- results are sorted by "created date".
-          example: created date
-          type: string
-          displayName: sort
-        order:
-          required: false
-          description: The sort order if sort parameter is provided. One of asc or desc. Default- desc.
-          example: desc
-          default: desc
-          type: string
-          displayName: order
-        startIndex:
-          required: false
-          description: The start Index from where the search results should be returned. Default - 0
-          example: 0
-          default: 0
-          type: integer
-          displayName: startIndex
-        maxItems:
-          required: false
-          description: the number or Items that should be included in the results . Default - 50
-          example: 50
-          default: 50
-          type: integer
-          displayName: maxItems
-        exclude:
-          required: false
-          description: |
-            Excludes fields from the search.Currently it suppoted value is "ssi" (to exclude         source system id) only.
-          type: string
-          displayName: exclude
-      securedBy:
-        - oauth_2_0
-      protocols:
-        - HTTPS
-    uriParameters:
-      searchentity:
-        type: string
-        displayName: searchentity
-    securedBy:
-      - oauth_2_0
+                queryParameters:
+                  q:
+                    description: |
+                      The search keywords, as well as any qualifiers. Currently supported search fields are first name,middle name,last name,dob,source system id and ssn. For search on "date of birth" field the format MM-dd-YYYY should be used for the search keyword.
+                  sort:
+                    description: The sort field. Default- results are sorted by "created date".
+                    example: created date
+                    type: string
+                  order:
+                    description: The sort order if sort parameter is provided. One of asc or desc. Default- desc.
+                    example: desc
+                    default: desc
+                    type: string
+                  startIndex:
+                    description: The start Index from where the search results should be returned. Default - 0
+                    example: 0
+                    default: 0
+                    type: integer
+                  maxItems:
+                    description: the number or Items that should be included in the results . Default - 50
+                    example: 50
+                    default: 50
+                    type: integer
+                  exclude:
+                    description: |
+                      Excludes flieds from the search.Currently it suppoted value is "ssi" (to exclude         source system id) only.
+              uriParameters:
+                searchentity: {}
+                /hmisTypes:
+                  description: Get all available hmis types
+                  get:
+                    responses:
+                      200:
+                        body:
+                          application/json:
+                             example: !include examples/get_all_hmis_type_names.json
+                             schema: !include schemas/get_all_hmis_type_names.json
+                  /{name}/values:
+                    description:  get all values of hmis type
+                    get:
+                      responses:
+                        200:
+                          body:
+                            application/json:
+                              example: !include examples/get_all_hmis_type_value_of_hmis_type.json
+                              schema: !include types/get_all_hmis_type_value_of_hmis_type.json
+
+                /questions:
+                  get:
+                    responses:
+                      200:
+                        body:
+                          application/json:
+                            example: !include examples/get_all_survey_questions.json
+                            type: !include types/get_all_survey_questions.json
+                /questions/{hudQuestionId}:
+                  get:
+                    responses:
+                      200:
+                        body:
+                          application/json:
+                            example: !include examples/get_survey_question_by_hudid.json
+                            type: !include types/get_survey_question_by_hudid.json

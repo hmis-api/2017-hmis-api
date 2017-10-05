@@ -3,12 +3,12 @@
   "id": "/",
   "type": "object",
   "properties": {
-    "entryrhy": {
-      "id": "entryrhy",
+    "exitrhy": {
+      "id": "exitrhy",
       "type": "object",
       "properties": {
-        "entryrhyId": {
-          "id": "entryrhyId",
+        "exitrhyId": {
+          "id": "exitrhyId",
           "type": "string"
         },
         "sexualOrientation": {
@@ -39,11 +39,11 @@
           "id": "houseHoldDynamics",
           "type": "integer"
         },
-        "sexualOrientatiionGenderIdentityYouth": {
+        "sexualOrientationGenderIdentityYouth": {
           "id": "sexualOrientatiionGenderIdentityYouth",
           "type": "integer"
         },
-        "sexualOrientatiionGenderIdentityFamilyMbr": {
+        "sexualOrientationGenderIdentityFamilyMbr": {
           "id": "sexualOrientatiionGenderIdentityFamilyMbr",
           "type": "integer"
         },
@@ -181,7 +181,7 @@
         }
       },
       "required": [
-        "entryrhyId",
+        "exitrhyId",
         "sexualOrientation",
         "formerlyWardChildWelfrForestCare",
         "yearsChildWelfrForestCare",
@@ -189,8 +189,8 @@
         "formerlyWardOfJuvenileJustice",
         "yearsJuvenileJustice",
         "houseHoldDynamics",
-        "sexualOrientatiionGenderIdentityYouth",
-        "sexualOrientatiionGenderIdentityFamilyMbr",
+        "sexualOrientationGenderIdentityYouth",
+        "sexualOrientationGenderIdentityFamilyMbr",
         "housingIssuesYouth",
         "housingIssuesFamilyMbr",
         "schoolEducationIssuesYouth",
@@ -228,6 +228,6 @@
     }
   },
   "required": [
-    "entryrhy"
+    "exitrhy"
   ]
 }
