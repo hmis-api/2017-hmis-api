@@ -40,11 +40,11 @@
           "type": "integer"
         },
         "sexualOrientationGenderIdentityYouth": {
-          "id": "sexualOrientatiionGenderIdentityYouth",
+          "id": "sexualOrientationGenderIdentityYouth",
           "type": "integer"
         },
         "sexualOrientationGenderIdentityFamilyMbr": {
-          "id": "sexualOrientatiionGenderIdentityFamilyMbr",
+          "id": "sexualOrientationGenderIdentityFamilyMbr",
           "type": "integer"
         },
         "housingIssuesYouth": {

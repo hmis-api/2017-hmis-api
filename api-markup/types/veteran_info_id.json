@@ -11,7 +11,7 @@
         "yearEntrdService": {
           "type": "integer"
         },
-        "yearSeperated": {
+        "yearSeparated": {
           "type": "integer"
         },
         "worldWar2": {
@@ -48,7 +48,7 @@
       "required": [
         "veteranInfoId",
         "yearEntrdService",
-        "yearSeperated",
+        "yearSeparated",
         "worldWar2",
         "koreanWar",
         "vietnamWar",
