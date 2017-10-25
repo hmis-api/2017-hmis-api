@@ -642,7 +642,7 @@ resourceTypes:
         schema_example: !include ./examples/organization_example.json
 /search:
   description: |
-    The Search API is optimized to find the specific entity you're looking for (e.g., a client, enrollments, etc.).It's designed to  find the one result you're looking for (or maybe the few results you're looking for). Currently hmislynk supporting search on 'clients' entity only. Just like searching on Google, you sometimes want to see a few pages of search results so that you can find the item that best meets your needs.  HMISLynk Search API provides up to 50 results for each search. However, the search results can be limited by the client. Note: Current supporting URI is /search/clients .
+    The Search API is optimized to find the specific entity you're looking for (e.g., a client, enrollments, etc.).  It's designed to  find the one result you're looking for (or maybe the few results you're looking for). Currently hmislynk supporting search on 'clients' entity only. Just like searching on Google, you sometimes want to see a few pages of search results so that you can find the item that best meets your needs.  HMISLynk Search API provides up to 50 results for each search. However, the search results can be limited by the client. Note: Current supporting URI is /search/clients .
 
   /{searchentity}:
     get:
@@ -676,9 +676,7 @@ resourceTypes:
           type: integer
         exclude:
           description: |
-            Excludes flieds from the search.Currently it suppoted value is "ssi" (to exclude         source system id) only.
-    uriParameters:
-      searchentity: {}
+            Excludes fields from the search.  Currently its only supported value is "ssi" (to exclude source system id) only.
 /hmisTypes:
   description: Get all available HMIS picklist values (types)
   get:
