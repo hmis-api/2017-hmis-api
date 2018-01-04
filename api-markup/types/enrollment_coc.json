@@ -8,13 +8,17 @@
         "informationDate": {
           "type": "string"
         },
-        "clientCode": {
+        "dataCollectionStage": {
+          "type": "integer"
+        },
+        "cocCode": {
           "type": "string"
         }
       },
       "required": [
         "informationDate",
-        "clientCode"
+        "dataCollectionStage",
+        "cocCode"
       ]
     }
   },

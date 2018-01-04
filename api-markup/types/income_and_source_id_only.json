@@ -74,6 +74,14 @@
         "workerscompamount": {
           "id": "http://jsonschema.net/incomeAndSource/workerscompamount",
           "type": "integer"
+        },
+        "informationDate": {
+          "id": "http://jsonschema.net/incomeAndSource/informationDate",
+          "type": "string"
+        },
+        "dataCollectionStage": {
+          "id": "http://jsonschema.net/incomeAndSource/dataCollectionStage",
+          "type": "integer"
         }
       },
       "required": [
@@ -93,7 +101,9 @@
         "unemploymentamount",
         "vadisabilitynonserviceamount",
         "vadisabilityserviceamount",
-        "workerscompamount"
+        "workerscompamount",
+        "informationDate",
+        "dataCollectionStage"
       ]
     }
   },

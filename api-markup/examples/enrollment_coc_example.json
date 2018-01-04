@@ -1,6 +1,7 @@
 {
    "enrollmentCoc":{
-      "informationDate":"04-15-2017 11:11",
-      "clientCode":"Test"
+      "dataCollectionStage":1,
+      "informationDate":"03-17-2016",
+      "cocCode":"Test"
    }
 }

@@ -55,6 +55,9 @@
               },
               "informationDate": {
                 "type": "string"
+              },
+              "dataCollectionStage": {
+                "type": "integer"
               }
             },
             "required": [
@@ -63,7 +66,8 @@
               "nohivaidsassistancereason",
               "adap",
               "noadapreason",
-              "informationDate"
+              "informationDate",
+              "dataCollectionStage"
             ]
           }
         }

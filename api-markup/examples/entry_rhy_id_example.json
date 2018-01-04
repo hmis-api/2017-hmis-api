@@ -42,6 +42,8 @@
       "workPlacePromiseDifference":8,
       "coercedToContinueWork":9,
       "laborExploitPastThreeMonths":1,
-      "laborExploitPastThreeMonths":420
+      "laborExploitPastThreeMonths":420,
+      "dataCollectionStage":1,
+      "informationDate":"03-17-2016"
    }
 }

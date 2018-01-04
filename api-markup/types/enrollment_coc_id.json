@@ -8,17 +8,21 @@
         "enrollmentCocId": {
           "type": "string"
         },
-        "clientCode": {
+        "cocCode": {
           "type": "string"
         },
         "informationDate": {
           "type": "string"
+        },
+        "dataCollectionStage": {
+          "type": "integer"
         }
       },
       "required": [
         "enrollmentCocId",
-        "clientCode",
-        "informationDate"
+        "cocCode",
+        "informationDate",
+        "dataCollectionStage"
       ]
     }
   },

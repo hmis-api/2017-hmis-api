@@ -138,6 +138,14 @@
         "workerscompamount": {
           "id": "workerscompamount",
           "type": "number"
+        },
+        "informationDate": {
+          "id": "http://jsonschema.net/incomeAndSource/informationDate",
+          "type": "string"
+        },
+        "dataCollectionStage": {
+          "id": "http://jsonschema.net/incomeAndSource/dataCollectionStage",
+          "type": "integer"
         }
       },
       "required": [
@@ -173,7 +181,9 @@
         "vadisabilityservice",
         "vadisabilityserviceamount",
         "workerscomp",
-        "workerscompamount"
+        "workerscompamount",
+        "informationDate",
+        "dataCollectionStage"
       ]
     }
   },

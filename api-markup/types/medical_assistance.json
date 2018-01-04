@@ -19,14 +19,21 @@
         },
         "noadapreason": {
           "type": "integer"
+        },
+        "informationDate": {
+          "type": "string"
+        },
+        "dataCollectionStage": {
+          "type": "integer"
         }
       },
       "required": [
         "adap",
-        "informationDate",
         "hivaidsassistance",
         "nohivaidsassistancereason",
-        "noadapreason"
+        "noadapreason",
+        "informationDate",
+        "dataCollectionStage"
       ]
     }
   },

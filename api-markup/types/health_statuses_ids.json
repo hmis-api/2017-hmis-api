@@ -47,11 +47,14 @@
               "healthStatus": {
                 "type": "integer"
               },
+              "dueDate": {
+                "type": "string"
+              },
               "informationDate": {
                 "type": "string"
               },
-              "dueDate": {
-                "type": "string"
+              "dataCollectionStage": {
+                "type": "integer"
               }
             },
             "required": [
@@ -59,6 +62,7 @@
               "healthCategory",
               "healthStatus",
               "informationDate",
+              "dataCollectionStage",
               "dueDate"
             ]
           }

@@ -112,6 +112,14 @@
         },
         "dateUpdated": {
           "type": "string"
+        },
+        "informationDate": {
+          "id": "http://jsonschema.net/incomeAndSource/informationDate",
+          "type": "string"
+        },
+        "dataCollectionStage": {
+          "id": "http://jsonschema.net/incomeAndSource/dataCollectionStage",
+          "type": "integer"
         }
       },
       "required": [
@@ -150,7 +158,9 @@
         "workerscomp",
         "workerscompamount",
         "dateCreated",
-        "dateUpdated"
+        "dateUpdated",
+        "informationDate",
+        "dataCollectionStage"
       ]
     }
   },

@@ -187,6 +187,14 @@
               "dateCreated": {
                 "id": "http://jsonschema.net/IncomeAndSources/incomeAndSources/0/dateCreated",
                 "type": "string"
+              },
+              "informationDate": {
+                "id": "http://jsonschema.net/incomeAndSource/informationDate",
+                "type": "string"
+              },
+              "dataCollectionStage": {
+                "id": "http://jsonschema.net/incomeAndSource/dataCollectionStage",
+                "type": "integer"
               }
             }
           }

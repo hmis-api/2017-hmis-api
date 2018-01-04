@@ -16,6 +16,8 @@
       "unemploymentamount":0.0,
       "vadisabilitynonserviceamount":0.0,
       "vadisabilityserviceamount":0.0,
-      "workerscompamount":0.0
+      "workerscompamount":0.0,
+      "dataCollectionStage":1,
+      "informationDate":"03-17-2016"
    }
 }
