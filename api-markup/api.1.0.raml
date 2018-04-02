@@ -698,7 +698,11 @@ resourceTypes:
 /questions:
   description: Get all available HMIS questions
   get:
-    responses:
+   queryParameters:
+     text:
+      description: filter on actual question text ( displayText )
+      required: false
+   responses:
       200:
         body:
           application/json:
