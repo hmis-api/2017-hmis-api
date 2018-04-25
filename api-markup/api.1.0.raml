@@ -1,6 +1,6 @@
 #%RAML 1.0
 title: 2017 HMIS
-version: 1.0.1
+version: 1.0.2
 mediaType: application/json
 protocols:
   - HTTPS
@@ -536,6 +536,10 @@ resourceTypes:
               schema_example: !include ./examples/veteran_info_example.json
               schema_id_example: !include ./examples/veteran_info_id_example.json
 /projects:
+  description: !
+         "  \n*  If the project that is being created already exists (this is validated based on project name and source system Id mapping), no new project will be created but the existing project Id will be returned to the caller.
+            \n* Also, When a version specific project is created , a global project mapping will be created automatically.
+            \n* The grouping of projects with in a global project is based on the project name and source system Id.  So, the projects that are created in 2014 and 2015 with the same name and source system Id will be grouped under the same global project"
   type:
     collection:
       schema: project
@@ -550,7 +554,7 @@ resourceTypes:
         schema_id: project_id
         schema_id_example: !include ./examples/project_id_example.json
         schema_example: !include ./examples/project_example.json
-    /projectcocs:
+/projects/{projectid}/projectcocs:
       type:
         collection:
           schema: project_coc
