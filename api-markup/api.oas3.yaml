@@ -3,7 +3,7 @@ info:
   title: 2017 HMIS
   version: "1.0.2"
 servers:
-  - url: 'https://www.hmislynk.com/hmis-clientapi-v2017/rest/v2017'
+  - url: 'https://www.hslynk.com/hmis-clientapi/rest/v2017'
 paths:
   /clients:
     get:
@@ -22,12 +22,12 @@ paths:
                     sort: {}
                   clients:
                     - clientId: e7f87b3b-9282-4031-af3f-34bebc2c6cbf
-                      firstName: 'First Name                                        '
-                      middleName: 'Middle Name                                       '
-                      lastName: 'LAST NAME                                         '
-                      nameSuffix: 'NS                                                '
+                      firstName: 'First Name'
+                      middleName: 'Middle Name'
+                      lastName: 'LAST NAME'
+                      nameSuffix: 'NS'
                       nameDataQuality: 1
-                      ssn: 'ssn      '
+                      ssn: '123-45-6789'
                       ssnDataQuality: 1
                       dob: 1459517834983
                       dobDataQuality: 1
@@ -38,12 +38,12 @@ paths:
                       phoneNumber: 1-541-754-3010
                       emailAddress: Jeanette@gmail.com
                     - clientId: bb1c4869-52af-4b4f-a9b6-a48f93c35294
-                      firstName: 'First Name                                        '
-                      middleName: 'Middle Name                                       '
-                      lastName: 'LAST NAME                                         '
-                      nameSuffix: 'NS                                                '
+                      firstName: 'First Name'
+                      middleName: 'Middle Name'
+                      lastName: 'LAST NAME'
+                      nameSuffix: 'NS'
                       nameDataQuality: 1
-                      ssn: 'ssn      '
+                      ssn: '123-45-6789'
                       ssnDataQuality: 1
                       dob: 1459517834983
                       dobDataQuality: 1
@@ -54,21 +54,6 @@ paths:
                       veteranStatus: '8'
                       phoneNumber: 1-541-754-3010
                       emailAddress: Jeanette@gmail.com
-                    - clientId: 2e31aed0-eb42-484d-9b42-8395b65a9ac7
-                      firstName: 'First Name                                        '
-                      middleName: 'Middle Name                                       '
-                      lastName: 'LAST NAME                                         '
-                      nameSuffix: 'NS                                                '
-                      nameDataQuality: 1
-                      ssn: 'ssn      '
-                      ssnDataQuality: 1
-                      dob: 1459517834983
-                      dobDataQuality: 1
-                      race: 1
-                      ethnicity: 1
-                      gender: 1
-                      otherGender: Test
-                      veteranStatus: '8'
               schema:
                 $ref: '#/components/schemas/clients_ids'
         '400':
@@ -86,39 +71,6 @@ paths:
         parameters sent.  The query parameters are cumulative, so each
         additional query parameter narrows the search down further.
       operationId: GET_clients
-      parameters:
-        - name: CreatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: CreatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created before (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated before (inclusive) a
-            particular date
-          schema:
-            type: string
     post:
       responses:
         '201':
@@ -129,12 +81,12 @@ paths:
                 example:
                   client:
                     clientId: 8547a63e-4659-412f-b5fa-200e03b62ae8
-                    firstName: 'First Name                                        '
-                    middleName: 'Middle Name                                       '
-                    lastName: 'LAST NAME                                         '
-                    nameSuffix: 'NS                                                '
+                    firstName: 'First Name'
+                    middleName: 'Middle Name'
+                    lastName: 'LAST NAME'
+                    nameSuffix: 'NS'
                     nameDataQuality: 1
-                    ssn: 'ssn      '
+                    ssn: '123-45-6789'
                     ssnDataQuality: 1
                     dob: 1459517834983
                     dobDataQuality: 1
@@ -159,7 +111,6 @@ paths:
           description: Unprocessable Entity - Request body is incorrect.
         '500':
           description: Internal Server Error.
-      description: "Adds a project.  \nIf the project that is being created already exists (this is validated based on project name and source system Id mapping), no new project will be created but the existing project Id will be returned to the caller. \n* Also, When a version specific project is created , a global project mapping will be created automatically. \n* The grouping of projects with in a global project is based on the project name and source system Id.  So, the projects that are created in 2014 and 2015 with the same name and source system Id will be grouped under the same global project"
       operationId: POST_clients
       requestBody:
         content:
@@ -195,12 +146,12 @@ paths:
               example:
                 client:
                   clientId: 8547a63e-4659-412f-b5fa-200e03b62ae8
-                  firstName: 'First Name                                        '
-                  middleName: 'Middle Name                                       '
-                  lastName: 'LAST NAME                                         '
-                  nameSuffix: 'NS                                                '
+                  firstName: 'First Name'
+                  middleName: 'Middle Name'
+                  lastName: 'LAST NAME'
+                  nameSuffix: 'NS'
                   nameDataQuality: 1
-                  ssn: 'ssn      '
+                  ssn: '123-45-6789'
                   ssnDataQuality: 1
                   dob: 1459517834983
                   dobDataQuality: 1
@@ -295,6 +246,7 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments':
     get:
@@ -343,39 +295,6 @@ paths:
         query parameters sent.  The query parameters are cumulative, so each
         additional query parameter narrows the search down further.
       operationId: GET_clients-clientid-enrollments
-      parameters:
-        - name: CreatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: CreatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created before (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated before (inclusive) a
-            particular date
-          schema:
-            type: string
     post:
       responses:
         '201':
@@ -450,6 +369,7 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}':
     get:
@@ -566,12 +486,14 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/enrollmentcocs':
     get:
@@ -610,39 +532,6 @@ paths:
         on the query parameters sent.  The query parameters are cumulative, so
         each additional query parameter narrows the search down further.
       operationId: GET_clients-clientid-enrollments-enrollmentid-enrollmentcocs
-      parameters:
-        - name: CreatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: CreatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created before (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated before (inclusive) a
-            particular date
-          schema:
-            type: string
     post:
       responses:
         '201':
@@ -690,12 +579,14 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/enrollmentcocs/{enrollmentcocid}':
     get:
@@ -788,18 +679,21 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollmentcoc Identifier
       - name: enrollmentid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/educations':
     get:
@@ -839,39 +733,7 @@ paths:
         query parameters sent.  The query parameters are cumulative, so each
         additional query parameter narrows the search down further.
       operationId: GET_clients-clientid-enrollments-enrollmentid-educations
-      parameters:
-        - name: CreatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: CreatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created before (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated before (inclusive) a
-            particular date
-          schema:
-            type: string
+  
     post:
       responses:
         '201':
@@ -921,12 +783,14 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/educations/{educationid}':
     get:
@@ -1014,18 +878,21 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Education Identifier
       - name: enrollmentid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/contacts':
     get:
@@ -1062,39 +929,7 @@ paths:
         parameters sent.  The query parameters are cumulative, so each
         additional query parameter narrows the search down further.
       operationId: GET_clients-clientid-enrollments-enrollmentid-contacts
-      parameters:
-        - name: CreatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: CreatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created before (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated before (inclusive) a
-            particular date
-          schema:
-            type: string
+  
     post:
       responses:
         '201':
@@ -1138,12 +973,14 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/contacts/{contactid}':
     get:
@@ -1225,18 +1062,21 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Contact Identifier
       - name: enrollmentid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/dateofengagements':
     get:
@@ -1274,39 +1114,7 @@ paths:
         cumulative, so each additional query parameter narrows the search down
         further.
       operationId: GET_clients-clientid-enrollments-enrollmentid-dateofengagements
-      parameters:
-        - name: CreatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: CreatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created before (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated before (inclusive) a
-            particular date
-          schema:
-            type: string
+  
     post:
       responses:
         '201':
@@ -1350,12 +1158,14 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/dateofengagements/{dateofengagementid}':
     get:
@@ -1444,18 +1254,21 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Dateofengagement Identifier
       - name: enrollmentid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/disabilities':
     get:
@@ -1506,39 +1319,7 @@ paths:
         query parameters sent.  The query parameters are cumulative, so each
         additional query parameter narrows the search down further.
       operationId: GET_clients-clientid-enrollments-enrollmentid-disabilities
-      parameters:
-        - name: CreatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: CreatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created before (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated before (inclusive) a
-            particular date
-          schema:
-            type: string
+  
     post:
       responses:
         '201':
@@ -1610,12 +1391,14 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/disabilities/{disabilityid}':
     get:
@@ -1730,18 +1513,21 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Disability Identifier
       - name: enrollmentid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/domesticviolences':
     get:
@@ -1783,39 +1569,7 @@ paths:
         cumulative, so each additional query parameter narrows the search down
         further.
       operationId: GET_clients-clientid-enrollments-enrollmentid-domesticviolences
-      parameters:
-        - name: CreatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: CreatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created before (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated before (inclusive) a
-            particular date
-          schema:
-            type: string
+  
     post:
       responses:
         '201':
@@ -1867,12 +1621,14 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/domesticviolences/{domesticviolenceid}':
     get:
@@ -1969,18 +1725,21 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Domesticviolence Identifier
       - name: enrollmentid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/employments':
     get:
@@ -2021,39 +1780,6 @@ paths:
         query parameters sent.  The query parameters are cumulative, so each
         additional query parameter narrows the search down further.
       operationId: GET_clients-clientid-enrollments-enrollmentid-employments
-      parameters:
-        - name: CreatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: CreatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created before (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated before (inclusive) a
-            particular date
-          schema:
-            type: string
     post:
       responses:
         '201':
@@ -2105,12 +1831,14 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/employments/{employmentid}':
     get:
@@ -2205,18 +1933,21 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Employment Identifier
       - name: enrollmentid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/exits':
     get:
@@ -2256,39 +1987,7 @@ paths:
         parameters sent.  The query parameters are cumulative, so each
         additional query parameter narrows the search down further.
       operationId: GET_clients-clientid-enrollments-enrollmentid-exits
-      parameters:
-        - name: CreatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: CreatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created before (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated before (inclusive) a
-            particular date
-          schema:
-            type: string
+  
     post:
       responses:
         '201':
@@ -2338,12 +2037,14 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}':
     get:
@@ -2431,18 +2132,21 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Exit Identifier
       - name: enrollmentid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exithousingassessments':
     get:
@@ -2482,39 +2186,7 @@ paths:
         narrows the search down further.
       operationId: >-
         GET_clients-clientid-enrollments-enrollmentid-exits-exitid-exithousingassessments
-      parameters:
-        - name: CreatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: CreatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created before (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated before (inclusive) a
-            particular date
-          schema:
-            type: string
+  
     post:
       responses:
         '201':
@@ -2561,18 +2233,21 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Exit Identifier
       - name: enrollmentid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exithousingassessments/{exithousingassessmentid}':
     get:
@@ -2663,24 +2338,28 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Exithousingassessment Identifier
       - name: exitid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Exit Identifier
       - name: enrollmentid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/housingassessmentdispositions':
     get:
@@ -2721,39 +2400,7 @@ paths:
         narrows the search down further.
       operationId: >-
         GET_clients-clientid-enrollments-enrollmentid-exits-exitid-housingassessmentdispositions
-      parameters:
-        - name: CreatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: CreatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created before (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated before (inclusive) a
-            particular date
-          schema:
-            type: string
+  
     post:
       responses:
         '201':
@@ -2802,18 +2449,21 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Exit Identifier
       - name: enrollmentid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/housingassessmentdispositions/{housingassessmentdispositionid}':
     get:
@@ -2906,24 +2556,28 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Housingassessmentdisposition Identifier
       - name: exitid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Exit Identifier
       - name: enrollmentid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exitpaths':
     get:
@@ -2960,39 +2614,7 @@ paths:
         query parameters sent.  The query parameters are cumulative, so each
         additional query parameter narrows the search down further.
       operationId: GET_clients-clientid-enrollments-enrollmentid-exits-exitid-exitpaths
-      parameters:
-        - name: CreatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: CreatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created before (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated before (inclusive) a
-            particular date
-          schema:
-            type: string
+  
     post:
       responses:
         '201':
@@ -3035,18 +2657,21 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Exit Identifier
       - name: enrollmentid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exitpaths/{exitpathid}':
     get:
@@ -3130,24 +2755,28 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Exitpath Identifier
       - name: exitid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Exit Identifier
       - name: enrollmentid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exitrhys':
     get:
@@ -3195,39 +2824,7 @@ paths:
         parameters sent.  The query parameters are cumulative, so each
         additional query parameter narrows the search down further.
       operationId: GET_clients-clientid-enrollments-enrollmentid-exits-exitid-exitrhys
-      parameters:
-        - name: CreatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: CreatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created before (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated before (inclusive) a
-            particular date
-          schema:
-            type: string
+  
     post:
       responses:
         '201':
@@ -3323,18 +2920,21 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Exit Identifier
       - name: enrollmentid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exitrhys/{exitrhyid}':
     get:
@@ -3471,24 +3071,28 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Exitrhy Identifier
       - name: exitid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Exit Identifier
       - name: enrollmentid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/healthinsurances':
     get:
@@ -3545,39 +3149,7 @@ paths:
         cumulative, so each additional query parameter narrows the search down
         further.
       operationId: GET_clients-clientid-enrollments-enrollmentid-healthinsurances
-      parameters:
-        - name: CreatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: CreatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created before (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated before (inclusive) a
-            particular date
-          schema:
-            type: string
+  
     post:
       responses:
         '201':
@@ -3645,12 +3217,14 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/healthinsurances/{healthinsuranceid}':
     get:
@@ -3778,18 +3352,21 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Healthinsurance Identifier
       - name: enrollmentid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/healthstatuses':
     get:
@@ -3830,39 +3407,7 @@ paths:
         the query parameters sent.  The query parameters are cumulative, so each
         additional query parameter narrows the search down further.
       operationId: GET_clients-clientid-enrollments-enrollmentid-healthstatuses
-      parameters:
-        - name: CreatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: CreatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created before (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated before (inclusive) a
-            particular date
-          schema:
-            type: string
+  
     post:
       responses:
         '201':
@@ -3914,12 +3459,14 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/healthstatuses/{healthstatusid}':
     get:
@@ -4016,18 +3563,21 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Healthstatus Identifier
       - name: enrollmentid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/incomeandsources':
     get:
@@ -4100,39 +3650,7 @@ paths:
         cumulative, so each additional query parameter narrows the search down
         further.
       operationId: GET_clients-clientid-enrollments-enrollmentid-incomeandsources
-      parameters:
-        - name: CreatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: CreatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created before (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated before (inclusive) a
-            particular date
-          schema:
-            type: string
+  
     post:
       responses:
         '201':
@@ -4246,12 +3764,14 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/incomeandsources/{incomeandsourceid}':
     get:
@@ -4410,18 +3930,21 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Incomeandsource Identifier
       - name: enrollmentid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/medicalassistances':
     get:
@@ -4464,39 +3987,7 @@ paths:
         cumulative, so each additional query parameter narrows the search down
         further.
       operationId: GET_clients-clientid-enrollments-enrollmentid-medicalassistances
-      parameters:
-        - name: CreatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: CreatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created before (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated before (inclusive) a
-            particular date
-          schema:
-            type: string
+  
     post:
       responses:
         '201':
@@ -4550,12 +4041,14 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/medicalassistances/{medicalassistanceid}':
     get:
@@ -4654,18 +4147,21 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Medicalassistance Identifier
       - name: enrollmentid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/noncashbenefits':
     get:
@@ -4714,39 +4210,7 @@ paths:
         cumulative, so each additional query parameter narrows the search down
         further.
       operationId: GET_clients-clientid-enrollments-enrollmentid-noncashbenefits
-      parameters:
-        - name: CreatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: CreatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created before (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated before (inclusive) a
-            particular date
-          schema:
-            type: string
+  
     post:
       responses:
         '201':
@@ -4812,12 +4276,14 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/noncashbenefits/{noncashbenefitid}':
     get:
@@ -4928,18 +4394,21 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Noncashbenefit Identifier
       - name: enrollmentid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"        
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/residentialmoveindates':
     get:
@@ -4978,39 +4447,7 @@ paths:
         query parameters are cumulative, so each additional query parameter
         narrows the search down further.
       operationId: GET_clients-clientid-enrollments-enrollmentid-residentialmoveindates
-      parameters:
-        - name: CreatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: CreatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created before (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated before (inclusive) a
-            particular date
-          schema:
-            type: string
+  
     post:
       responses:
         '201':
@@ -5055,12 +4492,14 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/residentialmoveindates/{residentialmoveindateid}':
     get:
@@ -5150,18 +4589,21 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Residentialmoveindate Identifier
       - name: enrollmentid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/pathstatuses':
     get:
@@ -5200,39 +4642,7 @@ paths:
         query parameters sent.  The query parameters are cumulative, so each
         additional query parameter narrows the search down further.
       operationId: GET_clients-clientid-enrollments-enrollmentid-pathstatuses
-      parameters:
-        - name: CreatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: CreatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created before (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated before (inclusive) a
-            particular date
-          schema:
-            type: string
+  
     post:
       responses:
         '201':
@@ -5281,12 +4691,14 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/pathstatuses/{pathstatusid}':
     get:
@@ -5378,18 +4790,21 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Pathstatus Identifier
       - name: enrollmentid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/entryrhsps':
     get:
@@ -5426,39 +4841,7 @@ paths:
         query parameters sent.  The query parameters are cumulative, so each
         additional query parameter narrows the search down further.
       operationId: GET_clients-clientid-enrollments-enrollmentid-entryrhsps
-      parameters:
-        - name: CreatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: CreatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created before (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated before (inclusive) a
-            particular date
-          schema:
-            type: string
+  
     post:
       responses:
         '201':
@@ -5502,12 +4885,14 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/entryrhsps/{entryrhspid}':
     get:
@@ -5589,18 +4974,21 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Entryrhsp Identifier
       - name: enrollmentid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/entryrhys':
     get:
@@ -5679,39 +5067,7 @@ paths:
         query parameters sent.  The query parameters are cumulative, so each
         additional query parameter narrows the search down further.
       operationId: GET_clients-clientid-enrollments-enrollmentid-entryrhys
-      parameters:
-        - name: CreatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: CreatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created before (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated before (inclusive) a
-            particular date
-          schema:
-            type: string
+  
     post:
       responses:
         '201':
@@ -5839,12 +5195,14 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/entryrhys/{entryrhyid}':
     get:
@@ -6010,18 +5368,21 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Entryrhy Identifier
       - name: enrollmentid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/entryssvfs':
     get:
@@ -6065,39 +5426,7 @@ paths:
         query parameters sent.  The query parameters are cumulative, so each
         additional query parameter narrows the search down further.
       operationId: GET_clients-clientid-enrollments-enrollmentid-entryssvfs
-      parameters:
-        - name: CreatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: CreatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created before (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated before (inclusive) a
-            particular date
-          schema:
-            type: string
+  
     post:
       responses:
         '201':
@@ -6155,12 +5484,14 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/entryssvfs/{entryssvfid}':
     get:
@@ -6256,18 +5587,21 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Entryssvf Identifier
       - name: enrollmentid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/servicefareferrals':
     get:
@@ -6311,39 +5645,7 @@ paths:
         cumulative, so each additional query parameter narrows the search down
         further.
       operationId: GET_clients-clientid-enrollments-enrollmentid-servicefareferrals
-      parameters:
-        - name: CreatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: CreatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created before (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated before (inclusive) a
-            particular date
-          schema:
-            type: string
+  
     post:
       responses:
         '201':
@@ -6399,12 +5701,14 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/enrollments/{enrollmentid}/servicefareferrals/{servicefareferralid}':
     get:
@@ -6505,18 +5809,21 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Servicefareferral Identifier
       - name: enrollmentid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Enrollment Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   '/clients/{clientid}/veteraninfos':
     get:
@@ -6564,39 +5871,7 @@ paths:
         the query parameters sent.  The query parameters are cumulative, so each
         additional query parameter narrows the search down further.
       operationId: GET_clients-clientid-veteraninfos
-      parameters:
-        - name: CreatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: CreatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created before (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated before (inclusive) a
-            particular date
-          schema:
-            type: string
+  
     post:
       responses:
         '201':
@@ -6662,6 +5937,7 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"
         description: Client Identifier
   '/clients/{clientid}/veteraninfos/{veteraninfoid}':
     get:
@@ -6769,12 +6045,14 @@ paths:
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Veteraninfo Identifier
       - name: clientid
         in: path
         required: true
         schema:
           type: string
+          format: "uuid"          
         description: Client Identifier
   /projects:
     get:
@@ -6819,39 +6097,7 @@ paths:
         parameters sent.  The query parameters are cumulative, so each
         additional query parameter narrows the search down further.
       operationId: GET_projects
-      parameters:
-        - name: CreatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: CreatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created before (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated before (inclusive) a
-            particular date
-          schema:
-            type: string
+  
     post:
       responses:
         '201':
@@ -7035,39 +6281,7 @@ paths:
         query parameters sent.  The query parameters are cumulative, so each
         additional query parameter narrows the search down further.
       operationId: GET_projects-projectid-projectcocs
-      parameters:
-        - name: CreatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: CreatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created before (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated before (inclusive) a
-            particular date
-          schema:
-            type: string
+  
     post:
       responses:
         '201':
@@ -7253,39 +6467,7 @@ paths:
         query parameters sent.  The query parameters are cumulative, so each
         additional query parameter narrows the search down further.
       operationId: GET_projects-projectid-inventories
-      parameters:
-        - name: CreatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: CreatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created before (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated before (inclusive) a
-            particular date
-          schema:
-            type: string
+  
     post:
       responses:
         '201':
@@ -7504,39 +6686,7 @@ paths:
         parameters sent.  The query parameters are cumulative, so each
         additional query parameter narrows the search down further.
       operationId: GET_projects-projectid-sites
-      parameters:
-        - name: CreatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: CreatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created before (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated before (inclusive) a
-            particular date
-          schema:
-            type: string
+  
     post:
       responses:
         '201':
@@ -7731,39 +6881,7 @@ paths:
         parameters sent.  The query parameters are cumulative, so each
         additional query parameter narrows the search down further.
       operationId: GET_projects-projectid-funders
-      parameters:
-        - name: CreatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: CreatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created before (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated before (inclusive) a
-            particular date
-          schema:
-            type: string
+  
     post:
       responses:
         '201':
@@ -7947,39 +7065,7 @@ paths:
         the query parameters sent.  The query parameters are cumulative, so each
         additional query parameter narrows the search down further.
       operationId: GET_projects-projectid-affiliations
-      parameters:
-        - name: CreatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: CreatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created before (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated before (inclusive) a
-            particular date
-          schema:
-            type: string
+  
     post:
       responses:
         '201':
@@ -8158,39 +7244,7 @@ paths:
         the query parameters sent.  The query parameters are cumulative, so each
         additional query parameter narrows the search down further.
       operationId: GET_organizations
-      parameters:
-        - name: CreatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: CreatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection created before (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedAfter
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated after (inclusive) a
-            particular date
-          schema:
-            type: string
-        - name: UpdatedBefore
-          in: query
-          required: true
-          description: >-
-            searches for members of the collection updated before (inclusive) a
-            particular date
-          schema:
-            type: string
+  
     post:
       responses:
         '201':
@@ -8797,6 +7851,12 @@ paths:
         schema:
           type: string
 components:
+  examples:
+    application/json:
+      id: 38
+      title: T-shirt
+      image:
+        url: images/38.png
   schemas:
     affiliation:
       required:
@@ -10143,6 +9203,7 @@ components:
                 properties:
                   enrollmentId:
                     type: string
+                    format: "uuid"
                   disablingcondition:
                     type: integer
                   entrydate:
@@ -13857,7 +12918,6 @@ components:
                     type: integer
   responses: {}
   parameters: {}
-  examples: {}
   requestBodies: {}
   headers: {}
   securitySchemes:
