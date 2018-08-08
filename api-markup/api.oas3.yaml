@@ -7763,6 +7763,7 @@ paths:
           description: filter on actual question text ( displayText )
           schema:
             type: string
+      description: The picklist values for spacific HUD question can be fetched usign action link("pickList") in response.
   '/questions/{hudquestionid}':
     get:
       responses:
