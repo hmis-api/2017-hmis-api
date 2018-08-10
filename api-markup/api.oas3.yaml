@@ -7665,33 +7665,24 @@ paths:
                         questionDataType: STRING
                         questionType: DROPDOWN
                         pickList:
-                        - name: housingstatus
-                          value: '1'
-                          description: Category 1 - Homeless
-                        - name: housingstatus
-                          value: '2'
-                          description: Category 2 - At imminent risk of losing housing
-                        - name: housingstatus
-                          value: '3'
-                          description: At-risk of homelessness
-                        - name: housingstatus
-                          value: '4'
-                          description: Stably Housed
-                        - name: housingstatus
-                          value: '5'
-                          description: Category 3 - Homeless only under other federal statutes
-                        - name: housingstatus
-                          value: '6'
-                          description: Category 4 - Fleeing domestic violence
-                        - name: housingstatus
-                          value: '8'
-                          description: Client does not know
-                        - name: housingstatus
-                          value: '9'
-                          description: Client refused
-                        - name: housingstatus
-                          value: '99'
-                          description: Data not collected
+                        - pickListValueCode: '1'
+                          valueText: Category 1 - Homeless
+                        - pickListValueCode: '2'
+                          valueText: Category 2 - At imminent risk of losing housing
+                        - pickListValueCode: '3'
+                          valueText: At-risk of homelessness
+                        - pickListValueCode: '4'
+                          valueText: Stably Housed
+                        - pickListValueCode: '5'
+                          valueText: Category 3 - Homeless only under other federal statutes
+                        - pickListValueCode: '6'
+                          valueText: Category 4 - Fleeing domestic violence
+                        - pickListValueCode: '8'
+                          valueText: Client does not know
+                        - pickListValueCode: '9'
+                          valueText: Client refused
+                        - pickListValueCode: '99'
+                          valueText: Data not collected
                         hudQuestionId: 12.1.1A
                         links:
                         - rel: updateUriTemplate
@@ -7702,22 +7693,17 @@ paths:
                         questionDataType: STRING
                         questionType: DROPDOWN
                         pickList:
-                        - name: relationshiptohoh
-                          value: '1'
-                          description: Self (head of household)
-                        - name: relationshiptohoh
-                          value: '2'
-                          description: Head of householdâ€™s child
-                        - name: relationshiptohoh
-                          value: '3'
-                          description: Head of householdâ€™s spouse or partner
-                        - name: relationshiptohoh
-                          value: '4'
-                          description: Head of householdâ€™s other relation member (other relation to
+                        - pickListValueCode: '1'
+                          valueText: Self (head of household)
+                        - pickListValueCode: '2'
+                          valueText: Head of householdâ€™s child
+                        - pickListValueCode: '3'
+                          valueText: Head of householdâ€™s spouse or partner
+                        - pickListValueCode: '4'
+                          valueText: Head of householdâ€™s other relation member (other relation to
                             head of household)
-                        - name: relationshiptohoh
-                          value: '5'
-                          description: 'Other: non-relation member'
+                        - pickListValueCode: '5'
+                          valueText: 'Other: non-relation member'
                         hudQuestionId: 3.15.1
                         links:
                         - rel: updateUriTemplate
@@ -7752,36 +7738,26 @@ paths:
                       stable housing ?
                     questionDataType: STRING
                     questionType: TEXT
-                    picklistGroupName: housingstatus
                     hudQuestionId: '2'
                     pickList:
-                    - name: housingstatus
-                      value: '1'
-                      description: Category 1 - Homeless
-                    - name: housingstatus
-                      value: '2'
-                      description: Category 2 - At imminent risk of losing housing
-                    - name: housingstatus
-                      value: '3'
-                      description: At-risk of homelessness
-                    - name: housingstatus
-                      value: '4'
-                      description: Stably Housed
-                    - name: housingstatus
-                      value: '5'
-                      description: Category 3 - Homeless only under other federal statutes
-                    - name: housingstatus
-                      value: '6'
-                      description: Category 4 - Fleeing domestic violence
-                    - name: housingstatus
-                      value: '8'
-                      description: Client does not know
-                    - name: housingstatus
-                      value: '9'
-                      description: Client refused
-                    - name: housingstatus
-                      value: '99'
-                      description: Data not collected
+                    - pickListValueCode: '1'
+                      valueText: Category 1 - Homeless
+                    - pickListValueCode: '2'
+                      valueText: Category 2 - At imminent risk of losing housing
+                    - pickListValueCode: '3'
+                      valueText: At-risk of homelessness
+                    - pickListValueCode: '4'
+                      valueText: Stably Housed
+                    - pickListValueCode: '5'
+                      valueText: Category 3 - Homeless only under other federal statutes
+                    - pickListValueCode: '6'
+                      valueText: Category 4 - Fleeing domestic violence
+                    - pickListValueCode: '8'
+                      valueText: Client does not know
+                    - pickListValueCode: '9'
+                      valueText: Client refused
+                    - pickListValueCode: '99'
+                      valueText: Data not collected
                     links:
                       - rel: updateUriTemplate
                         href: '/v2016/clients/{clientid}/enrollments'
