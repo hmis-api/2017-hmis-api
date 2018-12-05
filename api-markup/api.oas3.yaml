@@ -375,28 +375,28 @@ paths:
                   entryLinks:
                     rhsps:
                       unspecified_stage:
-                        09-23-2018 18:48:
+                        2018-09-23T18:48:
                         - data:
                           - rel: 03c66d96-72b9-49c9-bcb2-388053fb8e74
                             href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/entryrhsps/03c66d96-72b9-49c9-bcb2-388053fb8e74"
                           - rel: 3591939e-8adc-417c-8aad-386e85f87551
                             href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/entryrhsps/3591939e-8adc-417c-8aad-386e85f87551"
                           groupBy: dateUpdated
-                        09-23-2018 19:56:
+                        2018-09-23T19:56:
                         - data:
                           - rel: f340d9c5-c5d1-44f6-b407-9c91da9b9ef9
                             href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/entryrhsps/f340d9c5-c5d1-44f6-b407-9c91da9b9ef9"
                           - rel: 924e4746-4c1a-41cf-a0ed-d3177b9cc23d
                             href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/entryrhsps/924e4746-4c1a-41cf-a0ed-d3177b9cc23d"
                           groupBy: dateUpdated
-                        09-25-2018 09:50:
+                        2018-09-25T09:50:
                         - data:
                           - rel: d80ac82c-0030-4e34-bd43-0332dc5af5c0
                             href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/entryrhsps/d80ac82c-0030-4e34-bd43-0332dc5af5c0"
                           - rel: 0bab25d1-cff7-4a57-8c30-f7b258af6143
                             href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/entryrhsps/0bab25d1-cff7-4a57-8c30-f7b258af6143"
                           groupBy: dateUpdated
-                        09-25-2018 09:51:
+                        2018-09-25T09:51:
                         - data:
                           - rel: a47aee4e-8584-432a-b790-31be3a4e1409
                             href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/entryrhsps/a47aee4e-8584-432a-b790-31be3a4e1409"
@@ -409,73 +409,73 @@ paths:
                           groupBy: dateUpdated
                     entryrhys:
                       '1':
-                        09-23-2018 19:56:
+                        2018-09-23T19:56:
                         - data:
                           - rel: 66015eca-afa7-4f3f-a499-389c737339e3
                             href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/entryrhys/66015eca-afa7-4f3f-a499-389c737339e3"
                           groupBy: dateUpdated
-                        11-14-2018 12:10:
+                        2018-11-14T12:10:
                         - data:
                           - rel: b2462907-9ae5-4209-827d-e56ebb3631c7
                             href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/entryrhys/b2462907-9ae5-4209-827d-e56ebb3631c7"
                           groupBy: informationDate
-                        11-17-2018 12:09:
+                        2018-11-17T12:09:
                         - data:
                           - rel: 025b18af-d096-4b2e-9aec-f36d2a2435d3
                             href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/entryrhys/025b18af-d096-4b2e-9aec-f36d2a2435d3"
                           - rel: 7a47384f-d5e0-4c11-be33-2477bf0e9de4
                             href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/entryrhys/7a47384f-d5e0-4c11-be33-2477bf0e9de4"
                           groupBy: submissionDate
-                        11-20-2018 12:09:
+                        2018-11-20T12:09:
                         - data:
                           - rel: 5be632ee-8ba1-4bc6-b947-158963269eab
                             href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/entryrhys/5be632ee-8ba1-4bc6-b947-158963269eab"
                           groupBy: informationDate
                       '2':
-                        09-23-2018 18:48:
+                        2018-09-23T18:48:
                         - data:
                           - rel: e686d4cb-78cf-4642-bcf6-7be27e1d714c
                             href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/entryrhys/e686d4cb-78cf-4642-bcf6-7be27e1d714c"
                           groupBy: dateUpdated
-                        11-14-2018 12:10:
+                        2018-11-14T12:10:
                         - data:
                           - rel: 904623af-08c5-47f9-b034-bf3a6b82d646
                             href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/entryrhys/904623af-08c5-47f9-b034-bf3a6b82d646"
                           groupBy: informationDate
-                        11-17-2018 12:09:
+                        2018-11-17T12:09:
                         - data:
                           - rel: 6e541341-a2e4-40e7-8d89-0037a45095d4
                             href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/entryrhys/6e541341-a2e4-40e7-8d89-0037a45095d4"
                           groupBy: submissionDate
                       '3':
-                        11-20-2018 12:09:
+                        2018-11-20T12:09:
                         - data:
                           - rel: b817a545-1998-4377-9648-0b55828fdb8b
                             href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/entryrhys/b817a545-1998-4377-9648-0b55828fdb8b"
                           groupBy: informationDate
                       unspecified_stage:
-                        09-25-2018 09:51:
+                        2018-09-25T09:51:
                         - data:
                           - rel: 2e9ece93-d935-4489-8440-42230f05e999
                             href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/entryrhys/2e9ece93-d935-4489-8440-42230f05e999"
                           groupBy: dateUpdated
                     entryssvfs:
                       unspecified_stage:
-                        09-23-2018 19:56:
+                        2018-09-23T19:56:
                         - data:
                           - rel: 190094ed-a0a6-4210-bc0b-bbb73e53c0b8
                             href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/entryssvfs/190094ed-a0a6-4210-bc0b-bbb73e53c0b8"
                           - rel: 93038b0f-a916-43cd-9a5c-7cb544e96749
                             href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/entryssvfs/93038b0f-a916-43cd-9a5c-7cb544e96749"
                           groupBy: dateUpdated
-                        09-25-2018 09:50:
+                        2018-09-25T09:50:
                         - data:
                           - rel: d05e4b34-b561-4630-b960-474b05dbeeec
                             href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/entryssvfs/d05e4b34-b561-4630-b960-474b05dbeeec"
                           - rel: 2e772c46-cf20-4916-a6d0-cb00e3aa70af
                             href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/entryssvfs/2e772c46-cf20-4916-a6d0-cb00e3aa70af"
                           groupBy: dateUpdated
-                        09-25-2018 09:51:
+                        2018-09-25T09:51:
                         - data:
                           - rel: 99362cc3-8c14-4869-8895-b647d922d36b
                             href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/entryssvfs/99362cc3-8c14-4869-8895-b647d922d36b"
@@ -489,7 +489,7 @@ paths:
                   enrollmentLinks:
                     educations:
                       '1':
-                        11-13-2018 00:17:
+                        2018-11-13T00:17:
                         - data:
                           - rel: 3130d17b-c60a-473c-99f9-83e6886a9b7d
                             href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/educations/3130d17b-c60a-473c-99f9-83e6886a9b7d"
@@ -498,13 +498,13 @@ paths:
                           - rel: dcaba5a8-3fc9-48c1-93c8-ba2c3631a27a
                             href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/educations/dcaba5a8-3fc9-48c1-93c8-ba2c3631a27a"
                           groupBy: informationDate
-                        11-15-2018 23:01:
+                        2018-11-15T23:01:
                         - data:
                           - rel: 7736581e-db33-4fb3-b2c9-19bfd32c5b51
                             href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/educations/7736581e-db33-4fb3-b2c9-19bfd32c5b51"
                           groupBy: dateUpdated
                       unspecified_stage:
-                        11-13-2018 00:17:
+                        2018-11-13T00:17:
                         - data:
                           - rel: fa3dfcc0-4e2e-4ee6-b4d0-ef083e1ee0b9
                             href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/educations/fa3dfcc0-4e2e-4ee6-b4d0-ef083e1ee0b9"
@@ -513,14 +513,14 @@ paths:
                           - rel: 1da16c18-e507-41dc-9eba-5c61acb00b45
                             href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/educations/1da16c18-e507-41dc-9eba-5c61acb00b45"
                           groupBy: informationDate
-                        11-15-2018 23:01:
+                        2018-11-15T23:01:
                         - data:
                           - rel: 1bd7018e-f919-461f-982e-5f5c049d5896
                             href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/educations/1bd7018e-f919-461f-982e-5f5c049d5896"
                           groupBy: dateUpdated
                     dateOfEngagements:
                       unspecified_stage:
-                        09-25-2018 09:51:
+                        2018-09-25T09:51:
                         - data:
                           - rel: 40e7b72d-d265-4dd1-84c2-d900f5cbc5c1
                             href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/dateofengagements/40e7b72d-d265-4dd1-84c2-d900f5cbc5c1"
@@ -529,7 +529,7 @@ paths:
                           groupBy: dateUpdated
                     disabilities:
                       '1':
-                        11-04-0009 00:00:
+                        0009-11-04T00:00:
                         - data:
                           - rel: de33b981-f68d-418f-a303-eb0840091e42
                             href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/disabilities/de33b981-f68d-418f-a303-eb0840091e42"
@@ -537,7 +537,7 @@ paths:
                             href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/disabilities/66af571c-5c97-4ceb-b781-b87dcc9d7174"
                           groupBy: informationDate
                       '2':
-                        11-17-2018 12:07:
+                        2018-11-17T12:07:
                         - data:
                           - rel: ed7bbf2a-fae4-40cb-806e-b46bd5a2ec56
                             href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/disabilities/ed7bbf2a-fae4-40cb-806e-b46bd5a2ec56"
@@ -546,7 +546,7 @@ paths:
                           groupBy: submissionDate
                     domesticViolences:
                       unspecified_stage:
-                        01-08-2018 00:00:
+                        2018-01-08T00:00:
                         - data:
                           - rel: 6ac472ec-bad7-4cb7-b60a-8e237bea1d0d
                             href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/domesticviolences/6ac472ec-bad7-4cb7-b60a-8e237bea1d0d"
@@ -555,25 +555,25 @@ paths:
                           groupBy: informationDate
                   exitLinks:
                     unspecified_stage:
-                      09-25-2018 09:50:
+                      2018-09-25T09:50:
                       - data:
                         - rel: 28e48aec-82e0-48ff-918b-493825cdea18
                           href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/exits/28e48aec-82e0-48ff-918b-493825cdea18"
                           exitHousingAssessments:
                             unspecified_stage:
-                              09-25-2018 09:50:
+                              2018-09-25T09:50:
                               - data:
                                 - rel: 2cd01b48-c7e8-4e2a-90ff-144174c60757
                                   href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/exits/28e48aec-82e0-48ff-918b-493825cdea18/exithousingassessments/2cd01b48-c7e8-4e2a-90ff-144174c60757"
                                 groupBy: dateUpdated
                         groupBy: dateUpdated
-                      09-25-2018 09:51:
+                      2018-09-25T09:51:
                       - data:
                         - rel: 3ed58fa0-b406-4ee0-86ad-32de911407ad
                           href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/exits/3ed58fa0-b406-4ee0-86ad-32de911407ad"
                           exitHousingAssessments:
                             unspecified_stage:
-                              09-25-2018 09:51:
+                              2018-09-25T09:51:
                               - data:
                                 - rel: 3bdb1ef3-52e4-4bf7-b492-2a7afb600d47
                                   href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/exits/3ed58fa0-b406-4ee0-86ad-32de911407ad/exithousingassessments/3bdb1ef3-52e4-4bf7-b492-2a7afb600d47"
@@ -582,7 +582,7 @@ paths:
                           href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/exits/473f41ca-4a77-491f-aec8-a9765dff9012"
                           exitHousingAssessments:
                             unspecified_stage:
-                              09-25-2018 09:51:
+                              2018-09-25T09:51:
                               - data:
                                 - rel: 099359fe-36a3-4d09-9029-35c4b6938e58
                                   href: "/hmis-clientapi/rest/v2017/clients/00ba9b0a-bf0a-411f-9ad3-56194beb9e8a/enrollments/03c9fbfc-a3a0-42f4-b304-3f7dc3ad2113/exits/473f41ca-4a77-491f-aec8-a9765dff9012/exithousingassessments/099359fe-36a3-4d09-9029-35c4b6938e58"
@@ -705,21 +705,20 @@ paths:
           description: OK   Everything is working.
           content:
             application/json:
-              example:
-                enrollmentCocs:
-                  pagination:
-                    from: 0
-                    returned: 1
-                    total: 1
-                    maximum: 30
-                    sort: {}
-                  enrollmentCocs:
-                    - enrollmentCocId: 60071b3a-2625-45b8-aa6e-23e99096b343
-                      cocCode: Test
-                      dataCollectionStage: 1
-                      informationDate: 03-17-2016
               schema:
-                $ref: '#/components/schemas/enrollment_cocs_ids'
+                example:
+                    enrollmentCocs:
+                      pagination:
+                        from: 0
+                        returned: 1
+                        total: 1
+                        maximum: 30
+                        sort: {}
+                      enrollmentCocs:
+                        - enrollmentCocId: 60071b3a-2625-45b8-aa6e-23e99096b343
+                          cocCode: Test
+                          dataCollectionStage: 1
+                          informationDate: 03-17-2016
         '400':
           description: Bad Request   The request was invalid or cannot be served.
         '403':
@@ -768,13 +767,12 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              enrollmentCoc:
-                dataCollectionStage: 1
-                informationDate: 03-17-2016
-                cocCode: Test
             schema:
-              $ref: '#/components/schemas/enrollment_coc'
+              example:
+                  enrollmentCoc:
+                    dataCollectionStage: 1
+                    informationDate: 03-17-2016
+                    cocCode: Test
         required: true
     parameters:
       - name: enrollmentId
@@ -798,14 +796,13 @@ paths:
           description: OK   Everything is working.
           content:
             application/json:
-              example:
-                enrollmentCoc:
-                  enrollmentCocId: 60071b3a-2625-45b8-aa6e-23e99096b343
-                  cocCode: 'Test             '
-                  dataCollectionStage: 1
-                  informationDate: 03-17-2016
               schema:
-                $ref: '#/components/schemas/enrollment_coc_id'
+                example:
+                    enrollmentCoc:
+                      enrollmentCocId: 60071b3a-2625-45b8-aa6e-23e99096b343
+                      cocCode: 'Test             '
+                      dataCollectionStage: 1
+                      informationDate: 03-17-2016
         '400':
           description: Bad Request   The request was invalid or cannot be served.
         '401':
@@ -847,13 +844,12 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              enrollmentCoc:
-                dataCollectionStage: 1
-                informationDate: 03-17-2016
-                cocCode: Test
             schema:
-              $ref: '#/components/schemas/enrollment_coc'
+              example:
+                  enrollmentCoc:
+                    dataCollectionStage: 1
+                    informationDate: 03-17-2016
+                    cocCode: Test
         required: true
     delete:
       responses:
@@ -905,22 +901,21 @@ paths:
           description: OK   Everything is working.
           content:
             application/json:
-              example:
-                educations:
-                  pagination:
-                    from: 0
-                    returned: 1
-                    total: 1
-                    maximum: 30
-                    sort: {}
-                  educations:
-                    - educationId: f91547a2-d13b-40a1-a1be-fed415c468a6
-                      lastGradeCompleted: 10
-                      schoolStatus: 6
-                      dataCollectionStage: 1
-                      informationDate: 03-17-2016
               schema:
-                $ref: '#/components/schemas/educations_ids'
+                example:
+                    educations:
+                      pagination:
+                        from: 0
+                        returned: 1
+                        total: 1
+                        maximum: 30
+                        sort: {}
+                      educations:
+                        - educationId: f91547a2-d13b-40a1-a1be-fed415c468a6
+                          lastGradeCompleted: 10
+                          schoolStatus: 6
+                          dataCollectionStage: 1
+                          informationDate: 03-17-2016
         '400':
           description: Bad Request   The request was invalid or cannot be served.
         '403':
@@ -1048,14 +1043,13 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              education:
-                lastGradeCompleted: 10
-                schoolStatus: 6
-                dataCollectionStage: 1
-                informationDate: 03-17-2016
             schema:
-              $ref: '#/components/schemas/education'
+              example:
+                  education:
+                    lastGradeCompleted: 10
+                    schoolStatus: 6
+                    dataCollectionStage: 1
+                    informationDate: 03-17-2016
         required: true
     delete:
       responses:
@@ -1104,19 +1098,18 @@ paths:
           description: OK   Everything is working.
           content:
             application/json:
-              example:
-                contacts:
-                  pagination:
-                    from: 0
-                    returned: 1
-                    total: 1
-                    maximum: 30
-                    sort: {}
-                  contacts:
-                    - contactId: 169da295-22f9-41d9-b991-ada835b1e123
-                      contactLocation: 3
               schema:
-                $ref: '#/components/schemas/contacts_ids'
+                example:
+                    contacts:
+                      pagination:
+                        from: 0
+                        returned: 1
+                        total: 1
+                        maximum: 30
+                        sort: {}
+                      contacts:
+                        - contactId: 169da295-22f9-41d9-b991-ada835b1e123
+                          contactLocation: 3
         '400':
           description: Bad Request   The request was invalid or cannot be served.
         '403':
@@ -1164,11 +1157,10 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              contact:
-                contactLocation: 3
             schema:
-              $ref: '#/components/schemas/contact'
+              example:
+                  contact:
+                    contactLocation: 3
         required: true
     parameters:
       - name: enrollmentId
@@ -1192,12 +1184,11 @@ paths:
           description: OK   Everything is working.
           content:
             application/json:
-              example:
-                contact:
-                  contactId: 169da295-22f9-41d9-b991-ada835b1e123
-                  contactLocation: 3
               schema:
-                $ref: '#/components/schemas/contact_id'
+                example:
+                    contact:
+                      contactId: 169da295-22f9-41d9-b991-ada835b1e123
+                      contactLocation: 3
         '400':
           description: Bad Request   The request was invalid or cannot be served.
         '401':
@@ -1235,11 +1226,10 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              contact:
-                contactLocation: 3
             schema:
-              $ref: '#/components/schemas/contact'
+              example:
+                  contact:
+                    contactLocation: 3
         required: true
     delete:
       responses:
@@ -1288,19 +1278,18 @@ paths:
           description: OK   Everything is working.
           content:
             application/json:
-              example:
-                dateOfEngagements:
-                  pagination:
-                    from: 0
-                    returned: 1
-                    total: 1
-                    maximum: 30
-                    sort: {}
-                  dateOfEngagements:
-                    - dateOfEngagementId: 61d17265-aa9f-4ed2-a146-2a94846f3dd3
-                      dateOfEngagement: '04-07-2017 17:50'
               schema:
-                $ref: '#/components/schemas/date_of_engagements_ids'
+                example:
+                    dateOfEngagements:
+                      pagination:
+                        from: 0
+                        returned: 1
+                        total: 1
+                        maximum: 30
+                        sort: {}
+                      dateOfEngagements:
+                        - dateOfEngagementId: 61d17265-aa9f-4ed2-a146-2a94846f3dd3
+                          dateOfEngagement: '04-07-2017 17:50'
         '400':
           description: Bad Request   The request was invalid or cannot be served.
         '403':
@@ -1349,11 +1338,10 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              dateOfEngagement:
-                dateOfEngagement: '04-07-2017 17:50'
             schema:
-              $ref: '#/components/schemas/date_of_engagement'
+              example:
+                  dateOfEngagement:
+                    dateOfEngagement: '04-07-2017 17:50'
         required: true
     parameters:
       - name: enrollmentId
@@ -1377,12 +1365,11 @@ paths:
           description: OK   Everything is working.
           content:
             application/json:
-              example:
-                dateOfEngagement:
-                  dateOfEngagementId: 61d17265-aa9f-4ed2-a146-2a94846f3dd3
-                  dateOfEngagement: '04-07-2017 17:50'
               schema:
-                $ref: '#/components/schemas/date_of_engagement_id'
+                example:
+                    dateOfEngagement:
+                      dateOfEngagementId: 61d17265-aa9f-4ed2-a146-2a94846f3dd3
+                      dateOfEngagement: '04-07-2017 17:50'
         '400':
           description: Bad Request   The request was invalid or cannot be served.
         '401':
@@ -1424,11 +1411,10 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              dateOfEngagement:
-                dateOfEngagement: '04-07-2017 17:50'
             schema:
-              $ref: '#/components/schemas/date_of_engagement'
+              example:
+                  dateOfEngagement:
+                    dateOfEngagement: '04-07-2017 17:50'
         required: true
     delete:
       responses:
@@ -1480,33 +1466,32 @@ paths:
           description: OK   Everything is working.
           content:
             application/json:
-              example:
-                disabilitiesList:
-                  pagination:
-                    from: 0
-                    returned: 1
-                    total: 1
-                    maximum: 30
-                    sort: {}
-                  disabilitiesList:
-                    - disabilitiesId: afeb939c-72d9-43e8-95e6-045a39843c10
-                      disabilityType: 6
-                      disabilityResponse: -1994754550
-                      indefiniteandImpairs: 0
-                      documentationOnFile: 0
-                      receivingServices: 0
-                      pathHowConfirmed: 99
-                      pathSmiInformation: 0
-                      tCellCountAvailable: 1
-                      tCellCount: 2
-                      tCellCountSource: '3       '
-                      viralLoadAvailable: 4
-                      viralLoad: 5
-                      viralLoadSource: 'test    '
-                      dataCollectionStage: 1
-                      informationDate: 03-17-2016
               schema:
-                $ref: '#/components/schemas/disabilities_ids'
+                example:
+                    disabilitiesList:
+                      pagination:
+                        from: 0
+                        returned: 1
+                        total: 1
+                        maximum: 30
+                        sort: {}
+                      disabilitiesList:
+                        - disabilitiesId: afeb939c-72d9-43e8-95e6-045a39843c10
+                          disabilityType: 6
+                          disabilityResponse: -1994754550
+                          indefiniteandImpairs: 0
+                          documentationOnFile: 0
+                          receivingServices: 0
+                          pathHowConfirmed: 99
+                          pathSmiInformation: 0
+                          tCellCountAvailable: 1
+                          tCellCount: 2
+                          tCellCountSource: '3       '
+                          viralLoadAvailable: 4
+                          viralLoad: 5
+                          viralLoadSource: 'test    '
+                          dataCollectionStage: 1
+                          informationDate: 03-17-2016
         '400':
           description: Bad Request   The request was invalid or cannot be served.
         '403':
@@ -1568,25 +1553,24 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              disabilities:
-                disabilityType: 6
-                disabilityResponse: -1994754550
-                documentationOnFile: 0
-                indefiniteandImpairs: 0
-                pathHowConfirmed: 99
-                receivingServices: 0
-                pathSmiInformation: 0
-                tCellCountAvailable: 1
-                tCellCount: 2
-                tCellCountSource: 3
-                viralLoadAvailable: 4
-                viralLoad: 5
-                viralLoadSource: test
-                dataCollectionStage: 1
-                informationDate: 03-17-2016
             schema:
-              $ref: '#/components/schemas/disability'
+              example:
+                  disabilities:
+                    disabilityType: 6
+                    disabilityResponse: -1994754550
+                    documentationOnFile: 0
+                    indefiniteandImpairs: 0
+                    pathHowConfirmed: 99
+                    receivingServices: 0
+                    pathSmiInformation: 0
+                    tCellCountAvailable: 1
+                    tCellCount: 2
+                    tCellCountSource: 3
+                    viralLoadAvailable: 4
+                    viralLoad: 5
+                    viralLoadSource: test
+                    dataCollectionStage: 1
+                    informationDate: 03-17-2016
         required: true
     parameters:
       - name: enrollmentId
@@ -1610,26 +1594,25 @@ paths:
           description: OK   Everything is working.
           content:
             application/json:
-              example:
-                disabilities:
-                  disabilitiesId: afeb939c-72d9-43e8-95e6-045a39843c10
-                  disabilityType: 6
-                  disabilityResponse: -1994754550
-                  indefiniteandImpairs: 0
-                  documentationOnFile: 0
-                  receivingServices: 0
-                  pathHowConfirmed: 99
-                  pathSmiInformation: 0
-                  tCellCountAvailable: 1
-                  tCellCount: 2
-                  tCellCountSource: '3       '
-                  viralLoadAvailable: 4
-                  viralLoad: 5
-                  viralLoadSource: 'test    '
-                  dataCollectionStage: 1
-                  informationDate: 03-17-2016
               schema:
-                $ref: '#/components/schemas/disability_id'
+                example:
+                    disabilities:
+                      disabilitiesId: afeb939c-72d9-43e8-95e6-045a39843c10
+                      disabilityType: 6
+                      disabilityResponse: -1994754550
+                      indefiniteandImpairs: 0
+                      documentationOnFile: 0
+                      receivingServices: 0
+                      pathHowConfirmed: 99
+                      pathSmiInformation: 0
+                      tCellCountAvailable: 1
+                      tCellCount: 2
+                      tCellCountSource: '3       '
+                      viralLoadAvailable: 4
+                      viralLoad: 5
+                      viralLoadSource: 'test    '
+                      dataCollectionStage: 1
+                      informationDate: 03-17-2016
         '400':
           description: Bad Request   The request was invalid or cannot be served.
         '401':
@@ -1669,25 +1652,24 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              disabilities:
-                disabilityType: 6
-                disabilityResponse: -1994754550
-                documentationOnFile: 0
-                indefiniteandImpairs: 0
-                pathHowConfirmed: 99
-                receivingServices: 0
-                pathSmiInformation: 0
-                tCellCountAvailable: 1
-                tCellCount: 2
-                tCellCountSource: 3
-                viralLoadAvailable: 4
-                viralLoad: 5
-                viralLoadSource: test
-                dataCollectionStage: 1
-                informationDate: 03-17-2016
             schema:
-              $ref: '#/components/schemas/disability'
+              example:
+                  disabilities:
+                    disabilityType: 6
+                    disabilityResponse: -1994754550
+                    documentationOnFile: 0
+                    indefiniteandImpairs: 0
+                    pathHowConfirmed: 99
+                    receivingServices: 0
+                    pathSmiInformation: 0
+                    tCellCountAvailable: 1
+                    tCellCount: 2
+                    tCellCountSource: 3
+                    viralLoadAvailable: 4
+                    viralLoad: 5
+                    viralLoadSource: test
+                    dataCollectionStage: 1
+                    informationDate: 03-17-2016
         required: true
     delete:
       responses:
@@ -1739,23 +1721,22 @@ paths:
           description: OK   Everything is working.
           content:
             application/json:
-              example:
-                domesticViolences:
-                  pagination:
-                    from: 0
-                    returned: 1
-                    total: 1
-                    maximum: 30
-                    sort: {}
-                  domesticViolences:
-                    - domesticViolenceId: b4dcd92a-4d6c-44bb-bb07-4431ab48e806
-                      domesticViolenceVictim: 9
-                      whenOccurred: 8
-                      currentlyFleeing: -588416505
-                      dataCollectionStage: 1
-                      informationDate: 03-17-2016
               schema:
-                $ref: '#/components/schemas/domestic_violences_ids'
+                example:
+                    domesticViolences:
+                      pagination:
+                        from: 0
+                        returned: 1
+                        total: 1
+                        maximum: 30
+                        sort: {}
+                      domesticViolences:
+                        - domesticViolenceId: b4dcd92a-4d6c-44bb-bb07-4431ab48e806
+                          domesticViolenceVictim: 9
+                          whenOccurred: 8
+                          currentlyFleeing: -588416505
+                          dataCollectionStage: 1
+                          informationDate: 03-17-2016
         '400':
           description: Bad Request   The request was invalid or cannot be served.
         '403':
@@ -1808,15 +1789,14 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              domesticViolence:
-                domesticViolenceVictim: 9
-                whenOccurred: 8
-                currentlyFleeing: -588416505
-                dataCollectionStage: 1
-                informationDate: 03-17-2016
             schema:
-              $ref: '#/components/schemas/domestic_violence'
+              example:
+                  domesticViolence:
+                    domesticViolenceVictim: 9
+                    whenOccurred: 8
+                    currentlyFleeing: -588416505
+                    dataCollectionStage: 1
+                    informationDate: 03-17-2016
         required: true
     parameters:
       - name: enrollmentId
@@ -1840,16 +1820,15 @@ paths:
           description: OK   Everything is working.
           content:
             application/json:
-              example:
-                domesticViolence:
-                  domesticViolenceId: b4dcd92a-4d6c-44bb-bb07-4431ab48e806
-                  domesticViolenceVictim: 9
-                  whenOccurred: 8
-                  currentlyFleeing: -588416505
-                  dataCollectionStage: 1
-                  informationDate: 03-17-2016
               schema:
-                $ref: '#/components/schemas/domestic_violence_id'
+                example:
+                    domesticViolence:
+                      domesticViolenceId: b4dcd92a-4d6c-44bb-bb07-4431ab48e806
+                      domesticViolenceVictim: 9
+                      whenOccurred: 8
+                      currentlyFleeing: -588416505
+                      dataCollectionStage: 1
+                      informationDate: 03-17-2016
         '400':
           description: Bad Request   The request was invalid or cannot be served.
         '401':
@@ -1891,15 +1870,14 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              domesticViolence:
-                domesticViolenceVictim: 9
-                whenOccurred: 8
-                currentlyFleeing: -588416505
-                dataCollectionStage: 1
-                informationDate: 03-17-2016
             schema:
-              $ref: '#/components/schemas/domestic_violence'
+              example:
+                  domesticViolence:
+                    domesticViolenceVictim: 9
+                    whenOccurred: 8
+                    currentlyFleeing: -588416505
+                    dataCollectionStage: 1
+                    informationDate: 03-17-2016
         required: true
     delete:
       responses:
@@ -1951,23 +1929,22 @@ paths:
           description: OK   Everything is working.
           content:
             application/json:
-              example:
-                employments:
-                  pagination:
-                    from: 0
-                    returned: 1
-                    total: 1
-                    maximum: 30
-                    sort: {}
-                  employments:
-                    - employmentId: 61fa7069-3d46-4b4f-86f5-44fc4e1d6131
-                      employed: 0
-                      employmentType: 2
-                      notEmployedReason: 3
-                      dataCollectionStage: 1
-                      informationDate: 03-17-2016
               schema:
-                $ref: '#/components/schemas/employments_ids'
+                example:
+                    employments:
+                      pagination:
+                        from: 0
+                        returned: 1
+                        total: 1
+                        maximum: 30
+                        sort: {}
+                      employments:
+                        - employmentId: 61fa7069-3d46-4b4f-86f5-44fc4e1d6131
+                          employed: 0
+                          employmentType: 2
+                          notEmployedReason: 3
+                          dataCollectionStage: 1
+                          informationDate: 03-17-2016
         '400':
           description: Bad Request   The request was invalid or cannot be served.
         '403':
@@ -2018,15 +1995,14 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              employment:
-                employed: 0
-                employmentType: 2
-                notEmployedReason: 3
-                dataCollectionStage: 1
-                informationDate: 03-17-2016
             schema:
-              $ref: '#/components/schemas/employment'
+              example:
+                  employment:
+                    employed: 0
+                    employmentType: 2
+                    notEmployedReason: 3
+                    dataCollectionStage: 1
+                    informationDate: 03-17-2016
         required: true
     parameters:
       - name: enrollmentId
@@ -2050,16 +2026,15 @@ paths:
           description: OK   Everything is working.
           content:
             application/json:
-              example:
-                employment:
-                  employmentId: 61fa7069-3d46-4b4f-86f5-44fc4e1d6131
-                  employed: 0
-                  employmentType: 2
-                  notEmployedReason: 3
-                  dataCollectionStage: 1
-                  informationDate: 03-17-2016
               schema:
-                $ref: '#/components/schemas/employment_id'
+                example:
+                    employment:
+                      employmentId: 61fa7069-3d46-4b4f-86f5-44fc4e1d6131
+                      employed: 0
+                      employmentType: 2
+                      notEmployedReason: 3
+                      dataCollectionStage: 1
+                      informationDate: 03-17-2016
         '400':
           description: Bad Request   The request was invalid or cannot be served.
         '401':
@@ -2099,15 +2074,14 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              employment:
-                employed: 0
-                employmentType: 2
-                notEmployedReason: 3
-                dataCollectionStage: 1
-                informationDate: 03-17-2016
             schema:
-              $ref: '#/components/schemas/employment'
+              example:
+                  employment:
+                    employed: 0
+                    employmentType: 2
+                    notEmployedReason: 3
+                    dataCollectionStage: 1
+                    informationDate: 03-17-2016
         required: true
     delete:
       responses:
@@ -2159,22 +2133,21 @@ paths:
           description: OK   Everything is working.
           content:
             application/json:
-              example:
-                exits:
-                  pagination:
-                    from: 0
-                    returned: 1
-                    total: 1
-                    maximum: 30
-                    sort: {}
-                  exits:
-                    - exitId: 89c350f4-9165-4898-bb8b-f8b096a1aa2d
-                      exitDate: 1459518853883
-                      otherDestination: TWENTY_FOUR
-                      destination: 6
-                      dateCreated: 05-11-2017
               schema:
-                $ref: '#/components/schemas/exits_ids'
+                example:
+                    exits:
+                      pagination:
+                        from: 0
+                        returned: 1
+                        total: 1
+                        maximum: 30
+                        sort: {}
+                      exits:
+                        - exitId: 89c350f4-9165-4898-bb8b-f8b096a1aa2d
+                          exitDate: 1459518853883
+                          otherDestination: TWENTY_FOUR
+                          destination: 6
+                          dateCreated: 05-11-2017
         '400':
           description: Bad Request   The request was invalid or cannot be served.
         '403':
@@ -2226,13 +2199,12 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              exit:
-                exitDate: 1459518853883
-                otherDestination: TWENTY_FOUR
-                destination: 6
             schema:
-              $ref: '#/components/schemas/exit'
+              example:
+                  exit:
+                    exitDate: 1459518853883
+                    otherDestination: TWENTY_FOUR
+                    destination: 6
         required: true
     parameters:
       - name: enrollmentId
@@ -2256,16 +2228,15 @@ paths:
           description: OK   Everything is working.
           content:
             application/json:
-              example:
-                exit:
-                  exitId: 89c350f4-9165-4898-bb8b-f8b096a1aa2d
-                  exitDate: 1459518853883
-                  otherDestination: TWENTY_FOUR
-                  destination: 6
-                  dateCreated: 05-11-2017
-                  dateUpdated: 05-11-2017
               schema:
-                $ref: '#/components/schemas/exit_id'
+                example:
+                    exit:
+                      exitId: 89c350f4-9165-4898-bb8b-f8b096a1aa2d
+                      exitDate: 1459518853883
+                      otherDestination: TWENTY_FOUR
+                      destination: 6
+                      dateCreated: 05-11-2017
+                      dateUpdated: 05-11-2017
         '400':
           description: Bad Request   The request was invalid or cannot be served.
         '401':
@@ -2303,13 +2274,12 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              exit:
-                exitDate: 1459518853883
-                otherDestination: TWENTY_FOUR
-                destination: 6
             schema:
-              $ref: '#/components/schemas/exit'
+              example:
+                  exit:
+                    exitDate: 1459518853883
+                    otherDestination: TWENTY_FOUR
+                    destination: 6
         required: true
     delete:
       responses:
@@ -2358,20 +2328,19 @@ paths:
           description: OK   Everything is working.
           content:
             application/json:
-              example:
-                exitHousingAssessments:
-                  pagination:
-                    from: 0
-                    returned: 1
-                    total: 1
-                    maximum: 30
-                    sort: {}
-                  exitHousingAssessments:
-                    - exitHousingAssessmentId: a45e96ba-0287-4c9f-a1c2-5058a4acc1aa
-                      housingAssessment: 5
-                      subsidyInformation: 4
               schema:
-                $ref: '#/components/schemas/exit_housing_assessments_ids'
+                example:
+                    exitHousingAssessments:
+                      pagination:
+                        from: 0
+                        returned: 1
+                        total: 1
+                        maximum: 30
+                        sort: {}
+                      exitHousingAssessments:
+                        - exitHousingAssessmentId: a45e96ba-0287-4c9f-a1c2-5058a4acc1aa
+                          housingAssessment: 5
+                          subsidyInformation: 4
         '400':
           description: Bad Request   The request was invalid or cannot be served.
         '403':
@@ -2423,12 +2392,11 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              exitHousingAssessment:
-                housingAssessment: 5
-                subsidyInformation: 4
             schema:
-              $ref: '#/components/schemas/exit_housing_assessment'
+              example:
+                  exitHousingAssessment:
+                    housingAssessment: 5
+                    subsidyInformation: 4
         required: true
     parameters:
       - name: exitId
@@ -2459,13 +2427,12 @@ paths:
           description: OK   Everything is working.
           content:
             application/json:
-              example:
-                exitHousingAssessment:
-                  exitHousingAssessmentId: a45e96ba-0287-4c9f-a1c2-5058a4acc1aa
-                  housingAssessment: 5
-                  subsidyInformation: 4
               schema:
-                $ref: '#/components/schemas/exit_housing_assessment_id'
+                example:
+                    exitHousingAssessment:
+                      exitHousingAssessmentId: a45e96ba-0287-4c9f-a1c2-5058a4acc1aa
+                      housingAssessment: 5
+                      subsidyInformation: 4
         '400':
           description: Bad Request   The request was invalid or cannot be served.
         '401':
@@ -2507,12 +2474,11 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              exitHousingAssessment:
-                housingAssessment: 5
-                subsidyInformation: 4
             schema:
-              $ref: '#/components/schemas/exit_housing_assessment'
+              example:
+                  exitHousingAssessment:
+                    housingAssessment: 5
+                    subsidyInformation: 4
         required: true
     delete:
       responses:
@@ -2571,21 +2537,20 @@ paths:
           description: OK   Everything is working.
           content:
             application/json:
-              example:
-                housingAssessmentDispositions:
-                  pagination:
-                    from: 0
-                    returned: 1
-                    total: 1
-                    maximum: 30
-                    sort: {}
-                  housingAssessmentDispositions:
-                    - housingAssessmentDispositionId: c08b6685-c03e-4151-87dc-34f367a4a968
-                      assessmentDisposition: 3
-                      otherDisposition: lAP0q07uSY
-                      dateCreated: 05-11-2017
               schema:
-                $ref: '#/components/schemas/housing_assessment_dispositions_ids'
+                 example:
+                    housingAssessmentDispositions:
+                      pagination:
+                        from: 0
+                        returned: 1
+                        total: 1
+                        maximum: 30
+                        sort: {}
+                      housingAssessmentDispositions:
+                        - housingAssessmentDispositionId: c08b6685-c03e-4151-87dc-34f367a4a968
+                          assessmentDisposition: 3
+                          otherDisposition: lAP0q07uSY
+                          dateCreated: 05-11-2017
         '400':
           description: Bad Request   The request was invalid or cannot be served.
         '403':
@@ -2639,12 +2604,11 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              housingAssessmentDisposition:
-                assessmentDisposition: 3
-                otherDisposition: lAP0q07uSY
             schema:
-              $ref: '#/components/schemas/housing_assessment_disposition'
+              example:
+                  housingAssessmentDisposition:
+                    assessmentDisposition: 3
+                    otherDisposition: lAP0q07uSY
         required: true
     parameters:
       - name: exitId
@@ -2675,15 +2639,14 @@ paths:
           description: OK   Everything is working.
           content:
             application/json:
-              example:
-                housingAssessmentDisposition:
-                  housingAssessmentDispositionId: c08b6685-c03e-4151-87dc-34f367a4a968
-                  assessmentDisposition: 3
-                  otherDisposition: lAP0q07uSYlSKUifs
-                  dateCreated: 05-11-2017
-                  dateUpdated: 05-11-2017
               schema:
-                $ref: '#/components/schemas/housing_assessment_disposition_id'
+                example:
+                    housingAssessmentDisposition:
+                      housingAssessmentDispositionId: c08b6685-c03e-4151-87dc-34f367a4a968
+                      assessmentDisposition: 3
+                      otherDisposition: lAP0q07uSYlSKUifs
+                      dateCreated: 05-11-2017
+                      dateUpdated: 05-11-2017
         '400':
           description: Bad Request   The request was invalid or cannot be served.
         '401':
@@ -2725,12 +2688,11 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              housingAssessmentDisposition:
-                assessmentDisposition: 3
-                otherDisposition: lAP0q07uSY
             schema:
-              $ref: '#/components/schemas/housing_assessment_disposition'
+              example:
+                  housingAssessmentDisposition:
+                    assessmentDisposition: 3
+                    otherDisposition: lAP0q07uSY
         required: true
     delete:
       responses:
@@ -2789,19 +2751,18 @@ paths:
           description: OK   Everything is working.
           content:
             application/json:
-              example:
-                exitPaths:
-                  pagination:
-                    from: 0
-                    returned: 1
-                    total: 1
-                    maximum: 30
-                    sort: {}
-                  exitPaths:
-                    - exitPathId: 46b4e67b-08f4-4962-9a1e-3ff614aaea23
-                      connectionWithSoar: 9
               schema:
-                $ref: '#/components/schemas/exit_paths_ids'
+                example:
+                    exitPaths:
+                      pagination:
+                        from: 0
+                        returned: 1
+                        total: 1
+                        maximum: 30
+                        sort: {}
+                      exitPaths:
+                        - exitPathId: 46b4e67b-08f4-4962-9a1e-3ff614aaea23
+                          connectionWithSoar: 9
         '400':
           description: Bad Request   The request was invalid or cannot be served.
         '403':
@@ -2848,11 +2809,10 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              exitPath:
-                connectionWithSoar: 9
             schema:
-              $ref: '#/components/schemas/exit_path'
+              example:
+                  exitPath:
+                    connectionWithSoar: 9
         required: true
     parameters:
       - name: exitId
@@ -2883,11 +2843,10 @@ paths:
           description: OK   Everything is working.
           content:
             application/json:
-              example:
-                exitPath:
-                  exitPathId: 46b4e67b-08f4-4962-9a1e-3ff614aaea23
               schema:
-                $ref: '#/components/schemas/exit_path_id'
+                example:
+                    exitPath:
+                      exitPathId: 46b4e67b-08f4-4962-9a1e-3ff614aaea23
         '400':
           description: Bad Request   The request was invalid or cannot be served.
         '401':
@@ -2927,11 +2886,10 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              exitPath:
-                connectionWithSoar: 9
             schema:
-              $ref: '#/components/schemas/exit_path'
+              example:
+                  exitPath:
+                    connectionWithSoar: 9
         required: true
     delete:
       responses:
@@ -2988,30 +2946,29 @@ paths:
           description: OK   Everything is working.
           content:
             application/json:
-              example:
-                exitrhys:
-                  pagination:
-                    from: 0
-                    returned: 1
-                    total: 1
-                    maximum: 30
-                    sort: {}
-                  exitrhys:
-                    - exitrhyId: 878d7b3f-91d8-4a5d-9eba-81b081f0a9f8
-                      projectCompletionStatus: 3
-                      earlyExitReason: 1
-                      familyReunificationAchieved: 0
-                      writtenAfterCarePlan: 2
-                      assistanceMainStreamBenefits: 0
-                      permenantHousingPlacement: 1
-                      tempShelterPlacement: 2
-                      exitCounseling: 0
-                      furtherFollowupServices: 1
-                      scheduledFollowupContacts: 1
-                      resourcePackage: 1
-                      otherAftercarePlanOrAction: 2
               schema:
-                $ref: '#/components/schemas/exit_rhys_ids'
+                example:
+                    exitrhys:
+                      pagination:
+                        from: 0
+                        returned: 1
+                        total: 1
+                        maximum: 30
+                        sort: {}
+                      exitrhys:
+                        - exitrhyId: 878d7b3f-91d8-4a5d-9eba-81b081f0a9f8
+                          projectCompletionStatus: 3
+                          earlyExitReason: 1
+                          familyReunificationAchieved: 0
+                          writtenAfterCarePlan: 2
+                          assistanceMainStreamBenefits: 0
+                          permenantHousingPlacement: 1
+                          tempShelterPlacement: 2
+                          exitCounseling: 0
+                          furtherFollowupServices: 1
+                          scheduledFollowupContacts: 1
+                          resourcePackage: 1
+                          otherAftercarePlanOrAction: 2
         '400':
           description: Bad Request   The request was invalid or cannot be served.
         '403':
@@ -3100,55 +3057,9 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              exitrhy:
-                projectCompletionStatus: 3
-                earlyExitReason: 1
-                familyReunificationAchieved: 0
-                writtenAfterCarePlan: 2
-                assistanceMainStreamBenefits: 0
-                permenantHousingPlacement: 1
-                tempShelterPlacement: 2
-                exitCounseling: 0
-                furtherFollowupServices: 1
-                scheduledFollowupContacts: 1
-                resourcePackage: 1
-                otherAftercarePlanOrAction: 2
             schema:
-              $ref: '#/components/schemas/exit_rhy'
-        required: true
-    parameters:
-      - name: exitId
-        in: path
-        required: true
-        schema:
-          type: string
-          format: "uuid"
-        description: Exit Identifier
-      - name: enrollmentId
-        in: path
-        required: true
-        schema:
-          type: string
-          format: "uuid"
-        description: Enrollment Identifier
-      - name: clientId
-        in: path
-        required: true
-        schema:
-          type: string
-          format: "uuid"
-        description: Client Identifier
-  '/clients/{clientId}/enrollments/{enrollmentId}/exits/{exitId}/exitrhys/{exitrhyid}':
-    get:
-      responses:
-        '200':
-          description: OK   Everything is working.
-          content:
-            application/json:
               example:
-                exitrhy:
-                  exitrhyId: 878d7b3f-91d8-4a5d-9eba-81b081f0a9f8
+                  exitrhy:
                   sexualOrientation: 0
                   formerlyWardChildWelfrForestCare: 0
                   yearsChildWelfrForestCare: 0
@@ -3191,8 +3102,82 @@ paths:
                   workPlacePromiseDifference: 0
                   coercedToContinueWork: 0
                   laborExploitPastThreeMonths: 0
+        required: true
+    parameters:
+      - name: exitId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: "uuid"
+        description: Exit Identifier
+      - name: enrollmentId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: "uuid"
+        description: Enrollment Identifier
+      - name: clientId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: "uuid"
+        description: Client Identifier
+  '/clients/{clientId}/enrollments/{enrollmentId}/exits/{exitId}/exitrhys/{exitrhyid}':
+    get:
+      responses:
+        '200':
+          description: OK   Everything is working.
+          content:
+            application/json:
               schema:
-                $ref: '#/components/schemas/exit_rhy_id'
+                example:
+                    exitrhy:
+                      exitrhyId: 878d7b3f-91d8-4a5d-9eba-81b081f0a9f8
+                      sexualOrientation: 0
+                      formerlyWardChildWelfrForestCare: 0
+                      yearsChildWelfrForestCare: 0
+                      monthsChildWelfrForestCare: 0
+                      formerlyWardOfJuvenileJustice: 0
+                      yearsJuvenileJustice: 0
+                      houseHoldDynamics: 0
+                      sexualOrientationGenderIdentityYouth: 0
+                      sexualOrientationGenderIdentityFamilyMbr: 0
+                      housingIssuesYouth: 0
+                      housingIssuesFamilyMbr: 0
+                      schoolEducationIssuesYouth: 0
+                      schoolEducationIssuesFamilyMbr: 0
+                      unemployementYouth: 0
+                      unemployementFamilyMbr: 0
+                      mentalHealthIssuesYouth: 0
+                      mentalHealthIssuesFamilyMbr: 0
+                      healthIssuesYouth: 0
+                      healthIssuesFamilyMbr: 0
+                      physicalDisabilityYouth: 0
+                      physicalDisabilityFamilyMbr: 0
+                      mentalDisabilityYouth: 0
+                      mentalDisabilityFamilyMbr: 0
+                      abuseAndNeglectYouth: 0
+                      abuseAndNeglectFamilyMbr: 0
+                      alcoholDrugAbuseYouth: 0
+                      alcoholDrugAbuseFamilyMbr: 0
+                      insufficientIncomeToSupportYouth: 0
+                      activeMilitaryParent: 0
+                      incarceratedParent: 0
+                      incarceratedParentStatus: 0
+                      referralSource: 0
+                      countOutReachReferralApproaches: 0
+                      exchangeForSex: 0
+                      exchangeForSexPastThreeMonths: 0
+                      countOfExchangeForSex: 0
+                      askedOfForcedToExchangeForSex: 0
+                      askedOfForcedToExchangeForSexPastThreeMonths: 0
+                      workPlaceViolenceThreat: 0
+                      workPlacePromiseDifference: 0
+                      coercedToContinueWork: 0
+                      laborExploitPastThreeMonths: 0
         '400':
           description: Bad Request   The request was invalid or cannot be served.
         '401':
@@ -3232,22 +3217,21 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              exitrhy:
-                projectCompletionStatus: 3
-                earlyExitReason: 1
-                familyReunificationAchieved: 0
-                writtenAfterCarePlan: 2
-                assistanceMainStreamBenefits: 0
-                permenantHousingPlacement: 1
-                tempShelterPlacement: 2
-                exitCounseling: 0
-                furtherFollowupServices: 1
-                scheduledFollowupContacts: 1
-                resourcePackage: 1
-                otherAftercarePlanOrAction: 2
             schema:
-              $ref: '#/components/schemas/exit_rhy'
+              example:
+                  exitrhy:
+                    projectCompletionStatus: 3
+                    earlyExitReason: 1
+                    familyReunificationAchieved: 0
+                    writtenAfterCarePlan: 2
+                    assistanceMainStreamBenefits: 0
+                    permenantHousingPlacement: 1
+                    tempShelterPlacement: 2
+                    exitCounseling: 0
+                    furtherFollowupServices: 1
+                    scheduledFollowupContacts: 1
+                    resourcePackage: 1
+                    otherAftercarePlanOrAction: 2
         required: true
     delete:
       responses:
@@ -3304,38 +3288,37 @@ paths:
           description: OK   Everything is working.
           content:
             application/json:
-              example:
-                healthinsurances:
-                  pagination:
-                    from: 0
-                    returned: 1
-                    total: 1
-                    maximum: 30
-                    sort: {}
-                  healthinsurances:
-                    - healthinsuranceId: b7ccbf4c-980d-4163-a7a5-7eecf6829946
-                      insuranceFromAnySource: 99
-                      medicaid: 1
-                      noMedicaidReason: 8
-                      medicare: 99
-                      noMedicareReason: 4
-                      schip: 1
-                      noSchipReason: 2
-                      noVaMedReason: 9
-                      employerProvided: 1929555170
-                      noEmployerProvidedReason: 99
-                      cobra: 1401014227
-                      noCobraReason: 2
-                      privatePay: 0
-                      noPrivatePayReason: 4
-                      stateHealthIns: 0
-                      noStateHealthInsReason: 8
-                      otherSource: 688424562
-                      otherSourceIdentify: 'test    '
-                      dataCollectionStage: 1
-                      informationDate: 03-17-2016
               schema:
-                $ref: '#/components/schemas/health_insurances_ids'
+                example:
+                    healthinsurances:
+                      pagination:
+                        from: 0
+                        returned: 1
+                        total: 1
+                        maximum: 30
+                        sort: {}
+                      healthinsurances:
+                        - healthinsuranceId: b7ccbf4c-980d-4163-a7a5-7eecf6829946
+                          insuranceFromAnySource: 99
+                          medicaid: 1
+                          noMedicaidReason: 8
+                          medicare: 99
+                          noMedicareReason: 4
+                          schip: 1
+                          noSchipReason: 2
+                          noVaMedReason: 9
+                          employerProvided: 1929555170
+                          noEmployerProvidedReason: 99
+                          cobra: 1401014227
+                          noCobraReason: 2
+                          privatePay: 0
+                          noPrivatePayReason: 4
+                          stateHealthIns: 0
+                          noStateHealthInsReason: 8
+                          otherSource: 688424562
+                          otherSourceIdentify: 'test    '
+                          dataCollectionStage: 1
+                          informationDate: 03-17-2016
         '400':
           description: Bad Request   The request was invalid or cannot be served.
         '403':
@@ -3388,31 +3371,30 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              healthinsurance:
-                insuranceFromAnySource: 99
-                medicaid: 1
-                noMedicaidReason: 8
-                medicare: 99
-                noMedicareReason: 4
-                schip: 1
-                noSchipReason: 2
-                vaMedicalServices: 9
-                noVaMedReason: 9
-                employerProvided: 1929555170
-                noEmployerProvidedReason: 99
-                cobra: 1401014227
-                noCobraReason: 2
-                privatePay: 0
-                noPrivatePayReason: 4
-                stateHealthIns: 0
-                noStateHealthInsReason: 8
-                otherSource: 688424562
-                otherSourceIdentify: test
-                dataCollectionStage: 1
-                informationDate: 03-17-2016
             schema:
-              $ref: '#/components/schemas/health_insurance'
+              example:
+                  healthinsurance:
+                    insuranceFromAnySource: 99
+                    medicaid: 1
+                    noMedicaidReason: 8
+                    medicare: 99
+                    noMedicareReason: 4
+                    schip: 1
+                    noSchipReason: 2
+                    vaMedicalServices: 9
+                    noVaMedReason: 9
+                    employerProvided: 1929555170
+                    noEmployerProvidedReason: 99
+                    cobra: 1401014227
+                    noCobraReason: 2
+                    privatePay: 0
+                    noPrivatePayReason: 4
+                    stateHealthIns: 0
+                    noStateHealthInsReason: 8
+                    otherSource: 688424562
+                    otherSourceIdentify: test
+                    dataCollectionStage: 1
+                    informationDate: 03-17-2016
         required: true
     parameters:
       - name: enrollmentId
@@ -3436,31 +3418,30 @@ paths:
           description: OK   Everything is working.
           content:
             application/json:
-              example:
-                healthInsurance:
-                  healthInsuranceId: b7ccbf4c-980d-4163-a7a5-7eecf6829946
-                  insuranceFromAnySource: 99
-                  medicaid: 1
-                  noMedicaidReason: 8
-                  medicare: 99
-                  noMedicareReason: 4
-                  schip: 1
-                  noSchipReason: 2
-                  noVaMedReason: 9
-                  employerProvided: 1929555170
-                  noEmployerProvidedReason: 99
-                  cobra: 1401014227
-                  noCobraReason: 2
-                  privatePay: 0
-                  noPrivatePayReason: 4
-                  stateHealthIns: 0
-                  noStateHealthInsReason: 8
-                  otherSource: 688424562
-                  otherSourceIdentify: 'test    '
-                  dataCollectionStage: 1
-                  informationDate: 03-17-2016
               schema:
-                $ref: '#/components/schemas/health_insurance_id'
+                example:
+                    healthInsurance:
+                      healthInsuranceId: b7ccbf4c-980d-4163-a7a5-7eecf6829946
+                      insuranceFromAnySource: 99
+                      medicaid: 1
+                      noMedicaidReason: 8
+                      medicare: 99
+                      noMedicareReason: 4
+                      schip: 1
+                      noSchipReason: 2
+                      noVaMedReason: 9
+                      employerProvided: 1929555170
+                      noEmployerProvidedReason: 99
+                      cobra: 1401014227
+                      noCobraReason: 2
+                      privatePay: 0
+                      noPrivatePayReason: 4
+                      stateHealthIns: 0
+                      noStateHealthInsReason: 8
+                      otherSource: 688424562
+                      otherSourceIdentify: 'test    '
+                      dataCollectionStage: 1
+                      informationDate: 03-17-2016
         '400':
           description: Bad Request   The request was invalid or cannot be served.
         '401':
@@ -3502,30 +3483,29 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              healthInsurance:
-                insuranceFromAnySource: 99
-                medicaid: 1
-                noMedicaidReason: 8
-                medicare: 99
-                noMedicareReason: 4
-                schip: 1
-                noSchipReason: 2
-                noVaMedReason: 9
-                employerProvided: 1929555170
-                noEmployerProvidedReason: 99
-                cobra: 1401014227
-                noCobraReason: 2
-                privatePay: 0
-                noPrivatePayReason: 4
-                stateHealthIns: 0
-                noStateHealthInsReason: 8
-                otherSource: 688424562
-                otherSourceIdentify: 'test    '
-                dataCollectionStage: 1
-                informationDate: 03-17-2016
             schema:
-              $ref: '#/components/schemas/health_insurance'
+              example:
+                  healthInsurance:
+                    insuranceFromAnySource: 99
+                    medicaid: 1
+                    noMedicaidReason: 8
+                    medicare: 99
+                    noMedicareReason: 4
+                    schip: 1
+                    noSchipReason: 2
+                    noVaMedReason: 9
+                    employerProvided: 1929555170
+                    noEmployerProvidedReason: 99
+                    cobra: 1401014227
+                    noCobraReason: 2
+                    privatePay: 0
+                    noPrivatePayReason: 4
+                    stateHealthIns: 0
+                    noStateHealthInsReason: 8
+                    otherSource: 688424562
+                    otherSourceIdentify: 'test    '
+                    dataCollectionStage: 1
+                    informationDate: 03-17-2016
         required: true
     delete:
       responses:
@@ -3577,23 +3557,22 @@ paths:
           description: OK   Everything is working.
           content:
             application/json:
-              example:
-                healthStatuses:
-                  pagination:
-                    from: 0
-                    returned: 1
-                    total: 1
-                    maximum: 30
-                    sort: {}
-                  healthStatuses:
-                    - healthStatusId: 81057685-4120-424f-9378-23bc45e01925
-                      healthCategory: 27
-                      healthStatus: 3
-                      dueDate: 04-05-2017
-                      dataCollectionStage: 1
-                      informationDate: 03-17-2016
               schema:
-                $ref: '#/components/schemas/health_statuses_ids'
+                example:
+                    healthStatuses:
+                      pagination:
+                        from: 0
+                        returned: 1
+                        total: 1
+                        maximum: 30
+                        sort: {}
+                      healthStatuses:
+                        - healthStatusId: 81057685-4120-424f-9378-23bc45e01925
+                          healthCategory: 27
+                          healthStatus: 3
+                          dueDate: 04-05-2017
+                          dataCollectionStage: 1
+                          informationDate: 03-17-2016
         '400':
           description: Bad Request   The request was invalid or cannot be served.
         '403':
@@ -3645,15 +3624,14 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              healthStatus:
-                healthCategory: 27
-                healthStatus: 3
-                dueDate: '04-05-2017 11:12'
-                dataCollectionStage: 1
-                informationDate: 03-17-2016
             schema:
-              $ref: '#/components/schemas/health_status'
+              example:
+                  healthStatus:
+                    healthCategory: 27
+                    healthStatus: 3
+                    dueDate: '04-05-2017 11:12'
+                    dataCollectionStage: 1
+                    informationDate: 03-17-2016
         required: true
     parameters:
       - name: enrollmentId
@@ -3677,16 +3655,15 @@ paths:
           description: OK   Everything is working.
           content:
             application/json:
-              example:
-                healthStatus:
-                  healthStatusId: 81057685-4120-424f-9378-23bc45e01925
-                  healthCategory: 27
-                  healthStatus: 3
-                  dueDate: 04-05-2017
-                  dataCollectionStage: 1
-                  informationDate: 03-17-2016
               schema:
-                $ref: '#/components/schemas/health_status_id'
+                example:
+                    healthStatus:
+                      healthStatusId: 81057685-4120-424f-9378-23bc45e01925
+                      healthCategory: 27
+                      healthStatus: 3
+                      dueDate: 04-05-2017
+                      dataCollectionStage: 1
+                      informationDate: 03-17-2016
         '400':
           description: Bad Request   The request was invalid or cannot be served.
         '401':
@@ -3728,15 +3705,14 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              healthStatus:
-                healthCategory: 27
-                healthStatus: 3
-                dueDate: '04-05-2017 11:12'
-                dataCollectionStage: 1
-                informationDate: 03-17-2016
             schema:
-              $ref: '#/components/schemas/health_status'
+              example:
+                  healthStatus:
+                    healthCategory: 27
+                    healthStatus: 3
+                    dueDate: '04-05-2017 11:12'
+                    dataCollectionStage: 1
+                    informationDate: 03-17-2016
         required: true
     delete:
       responses:
@@ -3788,54 +3764,53 @@ paths:
           description: OK   Everything is working.
           content:
             application/json:
-              example:
-                IncomeAndSources:
-                  pagination:
-                    from: 0
-                    returned: 1
-                    total: 1
-                    maximum: 30
-                    sort: {}
-                  incomeAndSources:
-                    - incomeAndSourceId: 07577bdf-d44d-4a2f-b0f5-952098158242
-                      alimony: 0
-                      alimonyAmount: 0.683
-                      childSupport: 0
-                      childSupportAmount: 0.375
-                      earned: 0
-                      earnedAmount: 0.974
-                      ga: 0
-                      gaAmount: 0.638
-                      incomeFromAnySource: 0
-                      otherSource: 0
-                      otherSourceAmount: 0.867
-                      otherSourceidentify: TestData
-                      pension: 0
-                      pensionAmount: 0.375
-                      privatedisability: 0
-                      privateDisabilityAmount: 0.966
-                      socsecretirement: 0
-                      socsecretirementamount: 0.635
-                      ssdi: 0
-                      ssdiAmount: 0.429
-                      ssi: 0
-                      ssiAmount: 0.33
-                      tanf: 0
-                      tanfAmount: 0.361
-                      totalMonthlyIncome: 0.273
-                      unemployment: 0
-                      unemploymentamount: 0.584
-                      vadisabilitynonservice: 0
-                      vaDisabilityNonServiceAmount: 0.816
-                      vadisabilityservice: 0
-                      vaDisabilityServiceAmount: 0.148
-                      workerscomp: 0
-                      workersCompAmount: 0.144
-                      dateCreated: '04-11-2017 10:32'
-                      dataCollectionStage: 1
-                      informationDate: 03-17-2016
               schema:
-                $ref: '#/components/schemas/income_and_sources_ids'
+                example:
+                    IncomeAndSources:
+                      pagination:
+                        from: 0
+                        returned: 1
+                        total: 1
+                        maximum: 30
+                        sort: {}
+                      incomeAndSources:
+                        - incomeAndSourceId: 07577bdf-d44d-4a2f-b0f5-952098158242
+                          alimony: 0
+                          alimonyAmount: 0.683
+                          childSupport: 0
+                          childSupportAmount: 0.375
+                          earned: 0
+                          earnedAmount: 0.974
+                          ga: 0
+                          gaAmount: 0.638
+                          incomeFromAnySource: 0
+                          otherSource: 0
+                          otherSourceAmount: 0.867
+                          otherSourceidentify: TestData
+                          pension: 0
+                          pensionAmount: 0.375
+                          privatedisability: 0
+                          privateDisabilityAmount: 0.966
+                          socsecretirement: 0
+                          socsecretirementamount: 0.635
+                          ssdi: 0
+                          ssdiAmount: 0.429
+                          ssi: 0
+                          ssiAmount: 0.33
+                          tanf: 0
+                          tanfAmount: 0.361
+                          totalMonthlyIncome: 0.273
+                          unemployment: 0
+                          unemploymentamount: 0.584
+                          vadisabilitynonservice: 0
+                          vaDisabilityNonServiceAmount: 0.816
+                          vadisabilityservice: 0
+                          vaDisabilityServiceAmount: 0.148
+                          workerscomp: 0
+                          workersCompAmount: 0.144
+                          dateCreated: '04-11-2017 10:32'
+                          dataCollectionStage: 1
+                          informationDate: 03-17-2016
         '400':
           description: Bad Request   The request was invalid or cannot be served.
         '403':
@@ -3920,48 +3895,47 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              incomeAndSource:
-                  incomeAndSourceId: 07577bdf-d44d-4a2f-b0f5-952098158242
-                  alimony: 0
-                  alimonyAmount: 0.683
-                  childSupport: 0
-                  childSupportAmount: 0.375
-                  earned: 0
-                  earnedAmount: 0.974
-                  ga: 0
-                  gaAmount: 0.638
-                  incomeFromAnySource: 0
-                  otherSource: 0
-                  otherSourceAmount: 0.867
-                  otherSourceIdentify: TestData
-                  pension: 0
-                  pensionAmount: 0.375
-                  privateDisability: 0
-                  privateDisabilityAmount: 0.966
-                  socsecRetirement: 0
-                  socsecRetirementAmount: 0.635
-                  ssdi: 0
-                  ssdiAmount: 0.429
-                  ssi: 0
-                  ssiAmount: 0.33
-                  tanf: 0
-                  tanfAmount: 0.361
-                  totalMonthlyIncome: 0.273
-                  unemployment: 0
-                  unemploymentAmount: 0.584
-                  vaDisabilitynonService: 0
-                  vaDisabilityNonServiceAmount: 0.816
-                  vaDisabilityService: 0
-                  vaDisabilityServiceAmount: 0.148
-                  workersComp: 0
-                  workersCompAmount: 0.144
-                  dateCreated: '04-11-2017 10:32'
-                  dateUpdated: '04-11-2017 10:32'
-                  dataCollectionStage: 1
-                  informationDate: 03-17-2016
             schema:
-              $ref: '#/components/schemas/income_and_source'
+              example:
+                  incomeAndSource:
+                      incomeAndSourceId: 07577bdf-d44d-4a2f-b0f5-952098158242
+                      alimony: 0
+                      alimonyAmount: 0.683
+                      childSupport: 0
+                      childSupportAmount: 0.375
+                      earned: 0
+                      earnedAmount: 0.974
+                      ga: 0
+                      gaAmount: 0.638
+                      incomeFromAnySource: 0
+                      otherSource: 0
+                      otherSourceAmount: 0.867
+                      otherSourceIdentify: TestData
+                      pension: 0
+                      pensionAmount: 0.375
+                      privateDisability: 0
+                      privateDisabilityAmount: 0.966
+                      socsecRetirement: 0
+                      socsecRetirementAmount: 0.635
+                      ssdi: 0
+                      ssdiAmount: 0.429
+                      ssi: 0
+                      ssiAmount: 0.33
+                      tanf: 0
+                      tanfAmount: 0.361
+                      totalMonthlyIncome: 0.273
+                      unemployment: 0
+                      unemploymentAmount: 0.584
+                      vaDisabilitynonService: 0
+                      vaDisabilityNonServiceAmount: 0.816
+                      vaDisabilityService: 0
+                      vaDisabilityServiceAmount: 0.148
+                      workersComp: 0
+                      workersCompAmount: 0.144
+                      dateCreated: '04-11-2017 10:32'
+                      dateUpdated: '04-11-2017 10:32'
+                      dataCollectionStage: 1
+                      informationDate: 03-17-2016
         required: true
     parameters:
       - name: enrollmentId
@@ -3985,48 +3959,47 @@ paths:
           description: OK   Everything is working.
           content:
             application/json:
-              example:
-                incomeAndSource:
-                    incomeAndSourceId: 07577bdf-d44d-4a2f-b0f5-952098158242
-                    alimony: 0
-                    alimonyAmount: 0.683
-                    childSupport: 0
-                    childSupportAmount: 0.375
-                    earned: 0
-                    earnedAmount: 0.974
-                    ga: 0
-                    gaAmount: 0.638
-                    incomeFromAnySource: 0
-                    otherSource: 0
-                    otherSourceAmount: 0.867
-                    otherSourceIdentify: TestData
-                    pension: 0
-                    pensionAmount: 0.375
-                    privateDisability: 0
-                    privateDisabilityAmount: 0.966
-                    socsecRetirement: 0
-                    socsecRetirementAmount: 0.635
-                    ssdi: 0
-                    ssdiAmount: 0.429
-                    ssi: 0
-                    ssiAmount: 0.33
-                    tanf: 0
-                    tanfAmount: 0.361
-                    totalMonthlyIncome: 0.273
-                    unemployment: 0
-                    unemploymentAmount: 0.584
-                    vaDisabilitynonService: 0
-                    vaDisabilityNonServiceAmount: 0.816
-                    vaDisabilityService: 0
-                    vaDisabilityServiceAmount: 0.148
-                    workersComp: 0
-                    workersCompAmount: 0.144
-                    dateCreated: '04-11-2017 10:32'
-                    dateUpdated: '04-11-2017 10:32'
-                    dataCollectionStage: 1
-                    informationDate: 03-17-2016
               schema:
-                $ref: '#/components/schemas/income_and_source_id'
+                example:
+                    incomeAndSource:
+                        incomeAndSourceId: 07577bdf-d44d-4a2f-b0f5-952098158242
+                        alimony: 0
+                        alimonyAmount: 0.683
+                        childSupport: 0
+                        childSupportAmount: 0.375
+                        earned: 0
+                        earnedAmount: 0.974
+                        ga: 0
+                        gaAmount: 0.638
+                        incomeFromAnySource: 0
+                        otherSource: 0
+                        otherSourceAmount: 0.867
+                        otherSourceIdentify: TestData
+                        pension: 0
+                        pensionAmount: 0.375
+                        privateDisability: 0
+                        privateDisabilityAmount: 0.966
+                        socsecRetirement: 0
+                        socsecRetirementAmount: 0.635
+                        ssdi: 0
+                        ssdiAmount: 0.429
+                        ssi: 0
+                        ssiAmount: 0.33
+                        tanf: 0
+                        tanfAmount: 0.361
+                        totalMonthlyIncome: 0.273
+                        unemployment: 0
+                        unemploymentAmount: 0.584
+                        vaDisabilitynonService: 0
+                        vaDisabilityNonServiceAmount: 0.816
+                        vaDisabilityService: 0
+                        vaDisabilityServiceAmount: 0.148
+                        workersComp: 0
+                        workersCompAmount: 0.144
+                        dateCreated: '04-11-2017 10:32'
+                        dateUpdated: '04-11-2017 10:32'
+                        dataCollectionStage: 1
+                        informationDate: 03-17-2016
         '400':
           description: Bad Request   The request was invalid or cannot be served.
         '401':
@@ -4068,48 +4041,47 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              incomeAndSource:
-                  incomeAndSourceId: 07577bdf-d44d-4a2f-b0f5-952098158242
-                  alimony: 0
-                  alimonyAmount: 0.683
-                  childSupport: 0
-                  childSupportAmount: 0.375
-                  earned: 0
-                  earnedAmount: 0.974
-                  ga: 0
-                  gaAmount: 0.638
-                  incomeFromAnySource: 0
-                  otherSource: 0
-                  otherSourceAmount: 0.867
-                  otherSourceIdentify: TestData
-                  pension: 0
-                  pensionAmount: 0.375
-                  privateDisability: 0
-                  privateDisabilityAmount: 0.966
-                  socsecRetirement: 0
-                  socsecRetirementAmount: 0.635
-                  ssdi: 0
-                  ssdiAmount: 0.429
-                  ssi: 0
-                  ssiAmount: 0.33
-                  tanf: 0
-                  tanfAmount: 0.361
-                  totalMonthlyIncome: 0.273
-                  unemployment: 0
-                  unemploymentAmount: 0.584
-                  vaDisabilitynonService: 0
-                  vaDisabilityNonServiceAmount: 0.816
-                  vaDisabilityService: 0
-                  vaDisabilityServiceAmount: 0.148
-                  workersComp: 0
-                  workersCompAmount: 0.144
-                  dateCreated: '04-11-2017 10:32'
-                  dateUpdated: '04-11-2017 10:32'
-                  dataCollectionStage: 1
-                  informationDate: 03-17-2016
             schema:
-              $ref: '#/components/schemas/income_and_source'
+              example:
+                  incomeAndSource:
+                      incomeAndSourceId: 07577bdf-d44d-4a2f-b0f5-952098158242
+                      alimony: 0
+                      alimonyAmount: 0.683
+                      childSupport: 0
+                      childSupportAmount: 0.375
+                      earned: 0
+                      earnedAmount: 0.974
+                      ga: 0
+                      gaAmount: 0.638
+                      incomeFromAnySource: 0
+                      otherSource: 0
+                      otherSourceAmount: 0.867
+                      otherSourceIdentify: TestData
+                      pension: 0
+                      pensionAmount: 0.375
+                      privateDisability: 0
+                      privateDisabilityAmount: 0.966
+                      socsecRetirement: 0
+                      socsecRetirementAmount: 0.635
+                      ssdi: 0
+                      ssdiAmount: 0.429
+                      ssi: 0
+                      ssiAmount: 0.33
+                      tanf: 0
+                      tanfAmount: 0.361
+                      totalMonthlyIncome: 0.273
+                      unemployment: 0
+                      unemploymentAmount: 0.584
+                      vaDisabilitynonService: 0
+                      vaDisabilityNonServiceAmount: 0.816
+                      vaDisabilityService: 0
+                      vaDisabilityServiceAmount: 0.148
+                      workersComp: 0
+                      workersCompAmount: 0.144
+                      dateCreated: '04-11-2017 10:32'
+                      dateUpdated: '04-11-2017 10:32'
+                      dataCollectionStage: 1
+                      informationDate: 03-17-2016
         required: true
     delete:
       responses:
