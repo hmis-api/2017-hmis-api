@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: 2017 HMIS
-  version: "1.1.4"
+  version: "1.1.5"
   description: |
        **Note :**
               Please note that the partial updates are supported via PUT APIs. However, Note that If "null" value is passed for any element, in the PUT request body, it will be ignored. An empty string value should be sent (instead of "null" value) for the elements that need to be updated with NULL values.
@@ -3309,7 +3309,7 @@ paths:
           type: string
           format: "uuid"
         description: Client Identifier
-  '/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exitHousingAssessments':
+  '/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exithousingassessments':
     get:
       responses:
         '200':
@@ -3411,7 +3411,7 @@ paths:
           type: string
           format: "uuid"
         description: Client Identifier
-  '/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exitHousingAssessments/{exithousingassessmentid}':
+  '/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exithousingassessments/{exithousingassessmentid}':
     get:
       responses:
         '200':
@@ -3524,7 +3524,7 @@ paths:
           type: string
           format: "uuid"
         description: Client Identifier
-  '/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exitHousingAssessments/{exithousingassessmentid}/history':
+  '/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/exithousingassessments/{exithousingassessmentid}/history':
     get:
       responses:
         '200':
@@ -3590,7 +3590,7 @@ paths:
           type: string
           format: "uuid"
         description: Client Identifier
-  '/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/housingAssessmentDispositions':
+  '/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/housingassessmentdispositions':
     get:
       responses:
         '200':
@@ -3695,7 +3695,7 @@ paths:
           type: string
           format: "uuid"
         description: Client Identifier
-  '/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/housingAssessmentDispositions/{housingassessmentdispositionid}':
+  '/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/housingassessmentdispositions/{housingassessmentdispositionid}':
     get:
       responses:
         '200':
@@ -3810,7 +3810,7 @@ paths:
           type: string
           format: "uuid"
         description: Client Identifier
-  '/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/housingAssessmentDispositions/{housingassessmentdispositionid}/history':
+  '/clients/{clientid}/enrollments/{enrollmentid}/exits/{exitid}/housingassessmentdispositions/{housingassessmentdispositionid}/history':
     get:
       responses:
         '200':
@@ -5998,7 +5998,7 @@ paths:
           type: string
           format: "uuid"
         description: Client Identifier
-  '/clients/{clientid}/enrollments/{enrollmentid}/residentialMoveinDates':
+  '/clients/{clientid}/enrollments/{enrollmentid}/residentialmoveindates':
     get:
       responses:
         '200':
@@ -6092,7 +6092,7 @@ paths:
           type: string
           format: "uuid"
         description: Client Identifier
-  '/clients/{clientid}/enrollments/{enrollmentid}/residentialMoveinDates/{residentialmoveindateid}':
+  '/clients/{clientid}/enrollments/{enrollmentid}/residentialmoveindates/{residentialmoveindateid}':
     get:
       responses:
         '200':
@@ -6199,7 +6199,7 @@ paths:
           type: string
           format: "uuid"
         description: Client Identifier
-  '/clients/{clientid}/enrollments/{enrollmentid}/residentialMoveinDates/{residentialmoveindateid}/history':
+  '/clients/{clientid}/enrollments/{enrollmentid}/residentialmoveindates/{residentialmoveindateid}/history':
     get:
       responses:
         '200':
@@ -6522,7 +6522,7 @@ paths:
           type: string
           format: "uuid"
         description: Client Identifier
-  '/clients/{clientid}/enrollments/{enrollmentid}/entryRhsps':
+  '/clients/{clientid}/enrollments/{enrollmentid}/entryrhsps':
     get:
       responses:
         '200':
@@ -6613,7 +6613,7 @@ paths:
           type: string
           format: "uuid"
         description: Client Identifier
-  '/clients/{clientid}/enrollments/{enrollmentid}/entryRhsps/{entryrhspid}':
+  '/clients/{clientid}/enrollments/{enrollmentid}/entryrhsps/{entryrhspid}':
     get:
       responses:
         '200':
@@ -6712,7 +6712,7 @@ paths:
           type: string
           format: "uuid"
         description: Client Identifier
-  '/clients/{clientid}/enrollments/{enrollmentid}/entryRhsps/{entryrhspid}/history':
+  '/clients/{clientid}/enrollments/{enrollmentid}/entryrhsps/{entryrhspid}/history':
     get:
       responses:
         '200':
@@ -7557,7 +7557,7 @@ paths:
           type: string
           format: "uuid"
         description: Client Identifier
-  '/clients/{clientid}/enrollments/{enrollmentid}/serviceFaReferrals':
+  '/clients/{clientid}/enrollments/{enrollmentid}/servicefareferrals':
     get:
       responses:
         '200':
@@ -7667,7 +7667,7 @@ paths:
           type: string
           format: "uuid"
         description: Client Identifier
-  '/clients/{clientid}/enrollments/{enrollmentid}/serviceFaReferrals/{servicefareferralid}':
+  '/clients/{clientid}/enrollments/{enrollmentid}/servicefareferrals/{servicefareferralid}':
     get:
       responses:
         '200':
@@ -7785,7 +7785,7 @@ paths:
           type: string
           format: "uuid"
         description: Client Identifier
-  '/clients/{clientid}/enrollments/{enrollmentid}/serviceFaReferrals/{servicefareferralid}/history':
+  '/clients/{clientid}/enrollments/{enrollmentid}/servicefareferrals/{servicefareferralid}/history':
     get:
       responses:
         '200':
@@ -8572,7 +8572,7 @@ paths:
         schema:
           type: string
         description: Project Identifier
-  '/projects/{projectid}/projectCocs':
+  '/projects/{projectid}/projectcocs':
     get:
       responses:
         '200':
@@ -8658,7 +8658,7 @@ paths:
         schema:
           type: string
         description: Project Identifier
-  '/projects/{projectid}/projectCocs/{projectcocid}':
+  '/projects/{projectid}/projectcocs/{projectcocid}':
     get:
       responses:
         '200':
@@ -8754,7 +8754,7 @@ paths:
         schema:
           type: string
         description: Project Identifier
-  '/projects/{projectid}/projectCocs/{projectcocid}/history':
+  '/projects/{projectid}/projectcocs/{projectcocid}/history':
     get:
       responses:
         '200':
@@ -8805,7 +8805,7 @@ paths:
         schema:
           type: string
         description: Project Identifier
-  '/projects/{projectid}/projectCocs/{projectcocid}/inventories':
+  '/projects/{projectid}/projectcocs/{projectcocid}/inventories':
     get:
       responses:
         '200':
@@ -8927,7 +8927,7 @@ paths:
         schema:
           type: string
         description: Project Identifier
-  '/projects/{projectid}/projectCocs/{projectcocid}/inventories/{inventoryid}':
+  '/projects/{projectid}/projectcocs/{projectcocid}/inventories/{inventoryid}':
     get:
       responses:
         '200':
@@ -9046,7 +9046,7 @@ paths:
         schema:
           type: string
         description: Project Identifier
-  '/projects/{projectid}/projectCocs/{projectcocid}/inventories/{inventoryid}/history':
+  '/projects/{projectid}/projectcocs/{projectcocid}/inventories/{inventoryid}/history':
     get:
       responses:
         '200':
@@ -9446,7 +9446,7 @@ paths:
         required: true
         schema:
           type: string
-  /hmisTypes:
+  /hmistypes:
     get:
       responses:
         '200':
@@ -9540,7 +9540,7 @@ paths:
                               type: string
                           type: object
       operationId: GET_hmisTypes
-  '/hmisTypes/{name}/values':
+  '/hmistypes/{name}/values':
     get:
       responses:
         '200':
