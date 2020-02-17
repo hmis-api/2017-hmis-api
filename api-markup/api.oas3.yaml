@@ -673,6 +673,7 @@ paths:
                           yearsHomeless: 0
                           losUnderThreshold: 1
                           previousStreetESSH: 1
+                          chronicHomeless: 1
         '400':
           description: Bad Request   The request was invalid or cannot be served.
         '403':
@@ -740,6 +741,7 @@ paths:
                     yearsHomeless: 2
                     entryFromStreetEssh: 2
                     dateToStreetEssh: 1
+                    chronicHomeless: 1
         required: true
     parameters:
       - name: clientid
@@ -1060,6 +1062,7 @@ paths:
                     yearsHomeless: 2
                     entryFromStreetEssh: 2
                     dateToStreetEssh: 1
+                    chronicHomeless: 1
         required: true
     delete:
       responses:
@@ -11121,6 +11124,7 @@ components:
             - yearsHomeless
             - entryFromStreetEssh
             - dateToStreetEssh
+            - chronicHomeless
           type: object
           properties:
             continuouslyHomelessOneYear:
@@ -11160,6 +11164,8 @@ components:
             entryFromStreetEssh:
               type: integer
             dateToStreetEssh:
+              type: integer
+            chronicHomeless:
               type: integer
     enrollment_coc:
       required:
@@ -11282,6 +11288,7 @@ components:
             - entryFromStreetEssh
             - dateCreated
             - dateUpdated
+            - chronicHomeless
           type: object
           properties:
             enrollmentId:
@@ -11314,6 +11321,8 @@ components:
               type: string
             dateUpdated:
               type: string
+            chronicHomeless:
+              type: integer
     enrollment_id_only:
       required:
         - enrollment
@@ -11377,6 +11386,7 @@ components:
                   - yearsHomeless
                   - entryFromStreetEssh
                   - dateCreated
+                  - chronicHomeless
                 type: object
                 properties:
                   enrollmentId:
@@ -11408,6 +11418,8 @@ components:
                     type: integer
                   dateCreated:
                     type: string
+                  chronicHomeless:
+                    type: integer
     entry_rhsp:
       required:
         - entryRhsp
