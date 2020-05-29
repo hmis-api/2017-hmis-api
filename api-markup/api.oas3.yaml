@@ -31,11 +31,16 @@ paths:
                           clientId: 48db8ac0-cbfe-4456-a1fd-e40cb710b51b
                           dedupClientId: 0db39fc0-e2e3-11e9-a57b-02fe61f7863e
                           firstName: Taylor
+                          firstNameHashStatus: 1
                           middleName: Robin
+                          middleNameHashStatus: 1
                           lastName: Steve
+                          lastNameHashStatus: 1
                           nameSuffix: 'TS                                                '
                           nameDataQuality: 2
                           ssn: 100-xx-xxxx
+                          ssnHashStatus: 1
+                          ssnHashed: 0db39fc0-e2e3-11e9-a57b-02fe61f7863e
                           ssnDataQuality: 2
                           dob: 1473746618394
                           dobDataQuality: 9
@@ -51,7 +56,7 @@ paths:
                           firstName: TaylorT
                           middleName: RobinT
                           lastName: SteveT
-                          nameSuffix: 'TST                                               '
+                          nameSuffix: TST                                               '
                           nameDataQuality: 1
                           ssn: 100-xx-xxxx
                           ssnDataQuality: 1
@@ -128,11 +133,16 @@ paths:
               example:
                   client:
                     firstName: First Name
+                    firstNameHashStatus: 1
                     middleName: Middle Name
+                    middleNameHashStatus: 1
                     lastName: LAST NAME
+                    lastNameHashStatus: 1
                     nameSuffix: NS
                     nameDataQuality: 1
                     ssn: 123-45-6789
+                    ssnHashStatus: 1
+                    ssnHashed: hashedSSN
                     ssnDataQuality: 1
                     dob: 1459517834983
                     dobDataQuality: 1
@@ -159,12 +169,16 @@ paths:
                       href: "/clients/48db8ac0-cbfe-4456-a1fd-e40cb710b51b/history"
                     clientId: 48db8ac0-cbfe-4456-a1fd-e40cb710b51b
                     dedupClientId: 0db39fc0-e2e3-11e9-a57b-02fe61f7863e
-                    firstName: Taylor
-                    middleName: Robin
-                    lastName: Steve
-                    nameSuffix: 'TS'
-                    nameDataQuality: 2
-                    ssn: 100-xx-xxxx
+                    firstName: First Name
+                    firstNameHashStatus: 1
+                    middleName: Middle Name
+                    middleNameHashStatus: 1
+                    lastName: LAST NAME
+                    lastNameHashStatus: 1
+                    nameSuffix: NS
+                    nameDataQuality: 1
+                    ssn: 123-45-6789
+                    ssnHashStatus: 1
                     ssnDataQuality: 2
                     dob: 1473746618394
                     dobDataQuality: 9
@@ -217,12 +231,16 @@ paths:
                 example:
                   client:
                     firstName: First Name
+                    firstNameHashStatus: 1
                     middleName: Middle Name
+                    middleNameHashStatus: 1
                     lastName: LAST NAME
+                    lastNameHashStatus: 1
                     nameSuffix: NS
                     nameDataQuality: 1
                     ssn: 123-45-6789
-                    ssnDataQuality: 1
+                    ssnHashStatus: 1
+                    ssnHashed: hashedSSN
                     dob: 1459517834983
                     dobDataQuality: 1
                     race: 1
@@ -279,12 +297,16 @@ paths:
                         clients:
                         - clientId: 48db8ac0-cbfe-4456-a1fd-e40cb710b51b
                           dedupClientId: 0db39fc0-e2e3-11e9-a57b-02fe61f7863e
-                          firstName: Taylor
-                          middleName: Robin
-                          lastName: Steve
-                          nameSuffix: 'TS                                                '
-                          nameDataQuality: 2
-                          ssn: 100-xx-xxxx
+                          firstName: First Name
+                          firstNameHashStatus: 1
+                          middleName: Middle Name
+                          middleNameHashStatus: 1
+                          lastName: LAST NAME
+                          lastNameHashStatus: 1
+                          nameSuffix: NS
+                          nameDataQuality: 1
+                          ssn: 123-45-6789
+                          ssnHashStatus: 1
                           ssnDataQuality: 2
                           dob: 1473746618394
                           dobDataQuality: 9
@@ -294,13 +316,17 @@ paths:
                           veteranStatus: '99'
                         - clientId: 258d13c3-eed5-4236-8398-38bd71b0f29d
                           dedupClientId: 0db39fc0-e2e3-11e9-a57b-02fe61f7863e
-                          firstName: TaylorT
-                          middleName: RobinT
-                          lastName: SteveT
-                          nameSuffix: 'TST                                               '
+                          firstName: First Name
+                          firstNameHashStatus: 1
+                          middleName: Middle Name
+                          middleNameHashStatus: 1
+                          lastName: LAST NAME
+                          lastNameHashStatus: 1
+                          nameSuffix: NS
                           nameDataQuality: 1
-                          ssn: 100-xx-xxxx
-                          ssnDataQuality: 1
+                          ssn: 123-45-6789
+                          ssnHashStatus: 1
+                          ssnDataQuality: 2
                           dob: 1473746618394
                           dobDataQuality: 1
                           race: 1
@@ -1000,6 +1026,7 @@ paths:
                   yearsHomeless: 0
                   losUnderThreshold: 1
                   previousStreetESSH: 1
+                  chronicHomeless: 1
 
         '400':
           description: Bad Request   The request was invalid or cannot be served.
